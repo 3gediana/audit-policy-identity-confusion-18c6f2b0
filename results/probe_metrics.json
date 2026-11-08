@@ -1,0 +1,215 @@
+{
+ "stage": "pilot",
+ "scope": "2 design-frozen pilot tasks x 7 policies, all covered rollout episodes",
+ "runs": {
+  "A": {
+   "auc_main_macro_ovr": 0.8773371848739496,
+   "auc_main_bootstrap_ci95": [
+    0.8360976762110197,
+    0.9148162577269598
+   ],
+   "auc_positive_control_task": 1.0,
+   "auc_negative_control_permuted": 0.4811259234396659,
+   "null_band_95": [
+    0.336748051510362,
+    0.663251948489638
+   ],
+   "test_accuracy": 0.5701754385964912,
+   "config_fingerprint": "e3c7c892299d25e3",
+   "n_episodes": 570,
+   "n_test": 114
+  },
+  "B": {
+   "auc_main_macro_ovr": 0.8773371848739496,
+   "auc_main_bootstrap_ci95": [
+    0.8360976762110197,
+    0.9148162577269598
+   ],
+   "auc_positive_control_task": 1.0,
+   "auc_negative_control_permuted": 0.4811259234396659,
+   "null_band_95": [
+    0.336748051510362,
+    0.663251948489638
+   ],
+   "test_accuracy": 0.5701754385964912,
+   "config_fingerprint": "e3c7c892299d25e3",
+   "n_episodes": 570,
+   "n_test": 114
+  },
+  "C": {
+   "auc_main_macro_ovr": 0.8773371848739496,
+   "auc_main_bootstrap_ci95": [
+    0.8360976762110197,
+    0.9148162577269598
+   ],
+   "auc_positive_control_task": 1.0,
+   "auc_negative_control_permuted": 0.4811259234396659,
+   "null_band_95": [
+    0.336748051510362,
+    0.663251948489638
+   ],
+   "test_accuracy": 0.5701754385964912,
+   "config_fingerprint": "e3c7c892299d25e3",
+   "n_episodes": 570,
+   "n_test": 114
+  }
+ },
+ "auc_main_runs": [
+  0.8773371848739496,
+  0.8773371848739496,
+  0.8773371848739496
+ ],
+ "auc_main_mean": 0.8773371848739496,
+ "auc_main_range": 0.0,
+ "auc_main_ci95": [
+  0.8360976762110197,
+  0.9148162577269598
+ ],
+ "auc_main_per_class": {
+  "act": {
+   "n_test": 24,
+   "auc": 0.9527777777777777
+  },
+  "diffusion": {
+   "n_test": 12,
+   "auc": 0.9289215686274509
+  },
+  "grootn1.7": {
+   "n_test": 12,
+   "auc": 0.8823529411764706
+  },
+  "molmoact2": {
+   "n_test": 24,
+   "auc": 0.8763888888888889
+  },
+  "pi0": {
+   "n_test": 12,
+   "auc": 0.7834967320261438
+  },
+  "pi0.5": {
+   "n_test": 12,
+   "auc": 0.7990196078431372
+  },
+  "smolvla": {
+   "n_test": 18,
+   "auc": 0.9184027777777778
+  }
+ },
+ "positive_control_runs": [
+  1.0,
+  1.0,
+  1.0
+ ],
+ "negative_control_runs": [
+  0.4811259234396659,
+  0.4811259234396659,
+  0.4811259234396659
+ ],
+ "null_band_95": [
+  0.336748051510362,
+  0.663251948489638
+ ],
+ "neg_control_convergence": {
+  "pilot_test_n": 114,
+  "pilot_neg_auc": 0.4811259234396659,
+  "pilot_abs_dev_from_half": 0.018874076560334074,
+  "pilot_null_band": [
+   0.336748051510362,
+   0.663251948489638
+  ],
+  "smoke_test_n": 44,
+  "smoke_neg_auc": 0.5568568098173361,
+  "smoke_abs_dev_from_half": 0.056856809817336096,
+  "smoke_null_band": [
+   0.24904348465591442,
+   0.7509565153440856
+  ],
+  "dev_shrank_with_bigger_test": true,
+  "band_shrank_with_bigger_test": true,
+  "pilot_neg_within_own_band": true
+ },
+ "twice_same_1e-12": true,
+ "single_config_fingerprint": true,
+ "confusion_classes": [
+  "act",
+  "diffusion",
+  "grootn1.7",
+  "molmoact2",
+  "pi0",
+  "pi0.5",
+  "smolvla"
+ ],
+ "confusion_matrix_test": [
+  [
+   17,
+   4,
+   0,
+   1,
+   1,
+   1,
+   0
+  ],
+  [
+   0,
+   9,
+   0,
+   0,
+   0,
+   0,
+   3
+  ],
+  [
+   1,
+   0,
+   9,
+   1,
+   1,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   7,
+   8,
+   2,
+   1,
+   6
+  ],
+  [
+   1,
+   0,
+   2,
+   1,
+   6,
+   0,
+   2
+  ],
+  [
+   0,
+   1,
+   1,
+   1,
+   1,
+   5,
+   3
+  ],
+  [
+   1,
+   2,
+   0,
+   0,
+   3,
+   1,
+   11
+  ]
+ ],
+ "test_accuracy": 0.5701754385964912,
+ "gates": {
+  "main_auc_gt_0.55": true,
+  "positive_ge_0.90": true,
+  "negative_in_null_band": true,
+  "reliability_bitwise": true,
+  "neg_convergence_toward_half": true
+ }
+}

@@ -1,0 +1,296 @@
+{
+ "so101": {
+  "repo": "armnet/armnetbench_v01_lerobot_so101",
+  "shortname": "cable_clip",
+  "task": "Push the Displayport cable into the cable holder on the white block",
+  "camera": "observation.images.front",
+  "files": [
+   {
+    "path": "videos/observation.images.front/chunk-000/file-095.mp4",
+    "bytes": 208345840,
+    "local_bytes": 0,
+    "eps": 15,
+    "file_index": -1
+   },
+   {
+    "path": "videos/observation.images.front/chunk-000/file-096.mp4",
+    "bytes": 203717575,
+    "local_bytes": 0,
+    "eps": 14,
+    "file_index": -1
+   },
+   {
+    "path": "videos/observation.images.front/chunk-000/file-098.mp4",
+    "bytes": 207191733,
+    "local_bytes": 0,
+    "eps": 14,
+    "file_index": -1
+   },
+   {
+    "path": "videos/observation.images.front/chunk-000/file-099.mp4",
+    "bytes": 14308402,
+    "local_bytes": 0,
+    "eps": 1,
+    "file_index": -1
+   },
+   {
+    "path": "videos/observation.images.front/chunk-000/file-100.mp4",
+    "bytes": 203830785,
+    "local_bytes": 0,
+    "eps": 14,
+    "file_index": -1
+   },
+   {
+    "path": "videos/observation.images.front/chunk-000/file-103.mp4",
+    "bytes": 199427923,
+    "local_bytes": 0,
+    "eps": 14,
+    "file_index": -1
+   },
+   {
+    "path": "videos/observation.images.front/chunk-000/file-106.mp4",
+    "bytes": 196397680,
+    "local_bytes": 0,
+    "eps": 11,
+    "file_index": -1
+   },
+   {
+    "path": "videos/observation.images.front/chunk-000/file-107.mp4",
+    "bytes": 188693463,
+    "local_bytes": 0,
+    "eps": 14,
+    "file_index": -1
+   },
+   {
+    "path": "videos/observation.images.front/chunk-000/file-108.mp4",
+    "bytes": 107694220,
+    "local_bytes": 0,
+    "eps": 5,
+    "file_index": -1
+   },
+   {
+    "path": "videos/observation.images.front/chunk-000/file-110.mp4",
+    "bytes": 150612477,
+    "local_bytes": 0,
+    "eps": 12,
+    "file_index": -1
+   },
+   {
+    "path": "videos/observation.images.front/chunk-000/file-111.mp4",
+    "bytes": 171603622,
+    "local_bytes": 0,
+    "eps": 10,
+    "file_index": -1
+   },
+   {
+    "path": "videos/observation.images.front/chunk-000/file-113.mp4",
+    "bytes": 118055544,
+    "local_bytes": 0,
+    "eps": 7,
+    "file_index": -1
+   },
+   {
+    "path": "videos/observation.images.front/chunk-000/file-114.mp4",
+    "bytes": 113908155,
+    "local_bytes": 0,
+    "eps": 7,
+    "file_index": -1
+   },
+   {
+    "path": "videos/observation.images.front/chunk-000/file-115.mp4",
+    "bytes": 95768383,
+    "local_bytes": 0,
+    "eps": 8,
+    "file_index": -1
+   }
+  ],
+  "missing_files": 14,
+  "missing_gib": 2.03
+ },
+ "bimanual": {
+  "repo": "armnet/armnetbench_v01_lerobot_bimanual_so101",
+  "shortname": "fold_tea_towel",
+  "task": "Fold the brown tea towel",
+  "camera": "observation.images.top",
+  "files": [
+   {
+    "path": "videos/observation.images.top/chunk-000/file-056.mp4",
+    "bytes": 207869895,
+    "local_bytes": 0,
+    "eps": 11,
+    "file_index": -1
+   },
+   {
+    "path": "videos/observation.images.top/chunk-000/file-057.mp4",
+    "bytes": 136920768,
+    "local_bytes": 0,
+    "eps": 7,
+    "file_index": -1
+   },
+   {
+    "path": "videos/observation.images.top/chunk-000/file-058.mp4",
+    "bytes": 195359972,
+    "local_bytes": 0,
+    "eps": 8,
+    "file_index": -1
+   },
+   {
+    "path": "videos/observation.images.top/chunk-000/file-060.mp4",
+    "bytes": 199177216,
+    "local_bytes": 0,
+    "eps": 8,
+    "file_index": -1
+   },
+   {
+    "path": "videos/observation.images.top/chunk-000/file-061.mp4",
+    "bytes": 124320780,
+    "local_bytes": 0,
+    "eps": 5,
+    "file_index": -1
+   },
+   {
+    "path": "videos/observation.images.top/chunk-000/file-062.mp4",
+    "bytes": 208327812,
+    "local_bytes": 0,
+    "eps": 9,
+    "file_index": -1
+   },
+   {
+    "path": "videos/observation.images.top/chunk-000/file-063.mp4",
+    "bytes": 207153082,
+    "local_bytes": 0,
+    "eps": 9,
+    "file_index": -1
+   },
+   {
+    "path": "videos/observation.images.top/chunk-000/file-065.mp4",
+    "bytes": 73192005,
+    "local_bytes": 0,
+    "eps": 3,
+    "file_index": -1
+   },
+   {
+    "path": "videos/observation.images.top/chunk-000/file-066.mp4",
+    "bytes": 206025392,
+    "local_bytes": 0,
+    "eps": 10,
+    "file_index": -1
+   },
+   {
+    "path": "videos/observation.images.top/chunk-000/file-067.mp4",
+    "bytes": 202395874,
+    "local_bytes": 0,
+    "eps": 10,
+    "file_index": -1
+   },
+   {
+    "path": "videos/observation.images.top/chunk-000/file-068.mp4",
+    "bytes": 205431164,
+    "local_bytes": 0,
+    "eps": 10,
+    "file_index": -1
+   },
+   {
+    "path": "videos/observation.images.top/chunk-000/file-070.mp4",
+    "bytes": 208460113,
+    "local_bytes": 0,
+    "eps": 10,
+    "file_index": -1
+   },
+   {
+    "path": "videos/observation.images.top/chunk-000/file-071.mp4",
+    "bytes": 150711705,
+    "local_bytes": 0,
+    "eps": 8,
+    "file_index": -1
+   },
+   {
+    "path": "videos/observation.images.top/chunk-000/file-072.mp4",
+    "bytes": 199155004,
+    "local_bytes": 0,
+    "eps": 12,
+    "file_index": -1
+   },
+   {
+    "path": "videos/observation.images.top/chunk-000/file-073.mp4",
+    "bytes": 193678599,
+    "local_bytes": 0,
+    "eps": 11,
+    "file_index": -1
+   },
+   {
+    "path": "videos/observation.images.top/chunk-000/file-074.mp4",
+    "bytes": 122780251,
+    "local_bytes": 0,
+    "eps": 7,
+    "file_index": -1
+   },
+   {
+    "path": "videos/observation.images.top/chunk-000/file-076.mp4",
+    "bytes": 202455456,
+    "local_bytes": 0,
+    "eps": 13,
+    "file_index": -1
+   },
+   {
+    "path": "videos/observation.images.top/chunk-000/file-077.mp4",
+    "bytes": 45725695,
+    "local_bytes": 0,
+    "eps": 3,
+    "file_index": -1
+   },
+   {
+    "path": "videos/observation.images.top/chunk-000/file-078.mp4",
+    "bytes": 132550781,
+    "local_bytes": 0,
+    "eps": 7,
+    "file_index": -1
+   },
+   {
+    "path": "videos/observation.images.top/chunk-000/file-080.mp4",
+    "bytes": 197305781,
+    "local_bytes": 0,
+    "eps": 10,
+    "file_index": -1
+   },
+   {
+    "path": "videos/observation.images.top/chunk-000/file-083.mp4",
+    "bytes": 207505623,
+    "local_bytes": 0,
+    "eps": 12,
+    "file_index": -1
+   },
+   {
+    "path": "videos/observation.images.top/chunk-000/file-084.mp4",
+    "bytes": 108004894,
+    "local_bytes": 0,
+    "eps": 6,
+    "file_index": -1
+   },
+   {
+    "path": "videos/observation.images.top/chunk-000/file-086.mp4",
+    "bytes": 194547818,
+    "local_bytes": 0,
+    "eps": 12,
+    "file_index": -1
+   },
+   {
+    "path": "videos/observation.images.top/chunk-000/file-087.mp4",
+    "bytes": 67293902,
+    "local_bytes": 0,
+    "eps": 4,
+    "file_index": -1
+   }
+  ],
+  "missing_files": 24,
+  "missing_gib": 3.722
+ },
+ "_summary": {
+  "complete_files": 18,
+  "missing_files": 38,
+  "missing_gib": 5.752,
+  "remote_size_unreachable_fallback_plan_mib": [],
+  "built_unix": 1794173793,
+  "built_seconds": 18.3
+ }
+}

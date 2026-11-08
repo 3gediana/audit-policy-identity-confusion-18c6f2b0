@@ -1,0 +1,15 @@
+task,policy_type,n,n_success_episode_label,success_rate_episode_label_audit,n_success_at_horizon,success_rate_at_horizon,L50_trunc_len,n_truncated,rank,ci95_lo,ci95_hi,tie_order_idx,status
+cable_clip,act,60,0,0.0,0,0.0,905.0,52,1,0.0,0.0,0,ok
+cable_clip,diffusion,30,0,0.0,0,0.0,905.0,15,2,0.0,0.0,1,ok
+cable_clip,smolvla,30,0,0.0,0,0.0,905.0,0,3,0.0,0.0,2,ok
+cable_clip,pi0,30,0,0.0,0,0.0,905.0,25,4,0.0,0.0,3,ok
+cable_clip,pi0.5,30,0,0.0,0,0.0,905.0,25,5,0.0,0.0,4,ok
+cable_clip,grootn1.7,30,0,0.0,0,0.0,905.0,2,6,0.0,0.0,5,ok
+cable_clip,molmoact2,60,0,0.0,0,0.0,905.0,16,7,0.0,0.0,6,ok
+fold_tea_towel,act,60,3,0.05,1,0.016666666666666666,740.5,56,7,0.0,0.05,0,ok
+fold_tea_towel,diffusion,30,15,0.5,14,0.4666666666666667,740.5,14,3,0.3,0.6333333333333333,1,ok
+fold_tea_towel,smolvla,60,5,0.08333333333333333,5,0.08333333333333333,740.5,44,6,0.016666666666666666,0.15,2,ok
+fold_tea_towel,pi0,30,15,0.5,15,0.5,740.5,7,2,0.3333333333333333,0.6666666666666666,3,ok
+fold_tea_towel,pi0.5,30,21,0.7,21,0.7,740.5,1,1,0.5333333333333333,0.8666666666666667,4,ok
+fold_tea_towel,grootn1.7,30,4,0.13333333333333333,3,0.1,740.5,25,4,0.0,0.2,5,ok
+fold_tea_towel,molmoact2,60,6,0.1,6,0.1,740.5,3,5,0.03333333333333333,0.18333333333333332,6,ok

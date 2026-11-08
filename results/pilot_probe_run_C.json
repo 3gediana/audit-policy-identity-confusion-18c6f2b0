@@ -1,0 +1,166 @@
+{
+ "runid": "C",
+ "stage": "pilot",
+ "n_episodes": 570,
+ "n_train": 456,
+ "n_test": 114,
+ "n_classes": 7,
+ "split_seed": 20261109,
+ "perm_seed": 20261110,
+ "boot_seed": 20261111,
+ "boot_B": 2000,
+ "auc_main_macro_ovr": 0.8773371848739496,
+ "auc_main_per_class": {
+  "act": {
+   "n_test": 24,
+   "auc": 0.9527777777777777
+  },
+  "diffusion": {
+   "n_test": 12,
+   "auc": 0.9289215686274509
+  },
+  "grootn1.7": {
+   "n_test": 12,
+   "auc": 0.8823529411764706
+  },
+  "molmoact2": {
+   "n_test": 24,
+   "auc": 0.8763888888888889
+  },
+  "pi0": {
+   "n_test": 12,
+   "auc": 0.7834967320261438
+  },
+  "pi0.5": {
+   "n_test": 12,
+   "auc": 0.7990196078431372
+  },
+  "smolvla": {
+   "n_test": 18,
+   "auc": 0.9184027777777778
+  }
+ },
+ "auc_main_bootstrap_ci95": [
+  0.8360976762110197,
+  0.9148162577269598
+ ],
+ "boot_skipped_resamples": 0,
+ "test_accuracy": 0.5701754385964912,
+ "auc_positive_control_task": 1.0,
+ "n_task_classes": 2,
+ "auc_negative_control_permuted": 0.4811259234396659,
+ "null_band_95": [
+  0.336748051510362,
+  0.663251948489638
+ ],
+ "null_macro_se": 0.08329181045389694,
+ "neg_control_convergence": {
+  "pilot_test_n": 114,
+  "pilot_neg_auc": 0.4811259234396659,
+  "pilot_abs_dev_from_half": 0.018874076560334074,
+  "pilot_null_band": [
+   0.336748051510362,
+   0.663251948489638
+  ],
+  "smoke_test_n": 44,
+  "smoke_neg_auc": 0.5568568098173361,
+  "smoke_abs_dev_from_half": 0.056856809817336096,
+  "smoke_null_band": [
+   0.24904348465591442,
+   0.7509565153440856
+  ],
+  "dev_shrank_with_bigger_test": true,
+  "band_shrank_with_bigger_test": true,
+  "pilot_neg_within_own_band": true
+ },
+ "confusion_matrix_test": [
+  [
+   17,
+   4,
+   0,
+   1,
+   1,
+   1,
+   0
+  ],
+  [
+   0,
+   9,
+   0,
+   0,
+   0,
+   0,
+   3
+  ],
+  [
+   1,
+   0,
+   9,
+   1,
+   1,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   7,
+   8,
+   2,
+   1,
+   6
+  ],
+  [
+   1,
+   0,
+   2,
+   1,
+   6,
+   0,
+   2
+  ],
+  [
+   0,
+   1,
+   1,
+   1,
+   1,
+   5,
+   3
+  ],
+  [
+   1,
+   2,
+   0,
+   0,
+   3,
+   1,
+   11
+  ]
+ ],
+ "confusion_classes": [
+  "act",
+  "diffusion",
+  "grootn1.7",
+  "molmoact2",
+  "pi0",
+  "pi0.5",
+  "smolvla"
+ ],
+ "config_fingerprint": "e3c7c892299d25e3",
+ "timings_s": {
+  "main": 0.026,
+  "pos": 0.006,
+  "neg": 0.013,
+  "boot": 3.795
+ },
+ "env": {
+  "sklearn": "1.8.0",
+  "numpy": "2.2.6",
+  "torch": "2.10.0+cu128",
+  "transformers": "4.57.6",
+  "pillow": "13.0.0",
+  "python": "3.11.9"
+ },
+ "success_labels_included": true
+}

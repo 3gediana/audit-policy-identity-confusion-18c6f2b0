@@ -1,0 +1,50 @@
+{
+ "schema": "executor-verification/v1",
+ "verified_at": "2026-11-09T06:00:00+08:00",
+ "verifying_unit": "pilot executor unit (run bf7e23fe2cfe4b46afc67e2f6ecc1d1b)",
+ "context": "pilot stage outputs were produced by the surviving detached process of the first pilot attempt (unit cut at 488s, _detached_pid 16472, kept running per user rule 'do not kill running processes'); this unit independently verified every reported quantity before packaging.",
+ "checks": {
+  "1_independent_data_recompute": {
+   "method": "fresh script (scratch/verify_rank_indep.py) reading meta/episodes parquet of both repos directly, recomputing n / n_success / L50 / horizon-success per task x policy, compared cell-by-cell to results/ranking_C.csv and results/ranking_B.csv",
+   "result": "PASS (14/14 cells exact match, 0 mismatches)",
+   "surprising_facts_confirmed": "cable_clip: all 270 rollout episodes have success==0 for all 7 policies (verified straight from parquet, not an artifact)"
+  },
+  "2_code_audit_vs_protocol": {
+   "method": "line-by-line read of pilot_ranking.py / pilot_extract.py / pilot_probe.py / aggregate_pilot.py against experiments/protocol.md sections 1-5",
+   "result": "PASS (frame rule idx_k=floor(k*N/8), resize-224/center-crop/ImageNet-norm, CLS mean + L2 norm; split seed 20261109, perm seed 20261110, boot seed 20261111 B=2000; LR multinomial lbfgs L2 C=1.0 max_iter=2000 balanced; tie-break order act,diffusion,smolvla,pi0,pi0.5,grootn1.7,molmoact2; A-arm n>=10 gate + >=2 policies per layer + layer-episode-count weighting; batch_axis=unavailable_task_fallback applied per protocol section 1)"
+  },
+  "3_three_run_reliability": {
+   "result": "PASS (pilot_probe_run_A/B/C: auc_main 0.8773371848739496 x3 bitwise, config_fingerprint e3c7c892299d25e3 x3 identical)",
+   "ranking_double_run": "PASS (pilot_ranking.py in-process double compute, fingerprint a780d88eed247ebc... identical)"
+  },
+  "4_independent_rerun_by_this_unit": {
+   "pilot_ranking.py": "re-run by this unit: all 10 output files byte-identical (md5 diff empty; ranking_A/B/C, pairwise_flips, kendall_tau, cell_gates, ranking_summary, pilot_episodes_all, degradation_missing)",
+   "pilot_probe.py A": "re-run by this unit: scientific fields bitwise identical (auc_main/pos/neg, null band, CI, config_fingerprint); only timings_s differs (0.032->0.019 main, 3.763->3.998 boot), which is not a scientific quantity"
+  },
+  "5_negative_control_convergence": {
+   "smoke": {"n_test": 44, "neg_auc": 0.5568568098173361, "abs_dev_from_half": 0.05686, "null_band": [0.24904, 0.75096]},
+   "pilot": {"n_test": 114, "neg_auc": 0.4811259234396659, "abs_dev_from_half": 0.01887, "null_band": [0.33675, 0.66325]},
+   "result": "PASS: abs deviation from 0.5 shrank 0.0569 -> 0.0189 as test set grew 44 -> 114, null band shrank, pilot point estimate inside its own band"
+  }
+ },
+ "headline_numbers": {
+  "main_auc_macro_ovr": 0.8773371848739496,
+  "main_auc_bootstrap_ci95": [0.8360976762110197, 0.9148162577269598],
+  "positive_control": 1.0,
+  "negative_control": 0.4811259234396659,
+  "episodes": 570,
+  "cells_passing_n_ge10": "14/14",
+  "size_verification_pilot": "56/56 byte-complete",
+  "extract": "570/570 episodes full 8-frame coverage, degraded=0, 288.5s"
+ },
+ "arm_verdicts": {
+  "cable_clip": "insufficient_comparison (all policies 0 successes -> pure tie-break ranking, tau-b undefined, zero discriminating power)",
+  "fold_tea_towel_C_vs_A": "no_flip_observed (tau 1.0) but structurally uninformative: task-only fallback makes A == C on common support",
+  "fold_tea_towel_C_vs_B": "ranking_unstable (tau_b 0.95, 1/21 pair flip: diffusion vs pi0, strict_direction_reversals=0 — the flip is tie-break level: C ties both at 0.5 broken by fixed order, B horizon rates 0.4667 vs 0.5)",
+  "fold_tea_towel_C_vs_B_frozen_labels_audit": "no_flip_observed (tau 1.0, B==C by construction under frozen labels)"
+ },
+ "length_leakage_audit": {
+  "fold_tea_towel": "success episodes shorter than failures (median 566 vs 871), pearson(success,length) = -0.524",
+  "cable_clip": "undefined (no successes)"
+ }
+}

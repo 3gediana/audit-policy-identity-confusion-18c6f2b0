@@ -1,0 +1,398 @@
+{
+ "verified_with": "HTTP Range Content-Range total against huggingface.co/datasets/resolve",
+ "manifest": "download_plan.json (full pilot expansion, 2 tasks)",
+ "verdict": {
+  "so101/videos/observation.images.front/chunk-000/file-094.mp4": {
+   "local": 195459144,
+   "remote": 195459144,
+   "status": "ok",
+   "task": "cable_clip",
+   "eps": 15
+  },
+  "so101/videos/observation.images.front/chunk-000/file-095.mp4": {
+   "local": 208345840,
+   "remote": 208345840,
+   "status": "ok",
+   "task": "cable_clip",
+   "eps": 15
+  },
+  "so101/videos/observation.images.front/chunk-000/file-096.mp4": {
+   "local": 203717575,
+   "remote": 203717575,
+   "status": "ok",
+   "task": "cable_clip",
+   "eps": 14
+  },
+  "so101/videos/observation.images.front/chunk-000/file-097.mp4": {
+   "local": 14283376,
+   "remote": 14283376,
+   "status": "ok",
+   "task": "cable_clip",
+   "eps": 1
+  },
+  "so101/videos/observation.images.front/chunk-000/file-098.mp4": {
+   "local": 207191733,
+   "remote": 207191733,
+   "status": "ok",
+   "task": "cable_clip",
+   "eps": 14
+  },
+  "so101/videos/observation.images.front/chunk-000/file-099.mp4": {
+   "local": 14308402,
+   "remote": 14308402,
+   "status": "ok",
+   "task": "cable_clip",
+   "eps": 1
+  },
+  "so101/videos/observation.images.front/chunk-000/file-100.mp4": {
+   "local": 203830785,
+   "remote": 203830785,
+   "status": "ok",
+   "task": "cable_clip",
+   "eps": 14
+  },
+  "so101/videos/observation.images.front/chunk-000/file-101.mp4": {
+   "local": 187695245,
+   "remote": 187695245,
+   "status": "ok",
+   "task": "cable_clip",
+   "eps": 16
+  },
+  "so101/videos/observation.images.front/chunk-000/file-102.mp4": {
+   "local": 209559662,
+   "remote": 209559662,
+   "status": "ok",
+   "task": "cable_clip",
+   "eps": 15
+  },
+  "so101/videos/observation.images.front/chunk-000/file-103.mp4": {
+   "local": 199427923,
+   "remote": 199427923,
+   "status": "ok",
+   "task": "cable_clip",
+   "eps": 14
+  },
+  "so101/videos/observation.images.front/chunk-000/file-104.mp4": {
+   "local": 14479974,
+   "remote": 14479974,
+   "status": "ok",
+   "task": "cable_clip",
+   "eps": 1
+  },
+  "so101/videos/observation.images.front/chunk-000/file-105.mp4": {
+   "local": 164376443,
+   "remote": 164376443,
+   "status": "ok",
+   "task": "cable_clip",
+   "eps": 30
+  },
+  "so101/videos/observation.images.front/chunk-000/file-106.mp4": {
+   "local": 196397680,
+   "remote": 196397680,
+   "status": "ok",
+   "task": "cable_clip",
+   "eps": 11
+  },
+  "so101/videos/observation.images.front/chunk-000/file-107.mp4": {
+   "local": 188693463,
+   "remote": 188693463,
+   "status": "ok",
+   "task": "cable_clip",
+   "eps": 14
+  },
+  "so101/videos/observation.images.front/chunk-000/file-108.mp4": {
+   "local": 107694220,
+   "remote": 107694220,
+   "status": "ok",
+   "task": "cable_clip",
+   "eps": 5
+  },
+  "so101/videos/observation.images.front/chunk-000/file-109.mp4": {
+   "local": 202937572,
+   "remote": 202937572,
+   "status": "ok",
+   "task": "cable_clip",
+   "eps": 18
+  },
+  "so101/videos/observation.images.front/chunk-000/file-110.mp4": {
+   "local": 150612477,
+   "remote": 150612477,
+   "status": "ok",
+   "task": "cable_clip",
+   "eps": 12
+  },
+  "so101/videos/observation.images.front/chunk-000/file-111.mp4": {
+   "local": 171603622,
+   "remote": 171603622,
+   "status": "ok",
+   "task": "cable_clip",
+   "eps": 10
+  },
+  "so101/videos/observation.images.front/chunk-000/file-112.mp4": {
+   "local": 204320644,
+   "remote": 204320644,
+   "status": "ok",
+   "task": "cable_clip",
+   "eps": 13
+  },
+  "so101/videos/observation.images.front/chunk-000/file-113.mp4": {
+   "local": 118055544,
+   "remote": 118055544,
+   "status": "ok",
+   "task": "cable_clip",
+   "eps": 7
+  },
+  "so101/videos/observation.images.front/chunk-000/file-114.mp4": {
+   "local": 113908155,
+   "remote": 113908155,
+   "status": "ok",
+   "task": "cable_clip",
+   "eps": 7
+  },
+  "so101/videos/observation.images.front/chunk-000/file-115.mp4": {
+   "local": 95768383,
+   "remote": 95768383,
+   "status": "ok",
+   "task": "cable_clip",
+   "eps": 8
+  },
+  "so101/videos/observation.images.front/chunk-000/file-116.mp4": {
+   "local": 161741335,
+   "remote": 161741335,
+   "status": "ok",
+   "task": "cable_clip",
+   "eps": 15
+  },
+  "bimanual/videos/observation.images.top/chunk-000/file-055.mp4": {
+   "local": 206086046,
+   "remote": 206086046,
+   "status": "ok",
+   "task": "fold_tea_towel",
+   "eps": 12
+  },
+  "bimanual/videos/observation.images.top/chunk-000/file-056.mp4": {
+   "local": 207869895,
+   "remote": 207869895,
+   "status": "ok",
+   "task": "fold_tea_towel",
+   "eps": 11
+  },
+  "bimanual/videos/observation.images.top/chunk-000/file-057.mp4": {
+   "local": 136920768,
+   "remote": 136920768,
+   "status": "ok",
+   "task": "fold_tea_towel",
+   "eps": 7
+  },
+  "bimanual/videos/observation.images.top/chunk-000/file-058.mp4": {
+   "local": 195359972,
+   "remote": 195359972,
+   "status": "ok",
+   "task": "fold_tea_towel",
+   "eps": 8
+  },
+  "bimanual/videos/observation.images.top/chunk-000/file-059.mp4": {
+   "local": 203467148,
+   "remote": 203467148,
+   "status": "ok",
+   "task": "fold_tea_towel",
+   "eps": 9
+  },
+  "bimanual/videos/observation.images.top/chunk-000/file-060.mp4": {
+   "local": 199177216,
+   "remote": 199177216,
+   "status": "ok",
+   "task": "fold_tea_towel",
+   "eps": 8
+  },
+  "bimanual/videos/observation.images.top/chunk-000/file-061.mp4": {
+   "local": 124320780,
+   "remote": 124320780,
+   "status": "ok",
+   "task": "fold_tea_towel",
+   "eps": 5
+  },
+  "bimanual/videos/observation.images.top/chunk-000/file-062.mp4": {
+   "local": 208327812,
+   "remote": 208327812,
+   "status": "ok",
+   "task": "fold_tea_towel",
+   "eps": 9
+  },
+  "bimanual/videos/observation.images.top/chunk-000/file-063.mp4": {
+   "local": 207153082,
+   "remote": 207153082,
+   "status": "ok",
+   "task": "fold_tea_towel",
+   "eps": 9
+  },
+  "bimanual/videos/observation.images.top/chunk-000/file-064.mp4": {
+   "local": 201847375,
+   "remote": 201847375,
+   "status": "ok",
+   "task": "fold_tea_towel",
+   "eps": 9
+  },
+  "bimanual/videos/observation.images.top/chunk-000/file-065.mp4": {
+   "local": 73192005,
+   "remote": 73192005,
+   "status": "ok",
+   "task": "fold_tea_towel",
+   "eps": 3
+  },
+  "bimanual/videos/observation.images.top/chunk-000/file-066.mp4": {
+   "local": 206025392,
+   "remote": 206025392,
+   "status": "ok",
+   "task": "fold_tea_towel",
+   "eps": 10
+  },
+  "bimanual/videos/observation.images.top/chunk-000/file-067.mp4": {
+   "local": 202395874,
+   "remote": 202395874,
+   "status": "ok",
+   "task": "fold_tea_towel",
+   "eps": 10
+  },
+  "bimanual/videos/observation.images.top/chunk-000/file-068.mp4": {
+   "local": 205431164,
+   "remote": 205431164,
+   "status": "ok",
+   "task": "fold_tea_towel",
+   "eps": 10
+  },
+  "bimanual/videos/observation.images.top/chunk-000/file-069.mp4": {
+   "local": 201188892,
+   "remote": 201188892,
+   "status": "ok",
+   "task": "fold_tea_towel",
+   "eps": 12
+  },
+  "bimanual/videos/observation.images.top/chunk-000/file-070.mp4": {
+   "local": 208460113,
+   "remote": 208460113,
+   "status": "ok",
+   "task": "fold_tea_towel",
+   "eps": 10
+  },
+  "bimanual/videos/observation.images.top/chunk-000/file-071.mp4": {
+   "local": 150711705,
+   "remote": 150711705,
+   "status": "ok",
+   "task": "fold_tea_towel",
+   "eps": 8
+  },
+  "bimanual/videos/observation.images.top/chunk-000/file-072.mp4": {
+   "local": 199155004,
+   "remote": 199155004,
+   "status": "ok",
+   "task": "fold_tea_towel",
+   "eps": 12
+  },
+  "bimanual/videos/observation.images.top/chunk-000/file-073.mp4": {
+   "local": 193678599,
+   "remote": 193678599,
+   "status": "ok",
+   "task": "fold_tea_towel",
+   "eps": 11
+  },
+  "bimanual/videos/observation.images.top/chunk-000/file-074.mp4": {
+   "local": 122780251,
+   "remote": 122780251,
+   "status": "ok",
+   "task": "fold_tea_towel",
+   "eps": 7
+  },
+  "bimanual/videos/observation.images.top/chunk-000/file-075.mp4": {
+   "local": 200679869,
+   "remote": 200679869,
+   "status": "ok",
+   "task": "fold_tea_towel",
+   "eps": 14
+  },
+  "bimanual/videos/observation.images.top/chunk-000/file-076.mp4": {
+   "local": 202455456,
+   "remote": 202455456,
+   "status": "ok",
+   "task": "fold_tea_towel",
+   "eps": 13
+  },
+  "bimanual/videos/observation.images.top/chunk-000/file-077.mp4": {
+   "local": 45725695,
+   "remote": 45725695,
+   "status": "ok",
+   "task": "fold_tea_towel",
+   "eps": 3
+  },
+  "bimanual/videos/observation.images.top/chunk-000/file-078.mp4": {
+   "local": 132550781,
+   "remote": 132550781,
+   "status": "ok",
+   "task": "fold_tea_towel",
+   "eps": 7
+  },
+  "bimanual/videos/observation.images.top/chunk-000/file-079.mp4": {
+   "local": 206696673,
+   "remote": 206696673,
+   "status": "ok",
+   "task": "fold_tea_towel",
+   "eps": 11
+  },
+  "bimanual/videos/observation.images.top/chunk-000/file-080.mp4": {
+   "local": 197305781,
+   "remote": 197305781,
+   "status": "ok",
+   "task": "fold_tea_towel",
+   "eps": 10
+  },
+  "bimanual/videos/observation.images.top/chunk-000/file-081.mp4": {
+   "local": 34422500,
+   "remote": 34422500,
+   "status": "ok",
+   "task": "fold_tea_towel",
+   "eps": 2
+  },
+  "bimanual/videos/observation.images.top/chunk-000/file-082.mp4": {
+   "local": 188051315,
+   "remote": 188051315,
+   "status": "ok",
+   "task": "fold_tea_towel",
+   "eps": 12
+  },
+  "bimanual/videos/observation.images.top/chunk-000/file-083.mp4": {
+   "local": 207505623,
+   "remote": 207505623,
+   "status": "ok",
+   "task": "fold_tea_towel",
+   "eps": 12
+  },
+  "bimanual/videos/observation.images.top/chunk-000/file-084.mp4": {
+   "local": 108004894,
+   "remote": 108004894,
+   "status": "ok",
+   "task": "fold_tea_towel",
+   "eps": 6
+  },
+  "bimanual/videos/observation.images.top/chunk-000/file-085.mp4": {
+   "local": 207549967,
+   "remote": 207549967,
+   "status": "ok",
+   "task": "fold_tea_towel",
+   "eps": 14
+  },
+  "bimanual/videos/observation.images.top/chunk-000/file-086.mp4": {
+   "local": 194547818,
+   "remote": 194547818,
+   "status": "ok",
+   "task": "fold_tea_towel",
+   "eps": 12
+  },
+  "bimanual/videos/observation.images.top/chunk-000/file-087.mp4": {
+   "local": 67293902,
+   "remote": 67293902,
+   "status": "ok",
+   "task": "fold_tea_towel",
+   "eps": 4
+  }
+ }
+}

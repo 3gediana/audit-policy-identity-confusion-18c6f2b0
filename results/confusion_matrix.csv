@@ -1,8 +1,8 @@
 true\pred,act,diffusion,grootn1.7,molmoact2,pi0,pi0.5,smolvla
-act,6,0,0,1,0,0,0
-diffusion,0,2,0,0,3,0,0
-grootn1.7,2,0,4,0,0,0,1
-molmoact2,0,0,0,6,1,1,1
-pi0,1,0,0,0,3,0,1
-pi0.5,0,0,0,0,3,3,0
-smolvla,0,0,0,1,0,0,4
+act,17,4,0,1,1,1,0
+diffusion,0,9,0,0,0,0,3
+grootn1.7,1,0,9,1,1,0,0
+molmoact2,0,0,7,8,2,1,6
+pi0,1,0,2,1,6,0,2
+pi0.5,0,1,1,1,1,5,3
+smolvla,1,2,0,0,3,1,11

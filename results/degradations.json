@@ -1,0 +1,26 @@
+[
+ {
+  "scope": "cable_clip",
+  "item": "all 270 rollout episodes have success==0 (success_class='failure') for all 7 policies",
+  "impact": "all three arms have zero discriminating power on this task; rankings are pure fixed-order tie-break; Kendall tau-b undefined; verdict=insufficient_comparison",
+  "evidence": "results/cell_gates.csv, results/pilot_episodes_all.csv, diag_labels.py output"
+ },
+ {
+  "scope": "A arm",
+  "item": "batch_axis=unavailable_task_fallback (no session/batch field): layers degenerate to task",
+  "impact": "A layer rates equal C rates on common support (same episodes, same labels); C_vs_A has zero re-weighting power at pilot; 'no_flip_observed' there is uninformative",
+  "evidence": "results/schema_snapshot.json, results/kendall_tau.csv caveat column"
+ },
+ {
+  "scope": "B arm",
+  "item": "protocol.md section 4 instantiated: success ground truth = episode label, truncation window L50 per task; success within window = (success==1) AND (length<=L50) because successful rollouts were trimmed at completion (2611.03168 section 5)",
+  "impact": "B primary ranking is the truncated-window re-evaluation; the frozen-label reading (labels and membership unchanged -> B==C identically) is preserved as the C_vs_B_frozen_labels_audit comparison and the *_episode_label_audit column",
+  "evidence": "results/ranking_B.csv, results/kendall_tau.csv"
+ },
+ {
+  "scope": "B arm",
+  "item": "no success-timing field in meta/episodes (only episode-level success/success_class)",
+  "impact": "horizon success derived from episode label + length under the trimmed-at-completion termination property; not re-judged from video; if that property does not hold the B primary number must be re-derived (unavailable, never estimated)",
+  "evidence": "results/schema_snapshot.json columns_nonstats"
+ }
+]

@@ -1,0 +1,15 @@
+task,layer,policy_type,n,n_success,success_rate,gate_n_ge10,layer_valid,participates,rank,ci95_lo,ci95_hi,aggregate_rate_global,aggregate_rank_global,aggregate_ci95_lo,aggregate_ci95_hi,reason
+cable_clip,cable_clip (task-only fallback),act,60,0,0.0,True,True,True,1,0.0,0.0,0.02631578947368421,7,0.0,0.06140350877192982,ok
+cable_clip,cable_clip (task-only fallback),diffusion,30,0,0.0,True,True,True,2,0.0,0.0,0.2631578947368421,2,0.17543859649122806,0.3508771929824561,ok
+cable_clip,cable_clip (task-only fallback),smolvla,30,0,0.0,True,True,True,3,0.0,0.0,0.043859649122807015,6,0.008771929824561403,0.07916666666666547,ok
+cable_clip,cable_clip (task-only fallback),pi0,30,0,0.0,True,True,True,4,0.0,0.0,0.2631578947368421,3,0.17543859649122806,0.3508771929824561,ok
+cable_clip,cable_clip (task-only fallback),pi0.5,30,0,0.0,True,True,True,5,0.0,0.0,0.3684210526315789,1,0.2807017543859649,0.45614035087719296,ok
+cable_clip,cable_clip (task-only fallback),grootn1.7,30,0,0.0,True,True,True,6,0.0,0.0,0.07017543859649122,4,0.017543859649122806,0.14035087719298245,ok
+cable_clip,cable_clip (task-only fallback),molmoact2,60,0,0.0,True,True,True,7,0.0,0.0,0.05263157894736842,5,0.017543859649122806,0.09649122807017542,ok
+fold_tea_towel,fold_tea_towel (task-only fallback),act,60,3,0.05,True,True,True,7,0.0,0.11666666666666667,0.02631578947368421,7,0.0,0.06140350877192982,ok
+fold_tea_towel,fold_tea_towel (task-only fallback),diffusion,30,15,0.5,True,True,True,2,0.3333333333333333,0.6666666666666666,0.2631578947368421,2,0.17543859649122806,0.3508771929824561,ok
+fold_tea_towel,fold_tea_towel (task-only fallback),smolvla,60,5,0.08333333333333333,True,True,True,6,0.016666666666666666,0.15,0.043859649122807015,6,0.008771929824561403,0.07916666666666547,ok
+fold_tea_towel,fold_tea_towel (task-only fallback),pi0,30,15,0.5,True,True,True,3,0.3333333333333333,0.6666666666666666,0.2631578947368421,3,0.17543859649122806,0.3508771929824561,ok
+fold_tea_towel,fold_tea_towel (task-only fallback),pi0.5,30,21,0.7,True,True,True,1,0.5333333333333333,0.8666666666666667,0.3684210526315789,1,0.2807017543859649,0.45614035087719296,ok
+fold_tea_towel,fold_tea_towel (task-only fallback),grootn1.7,30,4,0.13333333333333333,True,True,True,4,0.03333333333333333,0.26666666666666666,0.07017543859649122,4,0.017543859649122806,0.14035087719298245,ok
+fold_tea_towel,fold_tea_towel (task-only fallback),molmoact2,60,6,0.1,True,True,True,5,0.03333333333333333,0.18333333333333332,0.05263157894736842,5,0.017543859649122806,0.09649122807017542,ok

@@ -1,0 +1,23 @@
+{
+ "model_revision": "ed25f3a31f01632728cabb09d1542f84ab7b0056",
+ "total_seconds": 288.5,
+ "peak_gpu_mib": 491.0,
+ "device": "cuda",
+ "frames_per_episode": 8,
+ "camera": {
+  "so101": "observation.images.front",
+  "bimanual": "observation.images.top"
+ },
+ "coverage": {
+  "cable_clip": {
+   "in_scope": 270,
+   "covered": 270,
+   "dropped_files": []
+  },
+  "fold_tea_towel": {
+   "in_scope": 300,
+   "covered": 300,
+   "dropped_files": []
+  }
+ }
+}

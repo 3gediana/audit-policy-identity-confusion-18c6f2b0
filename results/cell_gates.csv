@@ -1,0 +1,15 @@
+task,policy_type,n,n_success,success_rate,gate_n_ge10,n_policies_passing_in_layer,layer_valid,participates_in_A,reason
+cable_clip,act,60,0,0.0,True,7,True,True,ok
+cable_clip,diffusion,30,0,0.0,True,7,True,True,ok
+cable_clip,smolvla,30,0,0.0,True,7,True,True,ok
+cable_clip,pi0,30,0,0.0,True,7,True,True,ok
+cable_clip,pi0.5,30,0,0.0,True,7,True,True,ok
+cable_clip,grootn1.7,30,0,0.0,True,7,True,True,ok
+cable_clip,molmoact2,60,0,0.0,True,7,True,True,ok
+fold_tea_towel,act,60,3,0.05,True,7,True,True,ok
+fold_tea_towel,diffusion,30,15,0.5,True,7,True,True,ok
+fold_tea_towel,smolvla,60,5,0.08333333333333333,True,7,True,True,ok
+fold_tea_towel,pi0,30,15,0.5,True,7,True,True,ok
+fold_tea_towel,pi0.5,30,21,0.7,True,7,True,True,ok
+fold_tea_towel,grootn1.7,30,4,0.13333333333333333,True,7,True,True,ok
+fold_tea_towel,molmoact2,60,6,0.1,True,7,True,True,ok

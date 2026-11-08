@@ -1,0 +1,9 @@
+{
+ "fingerprint_runs": [
+  "58816f4cd7d98e3c635328d5b68e7210891a9cdfb10833ab0829083da7efc435",
+  "58816f4cd7d98e3c635328d5b68e7210891a9cdfb10833ab0829083da7efc435"
+ ],
+ "reproducible": true,
+ "formula": "sha256 over canonical json of all output tables (sorted keys)",
+ "double_run": "compute() executed twice in-process with fresh state"
+}

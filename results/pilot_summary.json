@@ -1,0 +1,121 @@
+{
+ "stage": "pilot",
+ "result_kind": "scientific_result",
+ "source_mode": "live",
+ "prediction": "ranking_A/B/C + pairwise_flips + Kendall tau-b + per-cell gates complete and same-口径 reproducible; negative-control point estimate re-check converges toward 0.5 as the test set grows",
+ "arms_present": {
+  "ranking_A.csv": true,
+  "ranking_B.csv": true,
+  "ranking_C.csv": true,
+  "pairwise_flips.csv": true,
+  "kendall_tau.csv": true,
+  "cell_gates.csv": true,
+  "ranking_summary.json": true,
+  "ranking_reproducibility.json": true
+ },
+ "ranking_double_run_reproducible": true,
+ "probe_gates": {
+  "main_auc_gt_0.55": true,
+  "positive_ge_0.90": true,
+  "negative_in_null_band": true,
+  "reliability_bitwise": true,
+  "neg_convergence_toward_half": true
+ },
+ "cells_gate_n_ge10": {
+  "passing": 14,
+  "total": 14
+ },
+ "arm_verdicts": [
+  {
+   "task": "cable_clip",
+   "comparison": "C_vs_A",
+   "tau_b": null,
+   "n_flips": 0,
+   "n_pairs": 21,
+   "n_strict_direction_reversals": 0,
+   "verdict": "insufficient_comparison"
+  },
+  {
+   "task": "cable_clip",
+   "comparison": "C_vs_B",
+   "tau_b": null,
+   "n_flips": 0,
+   "n_pairs": 21,
+   "n_strict_direction_reversals": 0,
+   "verdict": "insufficient_comparison"
+  },
+  {
+   "task": "cable_clip",
+   "comparison": "C_vs_B_frozen_labels_audit",
+   "tau_b": null,
+   "n_flips": 0,
+   "n_pairs": 21,
+   "n_strict_direction_reversals": 0,
+   "verdict": "insufficient_comparison"
+  },
+  {
+   "task": "fold_tea_towel",
+   "comparison": "C_vs_A",
+   "tau_b": 1.0,
+   "n_flips": 0,
+   "n_pairs": 21,
+   "n_strict_direction_reversals": 0,
+   "verdict": "no_flip_observed"
+  },
+  {
+   "task": "fold_tea_towel",
+   "comparison": "C_vs_B",
+   "tau_b": 0.95,
+   "n_flips": 1,
+   "n_pairs": 21,
+   "n_strict_direction_reversals": 0,
+   "verdict": "ranking_unstable"
+  },
+  {
+   "task": "fold_tea_towel",
+   "comparison": "C_vs_B_frozen_labels_audit",
+   "tau_b": 1.0,
+   "n_flips": 0,
+   "n_pairs": 21,
+   "n_strict_direction_reversals": 0,
+   "verdict": "no_flip_observed"
+  }
+ ],
+ "length_leakage_audit": {
+  "cable_clip": {
+   "n": 270,
+   "n_success": 0,
+   "mean_len_success": null,
+   "mean_len_failure": 846.6703703703704,
+   "median_len_success": null,
+   "median_len_failure": 905.0,
+   "L50_task": 905.0,
+   "pearson_corr_success_vs_length": null
+  },
+  "fold_tea_towel": {
+   "n": 300,
+   "n_success": 69,
+   "mean_len_success": 589.3623188405797,
+   "mean_len_failure": 830.1168831168832,
+   "median_len_success": 566.0,
+   "median_len_failure": 871.0,
+   "L50_task": 740.5,
+   "pearson_corr_success_vs_length": -0.5241168537804832
+  }
+ },
+ "degradations_file": "results/degradations.json",
+ "size_verification_pilot": "56/56",
+ "cost": {
+  "extract_seconds": 288.5,
+  "download_seconds": 732.2,
+  "download_files_ok": "38/38",
+  "probe_timings_s": {
+   "main": 0.032,
+   "pos": 0.005,
+   "neg": 0.012,
+   "boot": 3.763
+  }
+ },
+ "verdict": "supported",
+ "reproduction": "G:/ai/python11/python.exe experiments/scripts/prep_download_pilot.py; fast_download_pilot.py; verify_pilot.py; pilot_extract.py; pilot_probe.py A/B/C; pilot_ranking.py; aggregate_pilot.py"
+}

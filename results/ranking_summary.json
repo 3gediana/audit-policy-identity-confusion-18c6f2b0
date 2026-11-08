@@ -1,0 +1,141 @@
+{
+ "population": "all rollout episodes (policy_repo_id non-empty) of the two design-frozen pilot tasks from meta/episodes: cable_clip + fold_tea_towel",
+ "n_episodes_total": 570,
+ "n_by_task": {
+  "cable_clip": 270,
+  "fold_tea_towel": 300
+ },
+ "L50_by_task": {
+  "cable_clip": 905.0,
+  "fold_tea_towel": 740.5
+ },
+ "estimands": {
+  "C": "success_rate = mean(success == 1) per task x policy over all rollout episodes",
+  "B_primary": "success_rate_at_horizon = mean((success == 1) AND (length <= L50_task)); episode label is ground truth (no re-judging); successes were trimmed at completion (2611.03168 section 5) so success lands at the episode end",
+  "B_frozen_labels_audit": "mean(success == 1) on unchanged membership (= C by construction), reported to audit the 'labels stay episode labels' clause",
+  "A": "task-only fallback layers; per-cell n>=10 gate; layer kept with >=2 participating policies; layer rate = in-layer success rate; global aggregate weighted by layer episode count"
+ },
+ "seeds": {
+  "boot_seed": 20261111,
+  "boot_B": 2000,
+  "gate_n": 10,
+  "tie_break_order": [
+   "act",
+   "diffusion",
+   "smolvla",
+   "pi0",
+   "pi0.5",
+   "grootn1.7",
+   "molmoact2"
+  ]
+ },
+ "structural_checks": {
+  "A_equals_C_on_common_support": true,
+  "B_frozen_labels_equals_C": true,
+  "note": "expected by construction under batch_axis=unavailable_task_fallback and frozen episode labels; recorded as measured facts (max abs diffs above)"
+ },
+ "kendall": [
+  {
+   "task": "cable_clip",
+   "comparison": "C_vs_A",
+   "n_strategies_comparable": 7,
+   "tau_b": null,
+   "tau_b_scipy_check": null,
+   "n_pairs": 21,
+   "n_flips": 0,
+   "n_strict_direction_reversals": 0,
+   "flip_rate": 0.0,
+   "n_ties_involving": 42,
+   "max_abs_rate_diff_C_vs_alt": 0.0,
+   "verdict": "insufficient_comparison",
+   "caveat": "structural_no_power: task-only fallback -> A layer rates == C rates on common support (same episodes, same labels) | tau-b undefined: one arm has zero variance (all comparable pairs tied), ranking is pure tie-break order, zero discriminating power"
+  },
+  {
+   "task": "cable_clip",
+   "comparison": "C_vs_B",
+   "n_strategies_comparable": 7,
+   "tau_b": null,
+   "tau_b_scipy_check": null,
+   "n_pairs": 21,
+   "n_flips": 0,
+   "n_strict_direction_reversals": 0,
+   "flip_rate": 0.0,
+   "n_ties_involving": 42,
+   "max_abs_rate_diff_C_vs_alt": 0.0,
+   "verdict": "insufficient_comparison",
+   "caveat": "truncated-window success = (success==1) AND (length<=L50); episode label is the ground truth, no re-judging | tau-b undefined: one arm has zero variance (all comparable pairs tied), ranking is pure tie-break order, zero discriminating power"
+  },
+  {
+   "task": "cable_clip",
+   "comparison": "C_vs_B_frozen_labels_audit",
+   "n_strategies_comparable": 7,
+   "tau_b": null,
+   "tau_b_scipy_check": null,
+   "n_pairs": 21,
+   "n_flips": 0,
+   "n_strict_direction_reversals": 0,
+   "flip_rate": 0.0,
+   "n_ties_involving": 42,
+   "max_abs_rate_diff_C_vs_alt": 0.0,
+   "verdict": "insufficient_comparison",
+   "caveat": "structural_identity: frozen episode labels + unchanged membership make B == C by construction | tau-b undefined: one arm has zero variance (all comparable pairs tied), ranking is pure tie-break order, zero discriminating power"
+  },
+  {
+   "task": "fold_tea_towel",
+   "comparison": "C_vs_A",
+   "n_strategies_comparable": 7,
+   "tau_b": 1.0,
+   "tau_b_scipy_check": 1.0,
+   "n_pairs": 21,
+   "n_flips": 0,
+   "n_strict_direction_reversals": 0,
+   "flip_rate": 0.0,
+   "n_ties_involving": 2,
+   "max_abs_rate_diff_C_vs_alt": 0.0,
+   "verdict": "no_flip_observed",
+   "caveat": "structural_no_power: task-only fallback -> A layer rates == C rates on common support (same episodes, same labels)"
+  },
+  {
+   "task": "fold_tea_towel",
+   "comparison": "C_vs_B",
+   "n_strategies_comparable": 7,
+   "tau_b": 0.95,
+   "tau_b_scipy_check": 0.95,
+   "n_pairs": 21,
+   "n_flips": 1,
+   "n_strict_direction_reversals": 0,
+   "flip_rate": 0.047619047619047616,
+   "n_ties_involving": 2,
+   "max_abs_rate_diff_C_vs_alt": 0.03333333333333334,
+   "verdict": "ranking_unstable",
+   "caveat": "truncated-window success = (success==1) AND (length<=L50); episode label is the ground truth, no re-judging"
+  },
+  {
+   "task": "fold_tea_towel",
+   "comparison": "C_vs_B_frozen_labels_audit",
+   "n_strategies_comparable": 7,
+   "tau_b": 1.0,
+   "tau_b_scipy_check": 1.0,
+   "n_pairs": 21,
+   "n_flips": 0,
+   "n_strict_direction_reversals": 0,
+   "flip_rate": 0.0,
+   "n_ties_involving": 2,
+   "max_abs_rate_diff_C_vs_alt": 0.0,
+   "verdict": "no_flip_observed",
+   "caveat": "structural_identity: frozen episode labels + unchanged membership make B == C by construction"
+  }
+ ],
+ "double_run_fingerprint": "58816f4cd7d98e3c635328d5b68e7210891a9cdfb10833ab0829083da7efc435",
+ "double_run_reproducible": true,
+ "result_files": [
+  "results/ranking_A.csv",
+  "results/ranking_B.csv",
+  "results/ranking_C.csv",
+  "results/cell_gates.csv",
+  "results/pairwise_flips.csv",
+  "results/kendall_tau.csv",
+  "results/degradation_missing.csv",
+  "results/pilot_episodes_all.csv"
+ ]
+}
