@@ -1,0 +1,152 @@
+{
+ "so101": {
+  "repo": "armnet/armnetbench_v01_lerobot_so101",
+  "shortname": "cable_clip",
+  "task": "Push the Displayport cable into the cable holder on the white block",
+  "camera": "observation.images.front",
+  "episodes_covered": 124,
+  "episodes_total": 270,
+  "min_eps_per_cell": 10,
+  "files": [
+   {
+    "path": "videos/observation.images.front/chunk-000/file-094.mp4",
+    "file_index": 94,
+    "mib": 186.4,
+    "need_mib": 186.4,
+    "eps": 15
+   },
+   {
+    "path": "videos/observation.images.front/chunk-000/file-097.mp4",
+    "file_index": 97,
+    "mib": 13.6,
+    "need_mib": 0,
+    "eps": 1
+   },
+   {
+    "path": "videos/observation.images.front/chunk-000/file-101.mp4",
+    "file_index": 101,
+    "mib": 179.0,
+    "need_mib": 179.0,
+    "eps": 16
+   },
+   {
+    "path": "videos/observation.images.front/chunk-000/file-102.mp4",
+    "file_index": 102,
+    "mib": 199.9,
+    "need_mib": 199.9,
+    "eps": 15
+   },
+   {
+    "path": "videos/observation.images.front/chunk-000/file-104.mp4",
+    "file_index": 104,
+    "mib": 13.8,
+    "need_mib": 0,
+    "eps": 1
+   },
+   {
+    "path": "videos/observation.images.front/chunk-000/file-105.mp4",
+    "file_index": 105,
+    "mib": 156.8,
+    "need_mib": 156.8,
+    "eps": 30
+   },
+   {
+    "path": "videos/observation.images.front/chunk-000/file-109.mp4",
+    "file_index": 109,
+    "mib": 193.5,
+    "need_mib": 193.5,
+    "eps": 18
+   },
+   {
+    "path": "videos/observation.images.front/chunk-000/file-112.mp4",
+    "file_index": 112,
+    "mib": 194.9,
+    "need_mib": 194.9,
+    "eps": 13
+   },
+   {
+    "path": "videos/observation.images.front/chunk-000/file-116.mp4",
+    "file_index": 116,
+    "mib": 154.2,
+    "need_mib": 154.2,
+    "eps": 15
+   }
+  ],
+  "need_gib": 1.24
+ },
+ "bimanual": {
+  "repo": "armnet/armnetbench_v01_lerobot_bimanual_so101",
+  "shortname": "fold_tea_towel",
+  "task": "Fold the brown tea towel",
+  "camera": "observation.images.top",
+  "episodes_covered": 95,
+  "episodes_total": 300,
+  "min_eps_per_cell": 10,
+  "files": [
+   {
+    "path": "videos/observation.images.top/chunk-000/file-055.mp4",
+    "file_index": 55,
+    "mib": 196.5,
+    "need_mib": 196.5,
+    "eps": 12
+   },
+   {
+    "path": "videos/observation.images.top/chunk-000/file-059.mp4",
+    "file_index": 59,
+    "mib": 194.0,
+    "need_mib": 194.0,
+    "eps": 9
+   },
+   {
+    "path": "videos/observation.images.top/chunk-000/file-064.mp4",
+    "file_index": 64,
+    "mib": 192.5,
+    "need_mib": 192.5,
+    "eps": 9
+   },
+   {
+    "path": "videos/observation.images.top/chunk-000/file-069.mp4",
+    "file_index": 69,
+    "mib": 191.9,
+    "need_mib": 191.9,
+    "eps": 12
+   },
+   {
+    "path": "videos/observation.images.top/chunk-000/file-075.mp4",
+    "file_index": 75,
+    "mib": 191.4,
+    "need_mib": 191.4,
+    "eps": 14
+   },
+   {
+    "path": "videos/observation.images.top/chunk-000/file-079.mp4",
+    "file_index": 79,
+    "mib": 197.1,
+    "need_mib": 197.1,
+    "eps": 11
+   },
+   {
+    "path": "videos/observation.images.top/chunk-000/file-081.mp4",
+    "file_index": 81,
+    "mib": 32.8,
+    "need_mib": 32.8,
+    "eps": 2
+   },
+   {
+    "path": "videos/observation.images.top/chunk-000/file-082.mp4",
+    "file_index": 82,
+    "mib": 179.3,
+    "need_mib": 179.3,
+    "eps": 12
+   },
+   {
+    "path": "videos/observation.images.top/chunk-000/file-085.mp4",
+    "file_index": 85,
+    "mib": 197.9,
+    "need_mib": 197.9,
+    "eps": 14
+   }
+  ],
+  "need_gib": 1.54
+ }
+}

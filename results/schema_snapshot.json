@@ -1,0 +1,354 @@
+{
+ "what": "meta/episodes schema review for smoke step 1 (batch/session axis recoverability)",
+ "repos": {
+  "so101": {
+   "repo": "armnet/armnetbench_v01_lerobot_so101",
+   "revision": "",
+   "codebase_version": "v3.0",
+   "n_rows": 2499,
+   "rollout_rows": 2099,
+   "teleop_rows": 400,
+   "columns_nonstats": [
+    "episode_index",
+    "tasks",
+    "length",
+    "data/chunk_index",
+    "data/file_index",
+    "dataset_from_index",
+    "dataset_to_index",
+    "videos/observation.images.front/chunk_index",
+    "videos/observation.images.front/file_index",
+    "videos/observation.images.front/from_timestamp",
+    "videos/observation.images.front/to_timestamp",
+    "videos/observation.images.top/chunk_index",
+    "videos/observation.images.top/file_index",
+    "videos/observation.images.top/from_timestamp",
+    "videos/observation.images.top/to_timestamp",
+    "videos/observation.images.wrist/chunk_index",
+    "videos/observation.images.wrist/file_index",
+    "videos/observation.images.wrist/from_timestamp",
+    "videos/observation.images.wrist/to_timestamp",
+    "meta/episodes/chunk_index",
+    "meta/episodes/file_index",
+    "success",
+    "success_class",
+    "policy_repo_id",
+    "policy_type"
+   ],
+   "census_nonstats": {
+    "episode_index": {
+     "nonnull": 2499,
+     "n_rows": 2499,
+     "nunique": 2499
+    },
+    "tasks": {
+     "nonnull": 2499,
+     "n_rows": 2499,
+     "nunique": 8
+    },
+    "length": {
+     "nonnull": 2499,
+     "n_rows": 2499,
+     "nunique": 689
+    },
+    "data/chunk_index": {
+     "nonnull": 2499,
+     "n_rows": 2499,
+     "nunique": 1
+    },
+    "data/file_index": {
+     "nonnull": 2499,
+     "n_rows": 2499,
+     "nunique": 120
+    },
+    "dataset_from_index": {
+     "nonnull": 2499,
+     "n_rows": 2499,
+     "nunique": 2499
+    },
+    "dataset_to_index": {
+     "nonnull": 2499,
+     "n_rows": 2499,
+     "nunique": 2499
+    },
+    "videos/observation.images.front/chunk_index": {
+     "nonnull": 2499,
+     "n_rows": 2499,
+     "nunique": 1
+    },
+    "videos/observation.images.front/file_index": {
+     "nonnull": 2499,
+     "n_rows": 2499,
+     "nunique": 143
+    },
+    "videos/observation.images.front/from_timestamp": {
+     "nonnull": 2499,
+     "n_rows": 2499,
+     "nunique": 2237
+    },
+    "videos/observation.images.front/to_timestamp": {
+     "nonnull": 2499,
+     "n_rows": 2499,
+     "nunique": 2368
+    },
+    "videos/observation.images.top/chunk_index": {
+     "nonnull": 2499,
+     "n_rows": 2499,
+     "nunique": 1
+    },
+    "videos/observation.images.top/file_index": {
+     "nonnull": 2499,
+     "n_rows": 2499,
+     "nunique": 180
+    },
+    "videos/observation.images.top/from_timestamp": {
+     "nonnull": 2499,
+     "n_rows": 2499,
+     "nunique": 2172
+    },
+    "videos/observation.images.top/to_timestamp": {
+     "nonnull": 2499,
+     "n_rows": 2499,
+     "nunique": 2331
+    },
+    "videos/observation.images.wrist/chunk_index": {
+     "nonnull": 2499,
+     "n_rows": 2499,
+     "nunique": 1
+    },
+    "videos/observation.images.wrist/file_index": {
+     "nonnull": 2499,
+     "n_rows": 2499,
+     "nunique": 183
+    },
+    "videos/observation.images.wrist/from_timestamp": {
+     "nonnull": 2499,
+     "n_rows": 2499,
+     "nunique": 2145
+    },
+    "videos/observation.images.wrist/to_timestamp": {
+     "nonnull": 2499,
+     "n_rows": 2499,
+     "nunique": 2306
+    },
+    "meta/episodes/chunk_index": {
+     "nonnull": 2499,
+     "n_rows": 2499,
+     "nunique": 1
+    },
+    "meta/episodes/file_index": {
+     "nonnull": 2499,
+     "n_rows": 2499,
+     "nunique": 3
+    },
+    "success": {
+     "nonnull": 2499,
+     "n_rows": 2499,
+     "nunique": 2
+    },
+    "success_class": {
+     "nonnull": 2499,
+     "n_rows": 2499,
+     "nunique": 3
+    },
+    "policy_repo_id": {
+     "nonnull": 2499,
+     "n_rows": 2499,
+     "nunique": 67
+    },
+    "policy_type": {
+     "nonnull": 2499,
+     "n_rows": 2499,
+     "nunique": 8
+    }
+   },
+   "batch_like_columns": [],
+   "policy_type_values": [
+    "act",
+    "diffusion",
+    "grootn1.7",
+    "molmoact2",
+    "pi0",
+    "pi0.5",
+    "smolvla"
+   ],
+   "note_policy_repo_id": "policy_repo_id embeds the task slug (e.g. .../pi0-so101-armnetbench-ring-insert-isambard-v50); identity label at 7-class granularity = policy_type (rollout rows only)"
+  },
+  "bimanual": {
+   "repo": "armnet/armnetbench_v01_lerobot_bimanual_so101",
+   "revision": "",
+   "codebase_version": "v3.0",
+   "n_rows": 1219,
+   "rollout_rows": 1019,
+   "teleop_rows": 200,
+   "columns_nonstats": [
+    "episode_index",
+    "tasks",
+    "length",
+    "data/chunk_index",
+    "data/file_index",
+    "dataset_from_index",
+    "dataset_to_index",
+    "videos/observation.images.left_wrist/chunk_index",
+    "videos/observation.images.left_wrist/file_index",
+    "videos/observation.images.left_wrist/from_timestamp",
+    "videos/observation.images.left_wrist/to_timestamp",
+    "videos/observation.images.right_wrist/chunk_index",
+    "videos/observation.images.right_wrist/file_index",
+    "videos/observation.images.right_wrist/from_timestamp",
+    "videos/observation.images.right_wrist/to_timestamp",
+    "videos/observation.images.top/chunk_index",
+    "videos/observation.images.top/file_index",
+    "videos/observation.images.top/from_timestamp",
+    "videos/observation.images.top/to_timestamp",
+    "meta/episodes/chunk_index",
+    "meta/episodes/file_index",
+    "success",
+    "success_class",
+    "policy_repo_id",
+    "policy_type"
+   ],
+   "census_nonstats": {
+    "episode_index": {
+     "nonnull": 1219,
+     "n_rows": 1219,
+     "nunique": 1219
+    },
+    "tasks": {
+     "nonnull": 1219,
+     "n_rows": 1219,
+     "nunique": 4
+    },
+    "length": {
+     "nonnull": 1219,
+     "n_rows": 1219,
+     "nunique": 620
+    },
+    "data/chunk_index": {
+     "nonnull": 1219,
+     "n_rows": 1219,
+     "nunique": 1
+    },
+    "data/file_index": {
+     "nonnull": 1219,
+     "n_rows": 1219,
+     "nunique": 60
+    },
+    "dataset_from_index": {
+     "nonnull": 1219,
+     "n_rows": 1219,
+     "nunique": 1219
+    },
+    "dataset_to_index": {
+     "nonnull": 1219,
+     "n_rows": 1219,
+     "nunique": 1219
+    },
+    "videos/observation.images.left_wrist/chunk_index": {
+     "nonnull": 1219,
+     "n_rows": 1219,
+     "nunique": 1
+    },
+    "videos/observation.images.left_wrist/file_index": {
+     "nonnull": 1219,
+     "n_rows": 1219,
+     "nunique": 117
+    },
+    "videos/observation.images.left_wrist/from_timestamp": {
+     "nonnull": 1219,
+     "n_rows": 1219,
+     "nunique": 1053
+    },
+    "videos/observation.images.left_wrist/to_timestamp": {
+     "nonnull": 1219,
+     "n_rows": 1219,
+     "nunique": 1162
+    },
+    "videos/observation.images.right_wrist/chunk_index": {
+     "nonnull": 1219,
+     "n_rows": 1219,
+     "nunique": 1
+    },
+    "videos/observation.images.right_wrist/file_index": {
+     "nonnull": 1219,
+     "n_rows": 1219,
+     "nunique": 74
+    },
+    "videos/observation.images.right_wrist/from_timestamp": {
+     "nonnull": 1219,
+     "n_rows": 1219,
+     "nunique": 1110
+    },
+    "videos/observation.images.right_wrist/to_timestamp": {
+     "nonnull": 1219,
+     "n_rows": 1219,
+     "nunique": 1178
+    },
+    "videos/observation.images.top/chunk_index": {
+     "nonnull": 1219,
+     "n_rows": 1219,
+     "nunique": 1
+    },
+    "videos/observation.images.top/file_index": {
+     "nonnull": 1219,
+     "n_rows": 1219,
+     "nunique": 115
+    },
+    "videos/observation.images.top/from_timestamp": {
+     "nonnull": 1219,
+     "n_rows": 1219,
+     "nunique": 1045
+    },
+    "videos/observation.images.top/to_timestamp": {
+     "nonnull": 1219,
+     "n_rows": 1219,
+     "nunique": 1150
+    },
+    "meta/episodes/chunk_index": {
+     "nonnull": 1219,
+     "n_rows": 1219,
+     "nunique": 1
+    },
+    "meta/episodes/file_index": {
+     "nonnull": 1219,
+     "n_rows": 1219,
+     "nunique": 4
+    },
+    "success": {
+     "nonnull": 1219,
+     "n_rows": 1219,
+     "nunique": 2
+    },
+    "success_class": {
+     "nonnull": 1219,
+     "n_rows": 1219,
+     "nunique": 3
+    },
+    "policy_repo_id": {
+     "nonnull": 1219,
+     "n_rows": 1219,
+     "nunique": 33
+    },
+    "policy_type": {
+     "nonnull": 1219,
+     "n_rows": 1219,
+     "nunique": 8
+    }
+   },
+   "batch_like_columns": [],
+   "policy_type_values": [
+    "act",
+    "diffusion",
+    "grootn1.7",
+    "molmoact2",
+    "pi0",
+    "pi0.5",
+    "smolvla"
+   ],
+   "note_policy_repo_id": "policy_repo_id embeds the task slug (e.g. .../pi0-so101-armnetbench-ring-insert-isambard-v50); identity label at 7-class granularity = policy_type (rollout rows only)"
+  }
+ },
+ "batch_axis": "unavailable_task_fallback",
+ "verdict": "no session/batch/collection field exists in meta/episodes for either repo; chunk/file indices are storage chunking (size-based), not collection sessions; prereg fallback frozen: batch_axis=unavailable_task_fallback (task-only stratification)",
+ "checked_fields_rationale": "census covers all non-stats columns; fields whose names contain session/batch/collect/capture/rig/take would qualify as batch-like; episode_index/data file_index/videos file_index are layout artifacts and are forbidden as batch proxies by protocol \u00a71"
+}

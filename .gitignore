@@ -1,0 +1,4 @@
+assets/hf/
+experiments/cache/
+*.pyc
+__pycache__/
