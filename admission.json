@@ -344,7 +344,7 @@
   ],
   "uncertainties": [
     "c4 的『无人做过』仅覆盖本轮 4 渠道 8 查询式（arXiv 全文索引/OpenAlex/网页搜索/HF），Google Scholar 与 OpenReview 全组合遍历未做——不得当已证新颖性引用。",
-    "机位缺陷的逐 episode 批次归属未核验（论文只说 affected every policy except MolmoAct 2）：分层轴（任务×采集会话）需读 HF parquet/时间戳元数据后才能定，若批次信息缺失则分层退化为按任务分层，判据臂功效需重估。",
+    "设计阶段核验了 HF 数据卡与 first-rows API：episode 元数据字段公开 policy_repo_id/policy_type/success/success_class，per-frame parquet 有 next.done；数据卡未声明可恢复 collection_session/batch 字段。若实际 meta/episodes parquet 仍无非空 session/batch，按预注册退化为 task-only 分层，A 臂不得宣称批次校正，判据功效按退化口径解释。",
     "240p 腕相机低分辨率下 DINOv2-small 冻结特征对策略身份的可分性上限无先验数，探针 AUC 无预注册预期值。",
     "排名翻转是否存在取决于逐策略成功率差与层内样本量（部分任务-策略格仅 29 条 rollout），功效预估未做。",
     "S2 渠道 429，前向引文仅 OpenAlex 单渠道口径。",
