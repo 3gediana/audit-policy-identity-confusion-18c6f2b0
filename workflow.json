@@ -17,6 +17,11 @@
       "at": "2026-11-08T20:15:06+00:00",
       "type": "stage_released",
       "note": "smoke 完成后自动放行：pilot"
+    },
+    {
+      "at": "2026-11-08T22:04:16+00:00",
+      "type": "stage_released",
+      "note": "pilot 完成后自动放行：experiment"
     }
   ],
   "stages": [
@@ -256,9 +261,105 @@
       "model_override": null,
       "wake": null,
       "role": "executor",
-      "status": "ready",
-      "attempts": 0,
-      "result": null,
+      "status": "done",
+      "attempts": 1,
+      "result": {
+        "status": "ok",
+        "project": "审计真机基准的策略身份混淆-18c6f2b0",
+        "stage": "pilot",
+        "stage_id": "pilot",
+        "result_kind": "scientific_result",
+        "source_mode": "live",
+        "historical": false,
+        "source": "",
+        "result_files": [
+          "results/ranking_A.csv",
+          "results/ranking_B.csv",
+          "results/ranking_C.csv",
+          "results/pairwise_flips.csv",
+          "results/kendall_tau.csv",
+          "results/cell_gates.csv",
+          "results/ranking_summary.json",
+          "results/ranking_reproducibility.json",
+          "results/pilot_summary.json",
+          "results/probe_metrics.json",
+          "results/pilot_probe_run_A.json",
+          "results/pilot_probe_run_B.json",
+          "results/pilot_probe_run_C.json",
+          "results/pilot_episodes_all.csv",
+          "results/degradations.json",
+          "results/confusion_matrix.csv",
+          "results/executor_verification.json"
+        ],
+        "artifacts": [
+          "results/ranking_A.csv",
+          "results/ranking_B.csv",
+          "results/ranking_C.csv",
+          "results/pairwise_flips.csv",
+          "results/kendall_tau.csv",
+          "results/cell_gates.csv",
+          "results/ranking_summary.json",
+          "results/ranking_reproducibility.json",
+          "results/pilot_summary.json",
+          "results/probe_metrics.json",
+          "results/pilot_probe_run_A.json",
+          "results/pilot_probe_run_B.json",
+          "results/pilot_probe_run_C.json",
+          "results/pilot_episodes_all.csv",
+          "results/degradations.json",
+          "results/confusion_matrix.csv",
+          "results/executor_verification.json"
+        ],
+        "metrics": {
+          "episodes": 570,
+          "main_auc_macro_ovr": 0.8773371848739496,
+          "main_auc_ci95": [
+            0.8360976762110197,
+            0.9148162577269598
+          ],
+          "positive_control_auc": 1.0,
+          "negative_control_auc": 0.4811259234396659,
+          "negative_null_band_95": [
+            0.336748051510362,
+            0.663251948489638
+          ],
+          "neg_control_convergence": {
+            "smoke_test_n": 44,
+            "smoke_neg_auc": 0.5568568098173361,
+            "pilot_test_n": 114,
+            "pilot_neg_auc": 0.4811259234396659,
+            "abs_dev_0.0569_to_0.0189": true,
+            "dev_shrank": true,
+            "band_shrank": true,
+            "within_own_band": true
+          },
+          "three_run_bitwise_identical": true,
+          "probe_config_fingerprint": "e3c7c892299d25e3",
+          "ranking_double_run_fingerprint_match": true,
+          "cells_gate_n_ge10": "14/14",
+          "size_verification": "56/56",
+          "extract_coverage": "570/570, degraded=0",
+          "arm_verdicts": {
+            "cable_clip_C_vs_A/B": "insufficient_comparison (all 270 eps success=0, pure tie-break)",
+            "fold_tea_towel_C_vs_A": "no_flip_observed (tau 1.0, structural_no_power under task-only fallback)",
+            "fold_tea_towel_C_vs_B": "ranking_unstable (tau_b 0.95, 1/21 tie-break flip diffusion-vs-pi0, 0 strict reversals)",
+            "fold_tea_towel_C_vs_B_frozen_labels": "no_flip_observed (tau 1.0, B==C by construction)"
+          },
+          "length_leak_corr_fold_tea_towel": -0.5241168537804832,
+          "independent_verification_by_this_unit": "PASS (14-cell recompute exact, rerun ranking byte-identical, rerun probe A scientific fields bitwise identical)"
+        },
+        "verdict": "supported",
+        "reproduction": "G:/ai/python11/python.exe experiments/scripts/verify_pilot.py && G:/ai/python11/python.exe experiments/scripts/pilot_extract.py && G:/ai/python11/python.exe experiments/scripts/pilot_probe.py A && G:/ai/python11/python.exe experiments/scripts/pilot_probe.py B && G:/ai/python11/python.exe experiments/scripts/pilot_probe.py C && G:/ai/python11/python.exe experiments/scripts/pilot_ranking.py && G:/ai/python11/python.exe experiments/scripts/aggregate_pilot.py; 独立验证=results/executor_verification.json（scratch/verify_rank_indep.py 重算对账 + 重跑 pilot_ranking/pilot_probe 字节对比）",
+        "next_action": "continue",
+        "commits": [
+          "b7dc2ec",
+          "94325c6",
+          "9774566"
+        ],
+        "next_units": [],
+        "notes": "双单元接力无撞车：前身 detached 进程跑完管线（下载38/38、verify 56/56、提取570/570 degraded=0、探针×3、三臂排名双跑同指纹），本单元独立复算14格+字节复现验证通过后经门控打包；五门全过 verdict=supported，负控收敛预测成立；同阶段双派发（05:39:48）为调度层新 bug 源已记 RETRO/DECISIONS 供晨会，experiment 走 workflow 通道由 researcher 判读后放行；fb-31d8953534 无 supervisor 发车不适用。",
+        "receipt_status": "receipt_ok"
+      },
       "profile": "lab-executor",
       "reasoning_effort": "high",
       "toolsets": [
@@ -283,7 +384,7 @@
         "pilot"
       ],
       "goal": "12 任务全量三臂测量：探针混淆量化+分层重评+长度截断匹配对照，协议冻结",
-      "instruction": "全 12 任务×7 策略按 prereg 跑三臂：A 探针驱动分层重评 / B 长度截断匹配池化重评 / C 原池化排名；协议全程不变（特征/划分/门槛写死并记录）；逐 episode 原始值全部落盘不只存汇总；任一臂某层退化显式标记缺失不硬填；产出混淆量化表+三套排名+Kendall τ+逐对翻转清单+每格门槛判定。",
+      "instruction": "全 12 任务×7 策略按 prereg 跑三臂：A 探针驱动分层重评 / B 长度截断匹配池化重评（主口径=截断窗内成功 (success==1 ∧ length≤L50)，episode 标签为真值不重判；frozen-labels 读法作 C_vs_B_frozen_labels_audit 对照行保留） / C 原池化排名；协议全程不变（特征/划分/门槛写死并记录）。执行次序：①metadata 先行——三臂排名只依赖 meta/episodes，先全 12 任务出 ranking_A/B/C.csv + pairwise_flips.csv + Kendall tau-b + 每格门槛判定，逐 episode 原始值全部落盘；②探针段——download_plan 扩 10 任务清单，下载前必跑 verify_files.py（防 mib 舍入假缺口），提取→probe_run×3（同数判据），出逐任务混淆量化表（AUC/CI/正负控）+ 负控随样本向 0.5 收敛复核；任一臂某层退化显式标记缺失不硬填。合计预计 >40 分钟：探针段按「长任务发车即退」detach supervisor 一步到位真发车（禁 dry-run 两段式），发车回执带自检行=日志第 1 行 dry_run=False + pid 在 tasklist + PROGRESS 时间戳推进（缺一按发车失败早退），带 --window-end/--resume 断点续跑，跑不完留 checkpoint 跨夜续。stop_if（项目级）：probe AUC<0.55 在 ≥8/12 任务 → 身份信号系任务局部，停「排名不稳定」主线转长度泄漏单臂（RETRO pivot②）；C_vs_B 严格方向反转全 0 → 「方向翻转」主张收口为平局敏感性，如实报不翻新门线。",
       "prediction": "三臂完整产出且同口径可复现；判据表覆盖全部 12 任务（含显式标记的退化层）",
       "failure_conditions": "协议漂移未记录；缺数据硬填；只在好看子集上出数",
       "completion": {
@@ -295,7 +396,7 @@
       "model_override": null,
       "wake": null,
       "role": "executor",
-      "status": "gated",
+      "status": "ready",
       "attempts": 0,
       "result": null,
       "profile": "lab-executor",
@@ -371,9 +472,29 @@
       "result": null,
       "attempts": 0,
       "strategy": ""
+    },
+    {
+      "id": "pilot-continue",
+      "kind": "analysis",
+      "depends_on": [
+        "pilot"
+      ],
+      "status": "superseded",
+      "role": "verifier",
+      "hypothesis_id": null,
+      "prediction": "ranking_A/B/C + pairwise_flips + Kendall tau-b + 每格门槛判定三臂产出齐全且同口径可复现；负控点估计复核随测试集增大向 0.5 收敛",
+      "failure_conditions": "实现与 protocol.md 定义出现不可修复偏差，或任务选择偏离 design 写死的规则；下载扩量未过 verify_files 尺寸核验",
+      "completion": {
+        "result": "results/"
+      },
+      "result": null,
+      "attempts": 0,
+      "strategy": "",
+      "goal": "",
+      "instruction": "(superseded: pilot 续跑契约已全部履行，勿再派续跑单元——batch-20261109T060416)"
     }
   ],
-  "updated_at": "2026-11-08T20:40:00+00:00",
+  "updated_at": "2026-11-08T22:04:16+00:00",
   "from_template": {
     "contribution_type": "new_measurement",
     "version": 2,

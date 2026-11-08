@@ -1,6 +1,6 @@
 # 状态
 
-- 阶段：pilot **完成（verdict=supported，五门全过）**（2026-11-09 夜 executor 长时单元，即 batch-20261109T053542 续跑契约的执行者，全部在本单元内跑完）。workflow：design→smoke→pilot→experiment→analysis，下一步=researcher 判读 pilot 回执后决定是否放行 experiment（12 任务全量）。
+- 阶段：pilot **完成且已判读放行（verdict=supported，五门全过）**（2026-11-09 夜 executor 长时单元跑完，batch-20261109T060416 researcher 判读三项科学判定成立）。workflow：design→smoke→pilot→experiment→analysis，**experiment 已放行**（workflow ready 定点通道，权威指令在 workflow.json）。
 - 最近更新：2026-11-09T06:15:00+08:00（双单元收尾：前身 detached 进程跑完管线并 05:59 过门控；后继验证单元独立复算+字节复现验证通过并补记双派发事实。注：上一版 06:25 时间戳系 05:59 预写，实际完成于 05:59-06:00，特此更正）
 - 最近产物：results/（ranking_A/B/C.csv、pairwise_flips.csv、kendall_tau.csv、cell_gates.csv、probe_metrics.json、pilot_probe_run_A/B/C.json、pilot_summary.json、pilot_episodes_all.csv、degradations.json、degradation_missing.csv、confusion_matrix.csv、ranking_reproducibility.json、README.md）+ results/executor_verification.json（验证单元独立复算记录）。
 - pilot 判门（五门全过）：主探针（7 类，570 eps，train 456/test 114）宏 OVR AUC=0.8773，95% CI [0.8361,0.9148]，3 次 bitwise 同数（指纹 e3c7c892299d25e3）；正控 1.0；负控 0.4811∈null 带 [0.337,0.663]；负控收敛复核**成立**：|dev-0.5| 0.0569→0.0189、null 带收窄，随测试集 44→114 向 0.5 收敛；14/14 格 n≥10 过门槛。
@@ -9,9 +9,9 @@
 - 扩量下载核验：download_plan.json 全量 56 文件/8.55GiB/570 eps；fast_download_pilot.py 38 缺文件 732s 下完，verify_pilot.py Content-Range 权威字节数 **56/56 全过**（mib 假缺口防线生效）；提取 288.5s degraded=0。
 - B 臂口径实例化（已记 DECISIONS，两种读法数字都在盘上）：主口径=截断窗内成功 (success==1 ∧ length≤L50)（episode 标签为真值、不重判；成功按 §5 裁剪于完成点）；frozen-labels 读法（B≡C 恒等）作为 C_vs_B_frozen_labels_audit 对照行保留。
 - 时序注记（06:1x 验证单元更正补记）：驱动器 482s 等待上限把前身单元记为 partial（auto 交接单 stub），但进程未死、持续运行至全部完成；**驱动器仍于 05:39:48 又派发了第二个 pilot 单元（同阶段双派发，投影层重放 bug 同族）**。双进程未撞车：后继单元发现前身在跑后按「不重复开跑」让位于管线执行，改做独立验证——①独立脚本从 meta/episodes 重算 14 格 n/成功率/L50/截断成功与 ranking_C/B 逐格一致；②重跑 pilot_ranking.py 10 文件字节一致、重跑 pilot_probe.py A 科学字段逐位一致（仅 timings 变化）；验证记录 results/executor_verification.json。续跑契约①-③已全部履行，**勿再派续跑单元**。fb-31d8953534：无 supervisor 发车（全部工作单元内完成），自检行不适用。
-- 下一步：①researcher 判读 pilot 回执（重点：B 臂实例化口径是否认可、fold_tea_towel 平局翻转解读、A 臂空转是否按 prereg 退化出口 #2 接受）；②判读通过则派 experiment（12 任务全量三臂）——先算下载量/窗口，>40min 部分按 fb-31d8953534 一步到位 detach supervisor；③analysis 阶段按任务书逐一实测失效情形（240p 腕相机、单策略格、小样本格）。
+- 下一步：experiment（12 任务全量三臂，workflow ready 定点通道已放行，权威指令在 workflow.json）——①metadata 先行出 12 任务三臂排名/翻转/τ/门槛判定（分钟级）；②探针段 download_plan 扩 10 任务、下载前必过 verify_files，合计 >40min 按 fb-31d8953534 一步到位 detach supervisor（自检行三件套、--window-end/--resume，跑不完留 checkpoint 跨夜续）；③stop_if：probe AUC<0.55 在 ≥8/12 任务 → 转长度泄漏单臂（RETRO pivot②），C_vs_B 严格反转全 0 → 主张收口平局敏感性。analysis 阶段按任务书逐一实测失效情形（240p 腕相机、单策略格、小样本格）。
 - 组合层去重（2026-11-09 判读拍板）：同题姊妹 438aa6b2 已 duplicate-merged 归档，本课题为唯一推进线；保留 pivot 三条见 notes/DECISIONS.md。
 - 研究员唤醒点：pilot 回执判读；持续跟踪 LamportRobotics 上传（若出现 rollout 语料审计即触发 stop_if_not_novel 复查）。
 - 关键证据锚点：2611.03168 §5 逐字引语（身份可推断/长度泄漏/近二值标签）见 literature/related-work.md §2；OpenAlex 前向被引 0（W7225193298，2026-11-09）；Eval-Actions 2601.18723 旁证。smoke AUC 0.8896（219 eps）→ pilot AUC 0.8773（570 eps）：身份信号在扩量后稳定复现。
 - smoke 阶段存档（verdict=supported，四门全过）：AUC 0.8896 / 正控 1.0 / 负控 0.5569∈带 / 3 次同数；4 处实现修复见 DECISIONS。
-- 批次判读记录：batch-20261109T043017（smoke ok 放行 pilot）、batch-20261109T053542（pilot partial 放行 continue + 续跑契约，判读全文 _state/researcher-interventions/）。
+- 批次判读记录：batch-20261109T043017（smoke ok 放行 pilot）、batch-20261109T053542（pilot partial 放行 continue + 续跑契约）、batch-20261109T060416（pilot ok 放行 experiment，三项科学判定：B 臂主口径接受/平局翻转限定解读/A 臂退化出口#2 接受；pilot-continue 判 superseded），判读全文 _state/researcher-interventions/。
