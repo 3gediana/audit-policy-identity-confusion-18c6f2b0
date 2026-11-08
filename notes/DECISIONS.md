@@ -22,3 +22,4 @@
 - [2026-11-09 夜 smoke 单元·实现修复③] download_plan_min.json 的 mib 一位小数舍入使 int(mib×2^20) 超真实字节数 3-50KB，「差尾部」假缺口致 6 文件 attempts_exhausted（尾部 Range 越过 EOF 得 416）→ 用 HF Content-Range 权威字节数核验 18/18 完整并修正 plan（size_verification.json）；verify_files.py 入管线，后续下载前必跑。
 - [2026-11-09 夜 smoke 单元·实现修复④] aggregate_smoke.py batch_like 匹配器「rig」子串误命中 videos/observation.images.right_wrist 列（right 含 rig）→ 排除 videos/ 存储列后 batch_axis=unavailable_task_fallback，与 schema census 结论一致。
 - [2026-11-09 夜 smoke 单元·判门] verdict=supported（四门全过）：主探针宏 OVR AUC=0.8896（3 次同数，CI [0.8288,0.9402]）；正控 1.0；负控 0.5569 在 null 带 [0.249,0.751] 内（测试集每类 5-9 例，带宽即预注册保守判据）；成本 117.1s+探针 ≪80min。身份信号在 2 任务范围首次量化坐实（线性可分），尺子放行 pilot；排名翻转与否仍是待测对象，论点行不变。
+- [2026-11-09 夜 smoke 单元·仓库] 重要阶段已推 GitHub：remote origin=https://github.com/3gediana/audit-policy-identity-confusion-18c6f2b0.git（public，master 分支，assets/hf 与 experiments/cache 在 .gitignore 内未上传）；smoke 结果与管线两笔提交 27f8376/d356419。
