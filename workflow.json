@@ -12,6 +12,11 @@
       "at": "2026-11-08T17:33:18+00:00",
       "type": "stage_released",
       "note": "design 完成后自动放行：smoke"
+    },
+    {
+      "at": "2026-11-08T20:15:06+00:00",
+      "type": "stage_released",
+      "note": "smoke 完成后自动放行：pilot"
     }
   ],
   "stages": [
@@ -126,9 +131,90 @@
       "model_override": null,
       "wake": null,
       "role": "executor",
-      "status": "ready",
-      "attempts": 0,
-      "result": null,
+      "status": "done",
+      "attempts": 1,
+      "result": {
+        "status": "ok",
+        "project": "审计真机基准的策略身份混淆-18c6f2b0",
+        "stage": "smoke",
+        "stage_id": "smoke",
+        "result_kind": "scientific_result",
+        "source_mode": "live",
+        "historical": false,
+        "source": "",
+        "result_files": [
+          "results/smoke_summary.json",
+          "results/smoke_probe_run_A.json",
+          "results/smoke_probe_run_B.json",
+          "results/smoke_probe_run_C.json",
+          "results/smoke_config.json",
+          "results/smoke_cost.json",
+          "results/schema_snapshot.json",
+          "results/smoke_episodes.csv",
+          "results/confusion_matrix.csv",
+          "results/README.md",
+          "experiments/scripts/size_verification.json",
+          "notes/handoff/smoke.md"
+        ],
+        "artifacts": [
+          "results/smoke_summary.json",
+          "results/smoke_probe_run_A.json",
+          "results/smoke_probe_run_B.json",
+          "results/smoke_probe_run_C.json",
+          "results/smoke_config.json",
+          "results/smoke_cost.json",
+          "results/schema_snapshot.json",
+          "results/smoke_episodes.csv",
+          "results/confusion_matrix.csv",
+          "results/README.md",
+          "experiments/scripts/size_verification.json",
+          "notes/handoff/smoke.md"
+        ],
+        "metrics": {
+          "auc_main_macro_ovr": 0.8895618290355133,
+          "auc_main_ci95": [
+            0.8288435138052455,
+            0.940210931489152
+          ],
+          "auc_main_range_3runs": 0.0,
+          "config_fingerprint": "841f40fe3efcc9f1",
+          "auc_positive_control_task": 1.0,
+          "auc_negative_control_permuted": 0.5568568098173361,
+          "null_band_95": [
+            0.24904348465591442,
+            0.7509565153440856
+          ],
+          "n_episodes": 219,
+          "n_train": 175,
+          "n_test": 44,
+          "n_classes": 7,
+          "cells_min_eps": 12,
+          "extraction_seconds": 117.1,
+          "peak_gpu_mib": 491.0,
+          "cost_pass_2x_of_40min": true,
+          "twice_same_1e-12": true,
+          "batch_axis": "unavailable_task_fallback",
+          "verdict_gate": "supported"
+        },
+        "verdict": "supported",
+        "reproduction": "cd 课题目录 && python experiments/scripts/fast_download.py && python experiments/scripts/verify_files.py && python experiments/scripts/smoke_extract.py && python experiments/scripts/probe_run.py A && python experiments/scripts/probe_run.py B && python experiments/scripts/probe_run.py C && python experiments/scripts/build_download_report.py && python experiments/scripts/aggregate_smoke.py（详见 results/README.md）",
+        "next_action": "continue",
+        "commits": [
+          "27f8376",
+          "d356419",
+          "f9f85af"
+        ],
+        "next_units": [
+          {
+            "project": "审计真机基准的策略身份混淆-18c6f2b0",
+            "instruction": "执行 pilot（2 任务×7 策略三臂排名重评，按 experiments/protocol.md 冻结口径）：A 臂=探针驱动分层重评、B 臂=长度中位数截断池化重评、C 臂=原始成功率排名；产出 ranking_A/B/C.csv + pairwise_flips.csv + Kendall tau-b + 每格门槛判定，结果+复现命令落 results/。复用 smoke 管线（fast_download/verify_files/smoke_extract/probe_run），下载扩量前必跑 verify_files.py 防 mib 舍入假缺口；复核负控点估计是否随测试集增大向 0.5 收敛。",
+            "estimate_min": 30,
+            "stage": "pilot"
+          }
+        ],
+        "notes": "smoke 尺子验证四门全过（主 AUC 0.8896 三次同数、正控 1.0、负控在 null 带、成本远低于门），修复 4 个实现层 bug 均不涉协议，交接已过门控并触发 pilot。",
+        "receipt_status": "receipt_ok"
+      },
       "profile": "lab-executor",
       "reasoning_effort": "high",
       "toolsets": [
@@ -152,20 +238,25 @@
       "depends_on": [
         "smoke"
       ],
-      "goal": "2 任务×7 策略探针小规模跑通全流程：能算、能存、能复现",
-      "instruction": "按 protocol.md 冻结口径跑 design 选定的 2 任务×全部 7 策略：特征提取→探针→留出 AUC+逐策略混淆矩阵→分层重排名 demo；实现与文档逐项对照，发现偏差就地修——代码里算的必须就是 protocol.md 写的那个量；结果+复现命令落 results/。",
-      "prediction": "同命令重跑数字一致；AUC+混淆矩阵+双排名三件产出齐全",
-      "failure_conditions": "实现与定义出现不可修复偏差，或任务选择偏离 design 写死的规则",
+      "goal": "pilot 三臂排名重评（2 任务×7 策略，按 experiments/protocol.md 冻结口径）：A=探针驱动分层重评、B=长度中位数截断池化重评、C=原始成功率排名",
+      "instruction": "执行 pilot（2 任务×7 策略三臂排名重评，按 experiments/protocol.md 冻结口径）：A 臂=探针驱动分层重评、B 臂=长度中位数截断池化重评、C 臂=原始成功率排名；产出 ranking_A/B/C.csv + pairwise_flips.csv + Kendall tau-b + 每格门槛判定，结果+复现命令落 results/。复用 smoke 管线（fast_download/verify_files/smoke_extract/probe_run），下载扩量前必跑 verify_files.py 防 mib 舍入假缺口（数据下载按 download_plan_min.json 扩展清单）；复核负控点估计是否随测试集增大向 0.5 收敛。实现与文档逐项对照，发现偏差就地修——代码里算的必须就是 protocol.md 写的那个量。",
+      "prediction": "ranking_A/B/C + pairwise_flips + Kendall tau-b + 每格门槛判定三臂产出齐全且同口径可复现；负控点估计复核随测试集增大向 0.5 收敛",
+      "failure_conditions": "实现与 protocol.md 定义出现不可修复偏差，或任务选择偏离 design 写死的规则；下载扩量未过 verify_files 尺寸核验",
       "completion": {
         "files": [
+          "results/ranking_A.csv",
+          "results/ranking_B.csv",
+          "results/ranking_C.csv",
+          "results/pairwise_flips.csv",
           "results/"
-        ]
+        ],
+        "criteria": "ranking_A/B/C.csv + pairwise_flips.csv + Kendall tau-b + 每格门槛判定在盘；负控点估计复核记录在盘；结果+复现命令落 results/；门线/口径零改动"
       },
       "estimate_min": 30,
       "model_override": null,
       "wake": null,
       "role": "executor",
-      "status": "gated",
+      "status": "ready",
       "attempts": 0,
       "result": null,
       "profile": "lab-executor",
@@ -262,9 +353,27 @@
       "skills": [
         "result-verification"
       ]
+    },
+    {
+      "id": "smoke-continue",
+      "kind": "analysis",
+      "depends_on": [
+        "smoke"
+      ],
+      "status": "superseded",
+      "role": "verifier",
+      "hypothesis_id": null,
+      "prediction": "负控 AUC≈0.5（±噪声带）；正控≥0.9；主探针 3 次重算 AUC 极差远小于（AUC−0.55）；实测成本≤估算×2",
+      "failure_conditions": "负控 AUC 显著>0.5（流程伪影）或正控<0.9（特征无信号）→尺子不可用，回 design 修协议；成本超估算×2 且无解释",
+      "completion": {
+        "result": "results/"
+      },
+      "result": null,
+      "attempts": 0,
+      "strategy": ""
     }
   ],
-  "updated_at": "2026-11-08T17:33:18+00:00",
+  "updated_at": "2026-11-08T20:40:00+00:00",
   "from_template": {
     "contribution_type": "new_measurement",
     "version": 2,

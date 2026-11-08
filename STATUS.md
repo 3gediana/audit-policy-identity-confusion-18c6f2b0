@@ -1,5 +1,7 @@
 # 状态
 
+- 批次判读 batch-20261109T043017（2026-11-09 04:4x，researcher）：smoke ok **放行 pilot**（数字抽查与回执逐位一致：主 AUC 0.88956×3 同数 / 正控 1.0 / 负控 0.5569∈null 带 [0.249,0.751] / 成本 117.1s；4 处实现修复不涉协议）。动作：①workflow pilot 指令已升级为三臂排名重评权威版（回执 next_units 口径：ranking_A/B/C + pairwise_flips + Kendall tau-b + 每格门槛判定 + verify_files 防 mib 假缺口 + 负控复核），原通用旧版作废；②smoke-continue 判 superseded（机械续阶段，防多派空壳分析单元）；③pilot 走 workflow 定点一条通道（回执 next_units 同体不重复入队）。判读全文 _state/researcher-interventions/batch-20261109T043017.md。
+
 - 阶段：smoke **完成（verdict=supported，尺子可用）**（2026-11-09 夜 executor 单元）；workflow：design→smoke→pilot→experiment→analysis，下一步=pilot（三臂排名重评）。
 - 最近更新：2026-11-09T23:45:00+08:00（executor 夜间单元，smoke 全流程完成 + 判门 supported）
 - 最近产物：results/（smoke_summary.json、smoke_probe_run_A/B/C.json、smoke_config.json、smoke_cost.json、schema_snapshot.json、smoke_episodes.csv、confusion_matrix.csv、README.md）。
