@@ -64,3 +64,16 @@ Rollout then Recycle（arXiv:2611.03168v1，2026-11-02，CoRL 2026 Oops-I-Erred 
 
 - 准入后进 design：①探针 pilot（2 任务 × 7 策略，留出 AUC + 混淆矩阵，8G 卡 30 分钟）；②读 parquet 元数据定批次分层轴；③长度截断匹配对照臂。
 - 跟踪 LamportRobotics 后续上传（若出现 rollout 语料审计即触发 stop_if_not_novel 复查）。
+
+## 7. 姊妹筛查并入的近邻证据（2026-11-09 夜判读合并，源=438aa6b2 screening）
+
+同题姊妹课题 438aa6b2 经组合层判重归档后，其独立筛查补齐了本课题 screening 未覆盖的 4 个近邻（均全文核验关键段、判定不占位）：
+
+| 近邻 | 定位 | 与本课题差异 |
+|---|---|---|
+| RoboArena（arXiv:2506.18123） | 分布式双盲成对真机评估，"the evaluators do not know which policies they are evaluating" | 防在采集流程侧；本课题是已发布语料的事后审计件，混淆已发生 |
+| Eval-Actions / AutoEval（arXiv:2601.18723） | 策略 vs 遥操源头判别 99.6% 准确率 | 只做二分源头判别 + 重训练多模态判别器；是"视频里身份信号存在"的旁证，但不做逐策略语料审计、不重算排名 |
+| RoboView-Bias（arXiv:2509.22356） | 受控操纵相机视角测智能体偏差（"camera viewpoint being the most critical factor"） | 干预对象是策略行为；本课题测已发布语料内身份×机位泄漏并修正基准排名 |
+| 榜单扰动框架（arXiv:2605.15761） | Kendall τ 榜单稳健性审计（Chatbot Arena/网球/NBA，无机器人对象） | τ 方法学已有但不构成本课题贡献点；只把 τ 接进真机语料的分层重评判据 |
+
+另补一条被审计论文自认证据（ev-2611-metadata，源=438aa6b2 ledger）：§5 Metadata and splits——"The metadata does not mark which 2,518 rollouts form the benchmark; only the additional MolmoAct 2 sessions can be separated, via policy_repo_id, so the leaderboard cannot be reproduced exactly from the release." 本课题 A/C 臂对比结论须在结果表注明该不可精确复现边界。证据全文见 `../审计真机基准的策略身份混淆-438aa6b2/admission.json`（原样保留）。

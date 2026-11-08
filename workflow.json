@@ -7,7 +7,13 @@
     "prediction": "①冻结 DINOv2-small 逐 episode 均值池化特征的逻辑回归探针预测 policy_repo_id 的留出 AUC 显著高于 0.5（来源=作者 §5 自认\"Policy identity may therefore be inferable from the images alone\"，2026-11-09 arXiv HTML 逐字核验）；②按（任务×采集批次）分层重算排名后，至少一个任务上原始排名与分层排名 Kendall τ < 1 或出现逐对翻转（来源=同上引语 + §3 逐策略成功率差 π0.5 47.6% vs SmolVLA 13.1%）。预测②无先验把握，翻转与否正是要测的对象。",
     "failure_conditions": "①探针留出 AUC ≤ 0.55（近似瞎猜）→ 混淆量化臂空转，课题降级为长度泄漏审计或收口；②全任务分层后排名零翻转且逐对翻转率 0 → 判据臂空转，但混淆量化表+分层协议+长度匹配对照仍构成完整仓库结论（预注册退化出口，brief 已载）；③design 阶段发现任何已发表的身份探针量化/分层重评工作 → 按 stop_if_not_novel 停。"
   },
-  "lessons": [],
+  "lessons": [
+    {
+      "at": "2026-11-08T17:33:18+00:00",
+      "type": "stage_released",
+      "note": "design 完成后自动放行：smoke"
+    }
+  ],
   "stages": [
     {
       "id": "design",
@@ -30,9 +36,59 @@
       "wake": null,
       "night_dispatch": true,
       "role": "planner",
-      "status": "ready",
-      "attempts": 0,
-      "result": null,
+      "status": "done",
+      "attempts": 1,
+      "result": {
+        "status": "ok",
+        "project": "审计真机基准的策略身份混淆-18c6f2b0",
+        "stage": "design",
+        "stage_id": "design",
+        "result_kind": "document",
+        "source_mode": "document",
+        "historical": false,
+        "source": "",
+        "result_files": [
+          "literature/novelty-c4-check.md",
+          "experiments/protocol.md",
+          "experiments/prereg.md",
+          "notes/handoff/design.md",
+          "notes/RETRO.md",
+          "STATUS.md",
+          "notes/DECISIONS.md"
+        ],
+        "artifacts": [
+          "literature/novelty-c4-check.md",
+          "experiments/protocol.md",
+          "experiments/prereg.md",
+          "notes/handoff/design.md",
+          "notes/RETRO.md",
+          "STATUS.md",
+          "notes/DECISIONS.md"
+        ],
+        "metrics": {
+          "novelty_c4": "unknown",
+          "batch_axis": "unavailable_pending_schema_confirmation",
+          "fallback_axis": "task_only",
+          "gate": "passed",
+          "commit": "8537c60"
+        },
+        "verdict": "inconclusive",
+        "reproduction": "阅读 experiments/protocol.md 与 experiments/prereg.md；下一阶段按其中冻结命令和配置执行 smoke。",
+        "next_action": "continue",
+        "commits": [
+          "8537c60"
+        ],
+        "next_units": [
+          {
+            "project": "审计真机基准的策略身份混淆-18c6f2b0",
+            "instruction": "执行 smoke：同一特征缓存和固定 split 重算两次，完成正控任务标签与策略标签置换负控；检查正控AUC≥0.90、负控接近0.5、两次结果差≤1e-12，并保存results/证据。",
+            "estimate_min": 40,
+            "stage": "smoke"
+          }
+        ],
+        "notes": "设计文档、预注册和新颖性检查已落盘并通过交接门控；尚无论证性科学结果。",
+        "receipt_status": "receipt_ok"
+      },
       "profile": "lab-planner",
       "reasoning_effort": "xhigh",
       "toolsets": [
@@ -70,7 +126,7 @@
       "model_override": null,
       "wake": null,
       "role": "executor",
-      "status": "blocked",
+      "status": "ready",
       "attempts": 0,
       "result": null,
       "profile": "lab-executor",
@@ -109,7 +165,7 @@
       "model_override": null,
       "wake": null,
       "role": "executor",
-      "status": "blocked",
+      "status": "gated",
       "attempts": 0,
       "result": null,
       "profile": "lab-executor",
@@ -148,7 +204,7 @@
       "model_override": null,
       "wake": null,
       "role": "executor",
-      "status": "blocked",
+      "status": "gated",
       "attempts": 0,
       "result": null,
       "profile": "lab-executor",
@@ -187,7 +243,7 @@
       "model_override": null,
       "wake": "user",
       "role": "verifier",
-      "status": "blocked",
+      "status": "gated",
       "attempts": 0,
       "result": null,
       "profile": "lab-verifier",
@@ -208,7 +264,7 @@
       ]
     }
   ],
-  "updated_at": "2026-11-08T17:20:15+00:00",
+  "updated_at": "2026-11-08T17:33:18+00:00",
   "from_template": {
     "contribution_type": "new_measurement",
     "version": 2,
