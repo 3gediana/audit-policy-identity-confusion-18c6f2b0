@@ -1,0 +1,9 @@
+{
+  "schema": "research-candidate-approval/v1",
+  "approval_id": "auto:cand-18c6f2b0fcf58abc",
+  "candidate_id": "cand-18c6f2b0fcf58abc",
+  "status": "approved",
+  "approved_at": "2026-11-08T17:30:55+08:00",
+  "paradigm": "具身智能 / 视觉表征审计 / 基准有效性",
+  "advice": ""
+}
