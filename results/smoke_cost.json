@@ -1,0 +1,21 @@
+{
+ "smoke_estimate_min": 40,
+ "model_revision": "ed25f3a31f01632728cabb09d1542f84ab7b0056",
+ "total_seconds": 117.1,
+ "peak_gpu_mib": 491.0,
+ "device": "cuda",
+ "frames_per_episode": 8,
+ "camera": {
+  "so101": "observation.images.front",
+  "bimanual": "observation.images.top"
+ },
+ "download_gib": {
+  "so101": 1.262,
+  "bimanual": 1.537
+ },
+ "download_seconds": {
+  "so101": 402.0,
+  "bimanual": 402.0
+ },
+ "pass_2x": true
+}

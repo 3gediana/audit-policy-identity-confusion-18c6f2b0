@@ -1,0 +1,35 @@
+deterministic algorithms: ON
+device: cuda NVIDIA GeForce RTX 5060 Laptop GPU
+Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+model facebook/dinov2-small rev=ed25f3a31f01632728cabb09d1542f84ab7b0056 loaded in 6.2s; processor=BitImageProcessor (protocol uses manual PIL pipeline, processor unused)
+[so101] cable_clip: 270 rollout episodes, camera=observation.images.front
+  file 0/94: decoded 13143 frames in 6.7s, episodes full=15/15
+  file 0/97: decoded 798 frames in 0.4s, episodes full=1/1
+  file 0/101: decoded 13471 frames in 6.6s, episodes full=16/16
+  file 0/102: decoded 12797 frames in 7.2s, episodes full=15/15
+  file 0/104: decoded 766 frames in 0.4s, episodes full=1/1
+  file 0/105: decoded 11144 frames in 5.8s, episodes full=30/30
+  file 0/109: decoded 14036 frames in 7.0s, episodes full=18/18
+  file 0/112: decoded 12954 frames in 7.1s, episodes full=13/13
+  file 0/116: decoded 13254 frames in 6.0s, episodes full=15/15
+  [WARN] skipped incomplete/absent files: [(0, 95, 15), (0, 96, 14), (0, 98, 14), (0, 99, 1), (0, 100, 14), (0, 103, 14), (0, 106, 11), (0, 107, 14), (0, 108, 5), (0, 110, 12), (0, 111, 10), (0, 113, 7), (0, 114, 7), (0, 115, 8)]
+  encoded 992 frames -> 124 episode vectors in 4.3s (29 eps/s), degraded=0
+  episodes in scope after file completeness filter: 124/270
+[bimanual] fold_tea_towel: 300 rollout episodes, camera=observation.images.top
+  file 0/55: decoded 8909 frames in 7.0s, episodes full=12/12
+  file 0/59: decoded 8436 frames in 6.7s, episodes full=9/9
+  file 0/64: decoded 8521 frames in 6.7s, episodes full=9/9
+  file 0/69: decoded 8663 frames in 6.6s, episodes full=12/12
+  file 0/75: decoded 8374 frames in 6.6s, episodes full=14/14
+  file 0/79: decoded 8441 frames in 6.7s, episodes full=11/11
+  file 0/81: decoded 1330 frames in 1.1s, episodes full=2/2
+  file 0/82: decoded 7901 frames in 6.2s, episodes full=12/12
+  file 0/85: decoded 8678 frames in 6.8s, episodes full=14/14
+  [WARN] skipped incomplete/absent files: [(0, 56, 11), (0, 57, 7), (0, 58, 8), (0, 60, 8), (0, 61, 5), (0, 62, 9), (0, 63, 9), (0, 65, 3), (0, 66, 10), (0, 67, 10), (0, 68, 10), (0, 70, 10), (0, 71, 8), (0, 72, 12), (0, 73, 11), (0, 74, 7), (0, 76, 13), (0, 77, 3), (0, 78, 7), (0, 80, 10), (0, 83, 12), (0, 84, 6), (0, 86, 12), (0, 87, 4)]
+  encoded 760 frames -> 95 episode vectors in 3.1s (31 eps/s), degraded=0
+  episodes in scope after file completeness filter: 95/300
+TOTAL extraction time 117.1s
+peak GPU mem allocated: 491 MiB
+episodes with <8 matched frames: 0
+EXTRACTION DONE
+exit=0

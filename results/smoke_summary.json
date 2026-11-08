@@ -1,0 +1,62 @@
+{
+ "stage": "smoke",
+ "scope": "pilot-task minimal ruler check (cable_clip + fold_tea_towel, policy-rollout episodes)",
+ "scope_rule": "design-frozen pilot tasks; per (task,policy_type) cell greedy video-file selection by eps/MB (meta inventory only, no result-based choice), >=10 eps/cell",
+ "main_auc_runs": [
+  0.8895618290355134,
+  0.8895618290355134,
+  0.8895618290355134
+ ],
+ "main_auc_range": 0.0,
+ "main_auc_mean": 0.8895618290355133,
+ "gate_distance_AUC_minus_0.55": 0.33956182903551324,
+ "twice_same_1e-12": true,
+ "positive_control_runs": [
+  1.0,
+  1.0,
+  1.0
+ ],
+ "positive_control_pass": true,
+ "negative_control_runs": [
+  0.5568568098173361,
+  0.5568568098173361,
+  0.5568568098173361
+ ],
+ "null_band_95": [
+  0.24904348465591442,
+  0.7509565153440856
+ ],
+ "negative_control_pass": true,
+ "reliability_pass": true,
+ "cells": {
+  "cable_clip|act": 17,
+  "cable_clip|diffusion": 15,
+  "cable_clip|grootn1.7": 18,
+  "cable_clip|molmoact2": 30,
+  "cable_clip|pi0": 13,
+  "cable_clip|pi0.5": 15,
+  "cable_clip|smolvla": 16,
+  "fold_tea_towel|act": 18,
+  "fold_tea_towel|diffusion": 12,
+  "fold_tea_towel|grootn1.7": 13,
+  "fold_tea_towel|molmoact2": 14,
+  "fold_tea_towel|pi0": 12,
+  "fold_tea_towel|pi0.5": 14,
+  "fold_tea_towel|smolvla": 12
+ },
+ "cells_min_ge5": true,
+ "batch_axis": "unavailable_task_fallback",
+ "cost": {
+  "model_revision": "ed25f3a31f01632728cabb09d1542f84ab7b0056",
+  "total_seconds": 117.1,
+  "peak_gpu_mib": 491.0,
+  "device": "cuda",
+  "frames_per_episode": 8,
+  "camera": {
+   "so101": "observation.images.front",
+   "bimanual": "observation.images.top"
+  }
+ },
+ "cost_pass_2x_of_40min": true,
+ "verdict": "supported"
+}

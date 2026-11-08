@@ -1,0 +1,79 @@
+{
+ "ok": 12,
+ "total": 18,
+ "results": {
+  "videos/observation.images.front/chunk-000/file-094.mp4": {
+   "status": "ok",
+   "bytes": 195459144
+  },
+  "videos/observation.images.front/chunk-000/file-097.mp4": {
+   "status": "ok",
+   "bytes": 14283376
+  },
+  "videos/observation.images.front/chunk-000/file-101.mp4": {
+   "status": "ok",
+   "bytes": 187695245
+  },
+  "videos/observation.images.front/chunk-000/file-109.mp4": {
+   "status": "ok",
+   "bytes": 202937572
+  },
+  "videos/observation.images.front/chunk-000/file-104.mp4": {
+   "status": "ok",
+   "bytes": 14479974
+  },
+  "videos/observation.images.front/chunk-000/file-116.mp4": {
+   "status": "ok",
+   "bytes": 161741335
+  },
+  "videos/observation.images.top/chunk-000/file-059.mp4": {
+   "status": "ok",
+   "bytes": 203467148
+  },
+  "videos/observation.images.top/chunk-000/file-055.mp4": {
+   "status": "ok",
+   "bytes": 206086046
+  },
+  "videos/observation.images.front/chunk-000/file-102.mp4": {
+   "status": "attempts_exhausted",
+   "bytes": 209559662
+  },
+  "videos/observation.images.top/chunk-000/file-079.mp4": {
+   "status": "ok",
+   "bytes": 206696673
+  },
+  "videos/observation.images.top/chunk-000/file-081.mp4": {
+   "status": "ok",
+   "bytes": 34422500
+  },
+  "videos/observation.images.top/chunk-000/file-082.mp4": {
+   "status": "ok",
+   "bytes": 188051315
+  },
+  "videos/observation.images.top/chunk-000/file-085.mp4": {
+   "status": "ok",
+   "bytes": 207549967
+  },
+  "videos/observation.images.top/chunk-000/file-069.mp4": {
+   "status": "attempts_exhausted",
+   "bytes": 201188892
+  },
+  "videos/observation.images.top/chunk-000/file-075.mp4": {
+   "status": "attempts_exhausted",
+   "bytes": 200679869
+  },
+  "videos/observation.images.top/chunk-000/file-064.mp4": {
+   "status": "attempts_exhausted",
+   "bytes": 201847375
+  },
+  "videos/observation.images.front/chunk-000/file-112.mp4": {
+   "status": "attempts_exhausted",
+   "bytes": 204320644
+  },
+  "videos/observation.images.front/chunk-000/file-105.mp4": {
+   "status": "attempts_exhausted",
+   "bytes": 164376443
+  }
+ },
+ "seconds": 82.7
+}

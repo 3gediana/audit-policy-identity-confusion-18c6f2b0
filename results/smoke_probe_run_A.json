@@ -1,0 +1,145 @@
+{
+ "runid": "A",
+ "n_episodes": 219,
+ "n_train": 175,
+ "n_test": 44,
+ "n_classes": 7,
+ "split_seed": 20261109,
+ "perm_seed": 20261110,
+ "boot_seed": 20261111,
+ "boot_B": 2000,
+ "auc_main_macro_ovr": 0.8895618290355134,
+ "auc_main_per_class": {
+  "act": {
+   "n_test": 7,
+   "auc": 0.9806949806949807
+  },
+  "diffusion": {
+   "n_test": 5,
+   "auc": 0.9743589743589745
+  },
+  "grootn1.7": {
+   "n_test": 7,
+   "auc": 0.8455598455598455
+  },
+  "molmoact2": {
+   "n_test": 9,
+   "auc": 0.8031746031746032
+  },
+  "pi0": {
+   "n_test": 5,
+   "auc": 0.8974358974358975
+  },
+  "pi0.5": {
+   "n_test": 6,
+   "auc": 0.8026315789473684
+  },
+  "smolvla": {
+   "n_test": 5,
+   "auc": 0.9230769230769231
+  }
+ },
+ "auc_main_bootstrap_ci95": [
+  0.8288435138052455,
+  0.940210931489152
+ ],
+ "boot_skipped_resamples": 28,
+ "auc_positive_control_task": 1.0,
+ "n_task_classes": 2,
+ "auc_negative_control_permuted": 0.5568568098173361,
+ "null_band_95": [
+  0.24904348465591442,
+  0.7509565153440856
+ ],
+ "null_macro_se": 0.12803903844085998,
+ "confusion_matrix_test": [
+  [
+   6,
+   0,
+   0,
+   1,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   2,
+   0,
+   0,
+   3,
+   0,
+   0
+  ],
+  [
+   2,
+   0,
+   4,
+   0,
+   0,
+   0,
+   1
+  ],
+  [
+   0,
+   0,
+   0,
+   6,
+   1,
+   1,
+   1
+  ],
+  [
+   1,
+   0,
+   0,
+   0,
+   3,
+   0,
+   1
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   3,
+   3,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   1,
+   0,
+   0,
+   4
+  ]
+ ],
+ "confusion_classes": [
+  "act",
+  "diffusion",
+  "grootn1.7",
+  "molmoact2",
+  "pi0",
+  "pi0.5",
+  "smolvla"
+ ],
+ "config_fingerprint": "841f40fe3efcc9f1",
+ "timings_s": {
+  "main": 0.015,
+  "pos": 0.0,
+  "neg": 0.01,
+  "boot": 5.624
+ },
+ "env": {
+  "sklearn": "1.8.0",
+  "numpy": "2.2.6",
+  "torch": "2.10.0+cu128",
+  "transformers": "4.57.6",
+  "pillow": "13.0.0",
+  "python": "3.11.9"
+ },
+ "success_labels_included": true
+}

@@ -141,16 +141,21 @@ def extract_file(short, repo, camera, chunk, file_index, rows, model, buf):
 
 @torch.inference_mode()
 def encode_all(buf, model, out_X, out_meta, frag_name):
-    keys, batch, meta_rows = [], [], []
+    # row_slices: (key, start, end) absolute row indices into the concatenated frame matrix X
+    row_slices, batch, meta_rows = [], [], []
+    row_base = 0
     enc_t0 = time.time()
 
     def flush():
+        nonlocal row_base
         if not batch:
             return
         x = torch.stack(batch).to(DEV)
         out = model(pixel_values=x).last_hidden_state[:, 0, :]
         out_X.append(out.cpu().numpy().astype(np.float32))
-        keys.extend(k for k, _, _ in meta_rows)
+        for key, ntok, _ in meta_rows:
+            row_slices.append((key, row_base, row_base + ntok))
+            row_base += ntok
         meta_rows.clear()
         batch.clear()
 
@@ -164,10 +169,11 @@ def encode_all(buf, model, out_X, out_meta, frag_name):
     flush()
     dt = time.time() - enc_t0
     X = np.concatenate(out_X, axis=0)
-    # group frames by episode key (order in X matches keys order)
+    assert X.shape[0] == row_base, (X.shape, row_base)
+    # mean over the 8 CLS vectors of each episode, then L2 normalize
     per = {}
-    for i, k in enumerate(keys):
-        per.setdefault(k, []).append(i)
+    for key, s, e in row_slices:
+        per.setdefault(key, []).extend(range(s, e))
     feats, miss = [], []
     for key in sorted(per):
         idxs = per[key]
@@ -179,7 +185,7 @@ def encode_all(buf, model, out_X, out_meta, frag_name):
     Z = np.stack(feats).astype(np.float32)
     np.savez_compressed(os.path.join(FRAG_DIR, frag_name), Z=Z,
                         keys=np.array([str(k) for k in sorted(per)]))
-    print(f"  encoded {len(keys)} frames -> {len(feats)} episode vectors in {dt:.1f}s "
+    print(f"  encoded {row_base} frames -> {len(feats)} episode vectors in {dt:.1f}s "
           f"({len(feats)/max(dt,1e-9):.0f} eps/s), degraded={len(miss)}")
     return sorted(per), miss
 

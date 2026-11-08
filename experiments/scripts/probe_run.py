@@ -78,7 +78,7 @@ def fit_lr(y_labels, idx_tr):
 # ---- main probe: policy identity ----
 tM = time.time()
 clf = fit_lr(pol, tr)
-sc = clf.decision_function(X[te])
+sc = clf.predict_proba(X[te])  # multiclass ovr AUC requires scores summing to 1
 auc_main = float(roc_auc_score(pol[te], sc, multi_class="ovr", average="macro"))
 per_class = {}
 for ci, c in enumerate(clf.classes_):
@@ -90,11 +90,10 @@ t_main = time.time() - tM
 # ---- positive control: task label ----
 tP = time.time()
 clf_p = fit_lr(task, tr)
+sc_p = clf_p.predict_proba(X[te])
 if len(set(task)) == 2:
-    sc_p = clf_p.decision_function(X[te])
-    auc_pos = float(roc_auc_score(task[te], sc_p))
+    auc_pos = float(roc_auc_score((task[te] == clf_p.classes_[1]).astype(int), sc_p[:, 1]))
 else:
-    sc_p = clf_p.decision_function(X[te])
     auc_pos = float(roc_auc_score(task[te], sc_p, multi_class="ovr", average="macro"))
 t_pos = time.time() - tP
 
@@ -104,7 +103,7 @@ rng = np.random.default_rng(PERM_SEED)
 perm = rng.permutation(n)
 pol_perm = pol[perm]
 clf_n = fit_lr(pol_perm, tr)
-sc_n = clf_n.decision_function(X[te])
+sc_n = clf_n.predict_proba(X[te])
 auc_neg = float(roc_auc_score(pol_perm[te], sc_n, multi_class="ovr", average="macro"))
 t_neg = time.time() - tN
 

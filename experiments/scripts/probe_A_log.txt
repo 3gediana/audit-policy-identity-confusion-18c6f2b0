@@ -1,0 +1,17 @@
+X=(219, 384) episodes; classes=[np.str_('act'), np.str_('diffusion'), np.str_('grootn1.7'), np.str_('molmoact2'), np.str_('pi0'), np.str_('pi0.5'), np.str_('smolvla')]; strat cells=14
+split: train=175 test=44
+{
+ "auc_main_macro_ovr": 0.8895618290355134,
+ "auc_positive_control_task": 1.0,
+ "auc_negative_control_permuted": 0.5568568098173361,
+ "null_band_95": [
+  0.24904348465591442,
+  0.7509565153440856
+ ],
+ "auc_main_bootstrap_ci95": [
+  0.8288435138052455,
+  0.940210931489152
+ ],
+ "config_fingerprint": "841f40fe3efcc9f1"
+}
+PROBE RUN A DONE -> D:/hermes-data/research/审计真机基准的策略身份混淆-18c6f2b0\results\smoke_probe_run_A.json

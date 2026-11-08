@@ -1,13 +1,9 @@
 {
- "what": "meta/episodes schema review for smoke step 1 (batch/session axis recoverability)",
  "repos": {
   "so101": {
    "repo": "armnet/armnetbench_v01_lerobot_so101",
    "revision": "",
-   "codebase_version": "v3.0",
    "n_rows": 2499,
-   "rollout_rows": 2099,
-   "teleop_rows": 400,
    "columns_nonstats": [
     "episode_index",
     "tasks",
@@ -35,7 +31,7 @@
     "policy_repo_id",
     "policy_type"
    ],
-   "census_nonstats": {
+   "census": {
     "episode_index": {
      "nonnull": 2499,
      "n_rows": 2499,
@@ -162,25 +158,12 @@
      "nunique": 8
     }
    },
-   "batch_like_columns": [],
-   "policy_type_values": [
-    "act",
-    "diffusion",
-    "grootn1.7",
-    "molmoact2",
-    "pi0",
-    "pi0.5",
-    "smolvla"
-   ],
-   "note_policy_repo_id": "policy_repo_id embeds the task slug (e.g. .../pi0-so101-armnetbench-ring-insert-isambard-v50); identity label at 7-class granularity = policy_type (rollout rows only)"
+   "batch_like_columns": []
   },
   "bimanual": {
    "repo": "armnet/armnetbench_v01_lerobot_bimanual_so101",
    "revision": "",
-   "codebase_version": "v3.0",
    "n_rows": 1219,
-   "rollout_rows": 1019,
-   "teleop_rows": 200,
    "columns_nonstats": [
     "episode_index",
     "tasks",
@@ -208,7 +191,7 @@
     "policy_repo_id",
     "policy_type"
    ],
-   "census_nonstats": {
+   "census": {
     "episode_index": {
      "nonnull": 1219,
      "n_rows": 1219,
@@ -335,20 +318,9 @@
      "nunique": 8
     }
    },
-   "batch_like_columns": [],
-   "policy_type_values": [
-    "act",
-    "diffusion",
-    "grootn1.7",
-    "molmoact2",
-    "pi0",
-    "pi0.5",
-    "smolvla"
-   ],
-   "note_policy_repo_id": "policy_repo_id embeds the task slug (e.g. .../pi0-so101-armnetbench-ring-insert-isambard-v50); identity label at 7-class granularity = policy_type (rollout rows only)"
+   "batch_like_columns": []
   }
  },
  "batch_axis": "unavailable_task_fallback",
- "verdict": "no session/batch/collection field exists in meta/episodes for either repo; chunk/file indices are storage chunking (size-based), not collection sessions; prereg fallback frozen: batch_axis=unavailable_task_fallback (task-only stratification)",
- "checked_fields_rationale": "census covers all non-stats columns; fields whose names contain session/batch/collect/capture/rig/take would qualify as batch-like; episode_index/data file_index/videos file_index are layout artifacts and are forbidden as batch proxies by protocol \u00a71"
+ "verdict": "no session/batch/collection field in meta/episodes for either repo"
 }

@@ -1,0 +1,15 @@
+{
+ "total_seconds": 402.0,
+ "so101": {
+  "got_gib": 1.262,
+  "files_complete": 9,
+  "files_total": 9,
+  "download_seconds": 402.0
+ },
+ "bimanual": {
+  "got_gib": 1.537,
+  "files_complete": 9,
+  "files_total": 9,
+  "download_seconds": 402.0
+ }
+}

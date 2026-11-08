@@ -1,0 +1,53 @@
+{
+ "encoder": "facebook/dinov2-small",
+ "encoder_revision": "ed25f3a31f01632728cabb09d1542f84ab7b0056",
+ "frames_per_episode": 8,
+ "frame_rule": "idx_k = floor(k*N/8), k=0..7, N=episode length, fps=20",
+ "match_tolerance_s": 0.075,
+ "preprocess": "RGB -> resize shortest side 224 (PIL bilinear) -> center crop 224x224 -> /255 -> ImageNet mean/std",
+ "feature": "CLS token (last_hidden_state[:,0]), mean over 8 frames, L2 normalized, float32",
+ "probe": "LogisticRegression(multinomial lbfgs, L2, C=1.0, max_iter=2000, class_weight=balanced)",
+ "split": "80/20 stratified by task x policy_type, seed 20261109",
+ "perm_seed": 20261110,
+ "boot_seed": 20261111,
+ "boot_B": 2000,
+ "label_main": "policy_type (7 classes, rollout rows only; policy_repo_id non-empty)",
+ "label_positive_control": "task (2 pilot tasks)",
+ "label_negative_control": "policy_type permuted with seed 20261110",
+ "data": {
+  "so101": {
+   "repo": "armnet/armnetbench_v01_lerobot_so101",
+   "revision": "",
+   "camera": "observation.images.front",
+   "task": "Push the Displayport cable into the cable holder on the white block",
+   "episodes_in_scope": 124,
+   "files": 9
+  },
+  "bimanual": {
+   "repo": "armnet/armnetbench_v01_lerobot_bimanual_so101",
+   "revision": "",
+   "camera": "observation.images.top",
+   "task": "Fold the brown tea towel",
+   "episodes_in_scope": 95,
+   "files": 9
+  }
+ },
+ "env": {
+  "sklearn": "1.8.0",
+  "torch": "2.10.0+cu128",
+  "transformers": "4.57.6",
+  "pillow": "13.0.0",
+  "av": "16.1.0",
+  "numpy": "2.2.6",
+  "python": "3.11.9",
+  "platform": "Windows-10-10.0.26200-SP0"
+ },
+ "smoke_estimate_min": 40,
+ "gates": {
+  "twice_same": "max pairwise |diff| <= 1e-12",
+  "positive": "AUC >= 0.90",
+  "negative": "macro AUC within prereg 95% null band",
+  "reliability": "range < max(0.05, AUC-0.55) and <= 1e-12",
+  "cost": "extraction+probe wall <= 2x estimate"
+ }
+}

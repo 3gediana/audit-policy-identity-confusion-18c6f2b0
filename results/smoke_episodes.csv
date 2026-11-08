@@ -1,0 +1,220 @@
+episode_index,task_str,policy_type,policy_repo_id,success,success_class,length,repo,shortname,camera,frames_matched
+1889,Push the Displayport cable into the cable holder on the white block,diffusion,villekuosmanen/cable_clip_remote_v2_diffusion,0,failure,919,so101,cable_clip,observation.images.front,8
+1890,Push the Displayport cable into the cable holder on the white block,diffusion,villekuosmanen/cable_clip_remote_v2_diffusion,0,failure,925,so101,cable_clip,observation.images.front,8
+1891,Push the Displayport cable into the cable holder on the white block,diffusion,villekuosmanen/cable_clip_remote_v2_diffusion,0,failure,917,so101,cable_clip,observation.images.front,8
+1892,Push the Displayport cable into the cable holder on the white block,diffusion,villekuosmanen/cable_clip_remote_v2_diffusion,0,failure,882,so101,cable_clip,observation.images.front,8
+1893,Push the Displayport cable into the cable holder on the white block,diffusion,villekuosmanen/cable_clip_remote_v2_diffusion,0,failure,874,so101,cable_clip,observation.images.front,8
+1894,Push the Displayport cable into the cable holder on the white block,diffusion,villekuosmanen/cable_clip_remote_v2_diffusion,0,failure,831,so101,cable_clip,observation.images.front,8
+1895,Push the Displayport cable into the cable holder on the white block,diffusion,villekuosmanen/cable_clip_remote_v2_diffusion,0,failure,859,so101,cable_clip,observation.images.front,8
+1896,Push the Displayport cable into the cable holder on the white block,diffusion,villekuosmanen/cable_clip_remote_v2_diffusion,0,failure,879,so101,cable_clip,observation.images.front,8
+1897,Push the Displayport cable into the cable holder on the white block,diffusion,villekuosmanen/cable_clip_remote_v2_diffusion,0,failure,849,so101,cable_clip,observation.images.front,8
+1898,Push the Displayport cable into the cable holder on the white block,diffusion,villekuosmanen/cable_clip_remote_v2_diffusion,0,failure,885,so101,cable_clip,observation.images.front,8
+1899,Push the Displayport cable into the cable holder on the white block,diffusion,villekuosmanen/cable_clip_remote_v2_diffusion,0,failure,891,so101,cable_clip,observation.images.front,8
+1900,Push the Displayport cable into the cable holder on the white block,diffusion,villekuosmanen/cable_clip_remote_v2_diffusion,0,failure,863,so101,cable_clip,observation.images.front,8
+1901,Push the Displayport cable into the cable holder on the white block,diffusion,villekuosmanen/cable_clip_remote_v2_diffusion,0,failure,888,so101,cable_clip,observation.images.front,8
+1902,Push the Displayport cable into the cable holder on the white block,diffusion,villekuosmanen/cable_clip_remote_v2_diffusion,0,failure,895,so101,cable_clip,observation.images.front,8
+1903,Push the Displayport cable into the cable holder on the white block,diffusion,villekuosmanen/cable_clip_remote_v2_diffusion,0,failure,899,so101,cable_clip,observation.images.front,8
+1933,Push the Displayport cable into the cable holder on the white block,act,pravsels/act_cable_clip_20k,0,failure,912,so101,cable_clip,observation.images.front,8
+1963,Push the Displayport cable into the cable holder on the white block,act,pravsels/act_cable_clip_20k,0,failure,993,so101,cable_clip,observation.images.front,8
+1964,Push the Displayport cable into the cable holder on the white block,act,pravsels/act_cable_clip_20k,0,failure,987,so101,cable_clip,observation.images.front,8
+1965,Push the Displayport cable into the cable holder on the white block,act,pravsels/act_cable_clip_20k,0,failure,997,so101,cable_clip,observation.images.front,8
+1966,Push the Displayport cable into the cable holder on the white block,act,pravsels/act_cable_clip_20k,0,failure,991,so101,cable_clip,observation.images.front,8
+1967,Push the Displayport cable into the cable holder on the white block,act,pravsels/act_cable_clip_20k,0,failure,994,so101,cable_clip,observation.images.front,8
+1968,Push the Displayport cable into the cable holder on the white block,act,pravsels/act_cable_clip_20k,0,failure,475,so101,cable_clip,observation.images.front,8
+1969,Push the Displayport cable into the cable holder on the white block,act,pravsels/act_cable_clip_20k,0,failure,870,so101,cable_clip,observation.images.front,8
+1970,Push the Displayport cable into the cable holder on the white block,act,pravsels/act_cable_clip_20k,0,failure,837,so101,cable_clip,observation.images.front,8
+1971,Push the Displayport cable into the cable holder on the white block,act,pravsels/act_cable_clip_20k,0,failure,997,so101,cable_clip,observation.images.front,8
+1972,Push the Displayport cable into the cable holder on the white block,act,pravsels/act_cable_clip_20k,0,failure,993,so101,cable_clip,observation.images.front,8
+1973,Push the Displayport cable into the cable holder on the white block,act,pravsels/act_cable_clip_20k,0,failure,381,so101,cable_clip,observation.images.front,8
+1974,Push the Displayport cable into the cable holder on the white block,act,pravsels/act_cable_clip_20k,0,failure,153,so101,cable_clip,observation.images.front,8
+1975,Push the Displayport cable into the cable holder on the white block,act,pravsels/act_cable_clip_20k,0,failure,982,so101,cable_clip,observation.images.front,8
+1976,Push the Displayport cable into the cable holder on the white block,act,pravsels/act_cable_clip_20k,0,failure,988,so101,cable_clip,observation.images.front,8
+1977,Push the Displayport cable into the cable holder on the white block,act,pravsels/act_cable_clip_20k,0,failure,998,so101,cable_clip,observation.images.front,8
+1978,Push the Displayport cable into the cable holder on the white block,act,pravsels/act_cable_clip_20k,0,failure,955,so101,cable_clip,observation.images.front,8
+1979,Push the Displayport cable into the cable holder on the white block,smolvla,pravsels/smolvla_cable_clip,0,failure,864,so101,cable_clip,observation.images.front,8
+1980,Push the Displayport cable into the cable holder on the white block,smolvla,pravsels/smolvla_cable_clip,0,failure,868,so101,cable_clip,observation.images.front,8
+1981,Push the Displayport cable into the cable holder on the white block,smolvla,pravsels/smolvla_cable_clip,0,failure,871,so101,cable_clip,observation.images.front,8
+1982,Push the Displayport cable into the cable holder on the white block,smolvla,pravsels/smolvla_cable_clip,0,failure,871,so101,cable_clip,observation.images.front,8
+1983,Push the Displayport cable into the cable holder on the white block,smolvla,pravsels/smolvla_cable_clip,0,failure,878,so101,cable_clip,observation.images.front,8
+1984,Push the Displayport cable into the cable holder on the white block,smolvla,pravsels/smolvla_cable_clip,0,failure,867,so101,cable_clip,observation.images.front,8
+1985,Push the Displayport cable into the cable holder on the white block,smolvla,pravsels/smolvla_cable_clip,0,failure,869,so101,cable_clip,observation.images.front,8
+1986,Push the Displayport cable into the cable holder on the white block,smolvla,pravsels/smolvla_cable_clip,0,failure,865,so101,cable_clip,observation.images.front,8
+1987,Push the Displayport cable into the cable holder on the white block,smolvla,pravsels/smolvla_cable_clip,0,failure,861,so101,cable_clip,observation.images.front,8
+1988,Push the Displayport cable into the cable holder on the white block,smolvla,pravsels/smolvla_cable_clip,0,failure,870,so101,cable_clip,observation.images.front,8
+1989,Push the Displayport cable into the cable holder on the white block,smolvla,pravsels/smolvla_cable_clip,0,failure,774,so101,cable_clip,observation.images.front,8
+1990,Push the Displayport cable into the cable holder on the white block,smolvla,pravsels/smolvla_cable_clip,0,failure,864,so101,cable_clip,observation.images.front,8
+1991,Push the Displayport cable into the cable holder on the white block,smolvla,pravsels/smolvla_cable_clip,0,failure,850,so101,cable_clip,observation.images.front,8
+1992,Push the Displayport cable into the cable holder on the white block,smolvla,pravsels/smolvla_cable_clip,0,failure,865,so101,cable_clip,observation.images.front,8
+1993,Push the Displayport cable into the cable holder on the white block,smolvla,pravsels/smolvla_cable_clip,0,failure,869,so101,cable_clip,observation.images.front,8
+2008,Push the Displayport cable into the cable holder on the white block,smolvla,pravsels/smolvla_cable_clip,0,failure,876,so101,cable_clip,observation.images.front,8
+2009,Push the Displayport cable into the cable holder on the white block,molmoact2,pravsels/molmoact2_cable_clip_20k,0,failure,432,so101,cable_clip,observation.images.front,8
+2010,Push the Displayport cable into the cable holder on the white block,molmoact2,pravsels/molmoact2_cable_clip_20k,0,failure,429,so101,cable_clip,observation.images.front,8
+2011,Push the Displayport cable into the cable holder on the white block,molmoact2,pravsels/molmoact2_cable_clip_20k,0,failure,449,so101,cable_clip,observation.images.front,8
+2012,Push the Displayport cable into the cable holder on the white block,molmoact2,pravsels/molmoact2_cable_clip_20k,0,failure,424,so101,cable_clip,observation.images.front,8
+2013,Push the Displayport cable into the cable holder on the white block,molmoact2,pravsels/molmoact2_cable_clip_20k,0,failure,449,so101,cable_clip,observation.images.front,8
+2014,Push the Displayport cable into the cable holder on the white block,molmoact2,pravsels/molmoact2_cable_clip_20k,0,failure,429,so101,cable_clip,observation.images.front,8
+2015,Push the Displayport cable into the cable holder on the white block,molmoact2,pravsels/molmoact2_cable_clip_20k,0,failure,448,so101,cable_clip,observation.images.front,8
+2016,Push the Displayport cable into the cable holder on the white block,molmoact2,pravsels/molmoact2_cable_clip_20k,0,failure,445,so101,cable_clip,observation.images.front,8
+2017,Push the Displayport cable into the cable holder on the white block,molmoact2,pravsels/molmoact2_cable_clip_20k,0,failure,450,so101,cable_clip,observation.images.front,8
+2018,Push the Displayport cable into the cable holder on the white block,molmoact2,pravsels/molmoact2_cable_clip_20k,0,failure,421,so101,cable_clip,observation.images.front,8
+2019,Push the Displayport cable into the cable holder on the white block,molmoact2,pravsels/molmoact2_cable_clip_20k,0,failure,414,so101,cable_clip,observation.images.front,8
+2020,Push the Displayport cable into the cable holder on the white block,molmoact2,pravsels/molmoact2_cable_clip_20k,0,failure,414,so101,cable_clip,observation.images.front,8
+2021,Push the Displayport cable into the cable holder on the white block,molmoact2,pravsels/molmoact2_cable_clip_20k,0,failure,415,so101,cable_clip,observation.images.front,8
+2022,Push the Displayport cable into the cable holder on the white block,molmoact2,pravsels/molmoact2_cable_clip_20k,0,failure,393,so101,cable_clip,observation.images.front,8
+2023,Push the Displayport cable into the cable holder on the white block,molmoact2,pravsels/molmoact2_cable_clip_20k,0,failure,415,so101,cable_clip,observation.images.front,8
+2024,Push the Displayport cable into the cable holder on the white block,molmoact2,pravsels/molmoact2_cable_clip_20k,0,failure,244,so101,cable_clip,observation.images.front,8
+2025,Push the Displayport cable into the cable holder on the white block,molmoact2,pravsels/molmoact2_cable_clip_20k,0,failure,261,so101,cable_clip,observation.images.front,8
+2026,Push the Displayport cable into the cable holder on the white block,molmoact2,pravsels/molmoact2_cable_clip_20k,0,failure,383,so101,cable_clip,observation.images.front,8
+2027,Push the Displayport cable into the cable holder on the white block,molmoact2,pravsels/molmoact2_cable_clip_20k,0,failure,85,so101,cable_clip,observation.images.front,8
+2028,Push the Displayport cable into the cable holder on the white block,molmoact2,pravsels/molmoact2_cable_clip_20k,0,failure,264,so101,cable_clip,observation.images.front,8
+2029,Push the Displayport cable into the cable holder on the white block,molmoact2,pravsels/molmoact2_cable_clip_20k,0,failure,106,so101,cable_clip,observation.images.front,8
+2030,Push the Displayport cable into the cable holder on the white block,molmoact2,pravsels/molmoact2_cable_clip_20k,0,failure,413,so101,cable_clip,observation.images.front,8
+2031,Push the Displayport cable into the cable holder on the white block,molmoact2,pravsels/molmoact2_cable_clip_20k,0,failure,173,so101,cable_clip,observation.images.front,8
+2032,Push the Displayport cable into the cable holder on the white block,molmoact2,pravsels/molmoact2_cable_clip_20k,0,failure,321,so101,cable_clip,observation.images.front,8
+2033,Push the Displayport cable into the cable holder on the white block,molmoact2,pravsels/molmoact2_cable_clip_20k,0,failure,414,so101,cable_clip,observation.images.front,8
+2034,Push the Displayport cable into the cable holder on the white block,molmoact2,pravsels/molmoact2_cable_clip_20k,0,failure,427,so101,cable_clip,observation.images.front,8
+2035,Push the Displayport cable into the cable holder on the white block,molmoact2,pravsels/molmoact2_cable_clip_20k,0,failure,421,so101,cable_clip,observation.images.front,8
+2036,Push the Displayport cable into the cable holder on the white block,molmoact2,pravsels/molmoact2_cable_clip_20k,0,failure,418,so101,cable_clip,observation.images.front,8
+2037,Push the Displayport cable into the cable holder on the white block,molmoact2,pravsels/molmoact2_cable_clip_20k,0,failure,419,so101,cable_clip,observation.images.front,8
+2038,Push the Displayport cable into the cable holder on the white block,molmoact2,pravsels/molmoact2_cable_clip_20k,0,failure,421,so101,cable_clip,observation.images.front,8
+2069,Push the Displayport cable into the cable holder on the white block,grootn1.7,pravsels/groot1.7_cable_clip_20k,0,failure,881,so101,cable_clip,observation.images.front,8
+2070,Push the Displayport cable into the cable holder on the white block,grootn1.7,pravsels/groot1.7_cable_clip_20k,0,failure,881,so101,cable_clip,observation.images.front,8
+2071,Push the Displayport cable into the cable holder on the white block,grootn1.7,pravsels/groot1.7_cable_clip_20k,0,failure,889,so101,cable_clip,observation.images.front,8
+2072,Push the Displayport cable into the cable holder on the white block,grootn1.7,pravsels/groot1.7_cable_clip_20k,0,failure,888,so101,cable_clip,observation.images.front,8
+2073,Push the Displayport cable into the cable holder on the white block,grootn1.7,pravsels/groot1.7_cable_clip_20k,0,failure,897,so101,cable_clip,observation.images.front,8
+2074,Push the Displayport cable into the cable holder on the white block,grootn1.7,pravsels/groot1.7_cable_clip_20k,0,failure,891,so101,cable_clip,observation.images.front,8
+2075,Push the Displayport cable into the cable holder on the white block,grootn1.7,pravsels/groot1.7_cable_clip_20k,0,failure,483,so101,cable_clip,observation.images.front,8
+2076,Push the Displayport cable into the cable holder on the white block,grootn1.7,pravsels/groot1.7_cable_clip_20k,0,failure,732,so101,cable_clip,observation.images.front,8
+2077,Push the Displayport cable into the cable holder on the white block,grootn1.7,pravsels/groot1.7_cable_clip_20k,0,failure,556,so101,cable_clip,observation.images.front,8
+2078,Push the Displayport cable into the cable holder on the white block,grootn1.7,pravsels/groot1.7_cable_clip_20k,0,failure,881,so101,cable_clip,observation.images.front,8
+2079,Push the Displayport cable into the cable holder on the white block,grootn1.7,pravsels/groot1.7_cable_clip_20k,0,failure,850,so101,cable_clip,observation.images.front,8
+2080,Push the Displayport cable into the cable holder on the white block,grootn1.7,pravsels/groot1.7_cable_clip_20k,0,failure,883,so101,cable_clip,observation.images.front,8
+2081,Push the Displayport cable into the cable holder on the white block,grootn1.7,pravsels/groot1.7_cable_clip_20k,0,failure,867,so101,cable_clip,observation.images.front,8
+2082,Push the Displayport cable into the cable holder on the white block,grootn1.7,pravsels/groot1.7_cable_clip_20k,0,failure,161,so101,cable_clip,observation.images.front,8
+2083,Push the Displayport cable into the cable holder on the white block,grootn1.7,pravsels/groot1.7_cable_clip_20k,0,failure,865,so101,cable_clip,observation.images.front,8
+2084,Push the Displayport cable into the cable holder on the white block,grootn1.7,pravsels/groot1.7_cable_clip_20k,0,failure,739,so101,cable_clip,observation.images.front,8
+2085,Push the Displayport cable into the cable holder on the white block,grootn1.7,pravsels/groot1.7_cable_clip_20k,0,failure,898,so101,cable_clip,observation.images.front,8
+2086,Push the Displayport cable into the cable holder on the white block,grootn1.7,pravsels/groot1.7_cable_clip_20k,0,failure,908,so101,cable_clip,observation.images.front,8
+2109,Push the Displayport cable into the cable holder on the white block,pi0,lorenzouttini/pi0-so101-cable-clip-isambard-v50,0,failure,1162,so101,cable_clip,observation.images.front,8
+2110,Push the Displayport cable into the cable holder on the white block,pi0,lorenzouttini/pi0-so101-cable-clip-isambard-v50,0,failure,1162,so101,cable_clip,observation.images.front,8
+2111,Push the Displayport cable into the cable holder on the white block,pi0,lorenzouttini/pi0-so101-cable-clip-isambard-v50,0,failure,1134,so101,cable_clip,observation.images.front,8
+2112,Push the Displayport cable into the cable holder on the white block,pi0,lorenzouttini/pi0-so101-cable-clip-isambard-v50,0,failure,1166,so101,cable_clip,observation.images.front,8
+2113,Push the Displayport cable into the cable holder on the white block,pi0,lorenzouttini/pi0-so101-cable-clip-isambard-v50,0,failure,1166,so101,cable_clip,observation.images.front,8
+2114,Push the Displayport cable into the cable holder on the white block,pi0,lorenzouttini/pi0-so101-cable-clip-isambard-v50,0,failure,1166,so101,cable_clip,observation.images.front,8
+2115,Push the Displayport cable into the cable holder on the white block,pi0,lorenzouttini/pi0-so101-cable-clip-isambard-v50,0,failure,1166,so101,cable_clip,observation.images.front,8
+2116,Push the Displayport cable into the cable holder on the white block,pi0,lorenzouttini/pi0-so101-cable-clip-isambard-v50,0,failure,1166,so101,cable_clip,observation.images.front,8
+2117,Push the Displayport cable into the cable holder on the white block,pi0,lorenzouttini/pi0-so101-cable-clip-isambard-v50,0,failure,725,so101,cable_clip,observation.images.front,8
+2118,Push the Displayport cable into the cable holder on the white block,pi0,lorenzouttini/pi0-so101-cable-clip-isambard-v50,0,failure,1166,so101,cable_clip,observation.images.front,8
+2119,Push the Displayport cable into the cable holder on the white block,pi0,lorenzouttini/pi0-so101-cable-clip-isambard-v50,0,failure,657,so101,cable_clip,observation.images.front,8
+2120,Push the Displayport cable into the cable holder on the white block,pi0,lorenzouttini/pi0-so101-cable-clip-isambard-v50,0,failure,726,so101,cable_clip,observation.images.front,8
+2121,Push the Displayport cable into the cable holder on the white block,pi0,lorenzouttini/pi0-so101-cable-clip-isambard-v50,0,failure,448,so101,cable_clip,observation.images.front,8
+2144,Push the Displayport cable into the cable holder on the white block,pi0.5,lorenzouttini/pi05-so101-cable-clip-isambard,0,failure,1056,so101,cable_clip,observation.images.front,8
+2145,Push the Displayport cable into the cable holder on the white block,pi0.5,lorenzouttini/pi05-so101-cable-clip-isambard,0,failure,1060,so101,cable_clip,observation.images.front,8
+2146,Push the Displayport cable into the cable holder on the white block,pi0.5,lorenzouttini/pi05-so101-cable-clip-isambard,0,failure,1052,so101,cable_clip,observation.images.front,8
+2147,Push the Displayport cable into the cable holder on the white block,pi0.5,lorenzouttini/pi05-so101-cable-clip-isambard,0,failure,1055,so101,cable_clip,observation.images.front,8
+2148,Push the Displayport cable into the cable holder on the white block,pi0.5,lorenzouttini/pi05-so101-cable-clip-isambard,0,failure,1042,so101,cable_clip,observation.images.front,8
+2149,Push the Displayport cable into the cable holder on the white block,pi0.5,lorenzouttini/pi05-so101-cable-clip-isambard,0,failure,1057,so101,cable_clip,observation.images.front,8
+2150,Push the Displayport cable into the cable holder on the white block,pi0.5,lorenzouttini/pi05-so101-cable-clip-isambard,0,failure,1052,so101,cable_clip,observation.images.front,8
+2151,Push the Displayport cable into the cable holder on the white block,pi0.5,lorenzouttini/pi05-so101-cable-clip-isambard,0,failure,1055,so101,cable_clip,observation.images.front,8
+2152,Push the Displayport cable into the cable holder on the white block,pi0.5,lorenzouttini/pi05-so101-cable-clip-isambard,0,failure,166,so101,cable_clip,observation.images.front,8
+2153,Push the Displayport cable into the cable holder on the white block,pi0.5,lorenzouttini/pi05-so101-cable-clip-isambard,0,failure,1061,so101,cable_clip,observation.images.front,8
+2154,Push the Displayport cable into the cable holder on the white block,pi0.5,lorenzouttini/pi05-so101-cable-clip-isambard,0,failure,1059,so101,cable_clip,observation.images.front,8
+2155,Push the Displayport cable into the cable holder on the white block,pi0.5,lorenzouttini/pi05-so101-cable-clip-isambard,0,failure,833,so101,cable_clip,observation.images.front,8
+2156,Push the Displayport cable into the cable holder on the white block,pi0.5,lorenzouttini/pi05-so101-cable-clip-isambard,0,failure,1054,so101,cable_clip,observation.images.front,8
+2157,Push the Displayport cable into the cable holder on the white block,pi0.5,lorenzouttini/pi05-so101-cable-clip-isambard,0,failure,151,so101,cable_clip,observation.images.front,8
+2158,Push the Displayport cable into the cable holder on the white block,pi0.5,lorenzouttini/pi05-so101-cable-clip-isambard,0,failure,573,so101,cable_clip,observation.images.front,8
+579,Fold the brown tea towel,diffusion,villekuosmanen/armnetbench_fold_tea_towel_diffusion,0,failure,911,bimanual,fold_tea_towel,observation.images.top,8
+580,Fold the brown tea towel,diffusion,villekuosmanen/armnetbench_fold_tea_towel_diffusion,1,successful,636,bimanual,fold_tea_towel,observation.images.top,8
+581,Fold the brown tea towel,diffusion,villekuosmanen/armnetbench_fold_tea_towel_diffusion,1,successful,569,bimanual,fold_tea_towel,observation.images.top,8
+582,Fold the brown tea towel,diffusion,villekuosmanen/armnetbench_fold_tea_towel_diffusion,1,successful,564,bimanual,fold_tea_towel,observation.images.top,8
+583,Fold the brown tea towel,diffusion,villekuosmanen/armnetbench_fold_tea_towel_diffusion,1,successful,660,bimanual,fold_tea_towel,observation.images.top,8
+584,Fold the brown tea towel,diffusion,villekuosmanen/armnetbench_fold_tea_towel_diffusion,1,successful,579,bimanual,fold_tea_towel,observation.images.top,8
+585,Fold the brown tea towel,diffusion,villekuosmanen/armnetbench_fold_tea_towel_diffusion,0,failure,958,bimanual,fold_tea_towel,observation.images.top,8
+586,Fold the brown tea towel,diffusion,villekuosmanen/armnetbench_fold_tea_towel_diffusion,1,successful,566,bimanual,fold_tea_towel,observation.images.top,8
+587,Fold the brown tea towel,diffusion,villekuosmanen/armnetbench_fold_tea_towel_diffusion,0,failure,979,bimanual,fold_tea_towel,observation.images.top,8
+588,Fold the brown tea towel,diffusion,villekuosmanen/armnetbench_fold_tea_towel_diffusion,0,failure,925,bimanual,fold_tea_towel,observation.images.top,8
+589,Fold the brown tea towel,diffusion,villekuosmanen/armnetbench_fold_tea_towel_diffusion,0,failure,924,bimanual,fold_tea_towel,observation.images.top,8
+590,Fold the brown tea towel,diffusion,villekuosmanen/armnetbench_fold_tea_towel_diffusion,1,successful,595,bimanual,fold_tea_towel,observation.images.top,8
+617,Fold the brown tea towel,act,pravsels/act_fold_tea_towel_20k,0,failure,945,bimanual,fold_tea_towel,observation.images.top,8
+618,Fold the brown tea towel,act,pravsels/act_fold_tea_towel_20k,0,failure,948,bimanual,fold_tea_towel,observation.images.top,8
+619,Fold the brown tea towel,act,pravsels/act_fold_tea_towel_20k,0,failure,1008,bimanual,fold_tea_towel,observation.images.top,8
+620,Fold the brown tea towel,act,pravsels/act_fold_tea_towel_20k,0,failure,991,bimanual,fold_tea_towel,observation.images.top,8
+621,Fold the brown tea towel,act,pravsels/act_fold_tea_towel_20k,0,failure,912,bimanual,fold_tea_towel,observation.images.top,8
+622,Fold the brown tea towel,act,pravsels/act_fold_tea_towel_20k,0,failure,893,bimanual,fold_tea_towel,observation.images.top,8
+623,Fold the brown tea towel,act,pravsels/act_fold_tea_towel_20k,0,failure,909,bimanual,fold_tea_towel,observation.images.top,8
+624,Fold the brown tea towel,act,pravsels/act_fold_tea_towel_20k,0,failure,993,bimanual,fold_tea_towel,observation.images.top,8
+625,Fold the brown tea towel,act,pravsels/act_fold_tea_towel_20k,0,failure,957,bimanual,fold_tea_towel,observation.images.top,8
+657,Fold the brown tea towel,act,pravsels/act_fold_tea_towel_20k,0,failure,978,bimanual,fold_tea_towel,observation.images.top,8
+658,Fold the brown tea towel,act,pravsels/act_fold_tea_towel_20k,0,failure,1035,bimanual,fold_tea_towel,observation.images.top,8
+659,Fold the brown tea towel,act,pravsels/act_fold_tea_towel_20k,0,failure,1005,bimanual,fold_tea_towel,observation.images.top,8
+660,Fold the brown tea towel,act,pravsels/act_fold_tea_towel_20k,0,failure,959,bimanual,fold_tea_towel,observation.images.top,8
+661,Fold the brown tea towel,act,pravsels/act_fold_tea_towel_20k,0,suboptimal,560,bimanual,fold_tea_towel,observation.images.top,8
+662,Fold the brown tea towel,act,pravsels/act_fold_tea_towel_20k,1,successful,648,bimanual,fold_tea_towel,observation.images.top,8
+663,Fold the brown tea towel,act,pravsels/act_fold_tea_towel_20k,1,successful,1000,bimanual,fold_tea_towel,observation.images.top,8
+664,Fold the brown tea towel,act,pravsels/act_fold_tea_towel_20k,1,successful,986,bimanual,fold_tea_towel,observation.images.top,8
+665,Fold the brown tea towel,act,pravsels/act_fold_tea_towel_20k,0,failure,1053,bimanual,fold_tea_towel,observation.images.top,8
+699,Fold the brown tea towel,smolvla,pravsels/smolvla_fold_tea_towel,0,failure,1020,bimanual,fold_tea_towel,observation.images.top,8
+700,Fold the brown tea towel,smolvla,pravsels/smolvla_fold_tea_towel,0,suboptimal,510,bimanual,fold_tea_towel,observation.images.top,8
+701,Fold the brown tea towel,smolvla,pravsels/smolvla_fold_tea_towel,1,successful,549,bimanual,fold_tea_towel,observation.images.top,8
+702,Fold the brown tea towel,smolvla,pravsels/smolvla_fold_tea_towel,0,suboptimal,480,bimanual,fold_tea_towel,observation.images.top,8
+703,Fold the brown tea towel,smolvla,pravsels/smolvla_fold_tea_towel,0,failure,1047,bimanual,fold_tea_towel,observation.images.top,8
+704,Fold the brown tea towel,smolvla,pravsels/smolvla_fold_tea_towel,0,failure,1044,bimanual,fold_tea_towel,observation.images.top,8
+705,Fold the brown tea towel,smolvla,pravsels/smolvla_fold_tea_towel,1,successful,516,bimanual,fold_tea_towel,observation.images.top,8
+706,Fold the brown tea towel,smolvla,pravsels/smolvla_fold_tea_towel,0,suboptimal,550,bimanual,fold_tea_towel,observation.images.top,8
+707,Fold the brown tea towel,smolvla,pravsels/smolvla_fold_tea_towel,0,failure,687,bimanual,fold_tea_towel,observation.images.top,8
+708,Fold the brown tea towel,smolvla,pravsels/smolvla_fold_tea_towel,1,successful,540,bimanual,fold_tea_towel,observation.images.top,8
+709,Fold the brown tea towel,smolvla,pravsels/smolvla_fold_tea_towel,1,successful,501,bimanual,fold_tea_towel,observation.images.top,8
+710,Fold the brown tea towel,smolvla,pravsels/smolvla_fold_tea_towel,0,failure,1051,bimanual,fold_tea_towel,observation.images.top,8
+759,Fold the brown tea towel,molmoact2,pravsels/molmoact2_fold_tea_towel_quantile_norm_fix_25k,0,failure,653,bimanual,fold_tea_towel,observation.images.top,8
+760,Fold the brown tea towel,molmoact2,pravsels/molmoact2_fold_tea_towel_quantile_norm_fix_25k,0,failure,529,bimanual,fold_tea_towel,observation.images.top,8
+761,Fold the brown tea towel,molmoact2,pravsels/molmoact2_fold_tea_towel_quantile_norm_fix_25k,0,suboptimal,552,bimanual,fold_tea_towel,observation.images.top,8
+762,Fold the brown tea towel,molmoact2,pravsels/molmoact2_fold_tea_towel_quantile_norm_fix_25k,0,failure,772,bimanual,fold_tea_towel,observation.images.top,8
+763,Fold the brown tea towel,molmoact2,pravsels/molmoact2_fold_tea_towel_quantile_norm_fix_25k,0,suboptimal,505,bimanual,fold_tea_towel,observation.images.top,8
+764,Fold the brown tea towel,molmoact2,pravsels/molmoact2_fold_tea_towel_quantile_norm_fix_25k,1,successful,573,bimanual,fold_tea_towel,observation.images.top,8
+765,Fold the brown tea towel,molmoact2,pravsels/molmoact2_fold_tea_towel_quantile_norm_fix_25k,0,failure,718,bimanual,fold_tea_towel,observation.images.top,8
+766,Fold the brown tea towel,molmoact2,pravsels/molmoact2_fold_tea_towel_quantile_norm_fix_25k,0,suboptimal,484,bimanual,fold_tea_towel,observation.images.top,8
+767,Fold the brown tea towel,molmoact2,pravsels/molmoact2_fold_tea_towel_quantile_norm_fix_25k,0,failure,601,bimanual,fold_tea_towel,observation.images.top,8
+768,Fold the brown tea towel,molmoact2,pravsels/molmoact2_fold_tea_towel_quantile_norm_fix_25k,1,successful,482,bimanual,fold_tea_towel,observation.images.top,8
+769,Fold the brown tea towel,molmoact2,pravsels/molmoact2_fold_tea_towel_quantile_norm_fix_25k,0,failure,706,bimanual,fold_tea_towel,observation.images.top,8
+770,Fold the brown tea towel,molmoact2,pravsels/molmoact2_fold_tea_towel_quantile_norm_fix_25k,1,successful,512,bimanual,fold_tea_towel,observation.images.top,8
+771,Fold the brown tea towel,molmoact2,pravsels/molmoact2_fold_tea_towel_quantile_norm_fix_25k,0,failure,566,bimanual,fold_tea_towel,observation.images.top,8
+772,Fold the brown tea towel,molmoact2,pravsels/molmoact2_fold_tea_towel_quantile_norm_fix_25k,0,failure,704,bimanual,fold_tea_towel,observation.images.top,8
+796,Fold the brown tea towel,grootn1.7,pravsels/groot1.7_fold_tea_towel_20k,1,successful,584,bimanual,fold_tea_towel,observation.images.top,8
+797,Fold the brown tea towel,grootn1.7,pravsels/groot1.7_fold_tea_towel_20k,0,failure,815,bimanual,fold_tea_towel,observation.images.top,8
+798,Fold the brown tea towel,grootn1.7,pravsels/groot1.7_fold_tea_towel_20k,0,failure,715,bimanual,fold_tea_towel,observation.images.top,8
+799,Fold the brown tea towel,grootn1.7,pravsels/groot1.7_fold_tea_towel_20k,0,failure,806,bimanual,fold_tea_towel,observation.images.top,8
+800,Fold the brown tea towel,grootn1.7,pravsels/groot1.7_fold_tea_towel_20k,0,failure,808,bimanual,fold_tea_towel,observation.images.top,8
+801,Fold the brown tea towel,grootn1.7,pravsels/groot1.7_fold_tea_towel_20k,0,failure,816,bimanual,fold_tea_towel,observation.images.top,8
+802,Fold the brown tea towel,grootn1.7,pravsels/groot1.7_fold_tea_towel_20k,0,failure,814,bimanual,fold_tea_towel,observation.images.top,8
+803,Fold the brown tea towel,grootn1.7,pravsels/groot1.7_fold_tea_towel_20k,0,failure,807,bimanual,fold_tea_towel,observation.images.top,8
+804,Fold the brown tea towel,grootn1.7,pravsels/groot1.7_fold_tea_towel_20k,1,successful,600,bimanual,fold_tea_towel,observation.images.top,8
+805,Fold the brown tea towel,grootn1.7,pravsels/groot1.7_fold_tea_towel_20k,0,failure,810,bimanual,fold_tea_towel,observation.images.top,8
+806,Fold the brown tea towel,grootn1.7,pravsels/groot1.7_fold_tea_towel_20k,0,failure,807,bimanual,fold_tea_towel,observation.images.top,8
+817,Fold the brown tea towel,grootn1.7,pravsels/groot1.7_fold_tea_towel_20k,1,successful,510,bimanual,fold_tea_towel,observation.images.top,8
+818,Fold the brown tea towel,grootn1.7,pravsels/groot1.7_fold_tea_towel_20k,0,failure,814,bimanual,fold_tea_towel,observation.images.top,8
+819,Fold the brown tea towel,pi0,lorenzouttini/pi0-so101-armnetbench-fold-tea-towel-isambard-v50,0,suboptimal,620,bimanual,fold_tea_towel,observation.images.top,8
+820,Fold the brown tea towel,pi0,lorenzouttini/pi0-so101-armnetbench-fold-tea-towel-isambard-v50,1,successful,540,bimanual,fold_tea_towel,observation.images.top,8
+821,Fold the brown tea towel,pi0,lorenzouttini/pi0-so101-armnetbench-fold-tea-towel-isambard-v50,1,successful,580,bimanual,fold_tea_towel,observation.images.top,8
+822,Fold the brown tea towel,pi0,lorenzouttini/pi0-so101-armnetbench-fold-tea-towel-isambard-v50,0,suboptimal,545,bimanual,fold_tea_towel,observation.images.top,8
+823,Fold the brown tea towel,pi0,lorenzouttini/pi0-so101-armnetbench-fold-tea-towel-isambard-v50,1,successful,551,bimanual,fold_tea_towel,observation.images.top,8
+824,Fold the brown tea towel,pi0,lorenzouttini/pi0-so101-armnetbench-fold-tea-towel-isambard-v50,1,successful,682,bimanual,fold_tea_towel,observation.images.top,8
+825,Fold the brown tea towel,pi0,lorenzouttini/pi0-so101-armnetbench-fold-tea-towel-isambard-v50,0,failure,1114,bimanual,fold_tea_towel,observation.images.top,8
+826,Fold the brown tea towel,pi0,lorenzouttini/pi0-so101-armnetbench-fold-tea-towel-isambard-v50,0,suboptimal,764,bimanual,fold_tea_towel,observation.images.top,8
+827,Fold the brown tea towel,pi0,lorenzouttini/pi0-so101-armnetbench-fold-tea-towel-isambard-v50,0,failure,756,bimanual,fold_tea_towel,observation.images.top,8
+828,Fold the brown tea towel,pi0,lorenzouttini/pi0-so101-armnetbench-fold-tea-towel-isambard-v50,1,successful,554,bimanual,fold_tea_towel,observation.images.top,8
+829,Fold the brown tea towel,pi0,lorenzouttini/pi0-so101-armnetbench-fold-tea-towel-isambard-v50,1,successful,534,bimanual,fold_tea_towel,observation.images.top,8
+830,Fold the brown tea towel,pi0,lorenzouttini/pi0-so101-armnetbench-fold-tea-towel-isambard-v50,0,suboptimal,578,bimanual,fold_tea_towel,observation.images.top,8
+849,Fold the brown tea towel,pi0.5,lorenzouttini/pi05-so101-armnetbench-fold-tea-towel-isambard-v50,1,successful,560,bimanual,fold_tea_towel,observation.images.top,8
+850,Fold the brown tea towel,pi0.5,lorenzouttini/pi05-so101-armnetbench-fold-tea-towel-isambard-v50,1,successful,577,bimanual,fold_tea_towel,observation.images.top,8
+851,Fold the brown tea towel,pi0.5,lorenzouttini/pi05-so101-armnetbench-fold-tea-towel-isambard-v50,1,successful,520,bimanual,fold_tea_towel,observation.images.top,8
+852,Fold the brown tea towel,pi0.5,lorenzouttini/pi05-so101-armnetbench-fold-tea-towel-isambard-v50,1,successful,538,bimanual,fold_tea_towel,observation.images.top,8
+853,Fold the brown tea towel,pi0.5,lorenzouttini/pi05-so101-armnetbench-fold-tea-towel-isambard-v50,1,successful,566,bimanual,fold_tea_towel,observation.images.top,8
+854,Fold the brown tea towel,pi0.5,lorenzouttini/pi05-so101-armnetbench-fold-tea-towel-isambard-v50,1,successful,580,bimanual,fold_tea_towel,observation.images.top,8
+855,Fold the brown tea towel,pi0.5,lorenzouttini/pi05-so101-armnetbench-fold-tea-towel-isambard-v50,1,successful,540,bimanual,fold_tea_towel,observation.images.top,8
+856,Fold the brown tea towel,pi0.5,lorenzouttini/pi05-so101-armnetbench-fold-tea-towel-isambard-v50,1,successful,514,bimanual,fold_tea_towel,observation.images.top,8
+857,Fold the brown tea towel,pi0.5,lorenzouttini/pi05-so101-armnetbench-fold-tea-towel-isambard-v50,0,suboptimal,525,bimanual,fold_tea_towel,observation.images.top,8
+858,Fold the brown tea towel,pi0.5,lorenzouttini/pi05-so101-armnetbench-fold-tea-towel-isambard-v50,1,successful,520,bimanual,fold_tea_towel,observation.images.top,8
+859,Fold the brown tea towel,pi0.5,lorenzouttini/pi05-so101-armnetbench-fold-tea-towel-isambard-v50,0,suboptimal,573,bimanual,fold_tea_towel,observation.images.top,8
+860,Fold the brown tea towel,pi0.5,lorenzouttini/pi05-so101-armnetbench-fold-tea-towel-isambard-v50,0,suboptimal,580,bimanual,fold_tea_towel,observation.images.top,8
+861,Fold the brown tea towel,pi0.5,lorenzouttini/pi05-so101-armnetbench-fold-tea-towel-isambard-v50,1,successful,552,bimanual,fold_tea_towel,observation.images.top,8
+862,Fold the brown tea towel,pi0.5,lorenzouttini/pi05-so101-armnetbench-fold-tea-towel-isambard-v50,1,successful,720,bimanual,fold_tea_towel,observation.images.top,8

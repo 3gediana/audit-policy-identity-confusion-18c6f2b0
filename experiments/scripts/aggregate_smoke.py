@@ -52,7 +52,8 @@ for short in ["so101", "bimanual"]:
         except Exception:
             nu = -1
         census[c] = {"nonnull": int(s.notna().sum()), "n_rows": int(len(s)), "nunique": nu}
-    batch_like = [c for c in keycols if any(k in c.lower() for k in
+    batch_like = [c for c in keycols if not c.startswith("videos/")
+                  and any(k in c.lower() for k in
                   ["session", "batch", "collect", "capture", "record_session", "rig"])]
     schema[short] = {
         "repo": REPOS[short], "revision": plan[short].get("revision", ""),
