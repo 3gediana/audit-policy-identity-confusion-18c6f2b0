@@ -1,7 +1,8 @@
 # 状态
 
-- 阶段：candidate/screening（screening 已完成，admission 门 eligible=true，decision=admitted；未进 design，不涉实验）
-- 最近更新：2026-11-09T00:25:00+08:00
-- 最近产物：admission.json（research-topic-admission/v1，eligible=true，evidence_ledger 11 条）；literature/related-work.md（4 渠道 8 查询式 + 逐字引语 + 未知项）
-- 下一步：进 design 阶段——①读 HF parquet 元数据确认采集批次轴可恢复性（§5 引语表明混淆按单元×批次分布、每任务固定单元，brief 旧口径的"任务×机位单元"分层轴已修正，见 DECISIONS）；②探针 pilot 设计（2 任务 × 7 策略，留出 AUC + 混淆矩阵，8G 卡 30 分钟）；③长度截断匹配对照臂协议。跟踪 LamportRobotics 后续上传（跟进簇活跃，5 小时前仍在更新；若出现 rollout 语料审计即触发 stop_if_not_novel 复查）。
-- 关键证据锚点：2611.03168 §5 逐字引语（身份可推断/长度泄漏/近二值标签）见 literature/related-work.md §2；OpenAlex 前向被引 0（W7225193298，2026-11-09）；新颖性主张 c4 标 unknown（仅 4 渠道覆盖，Scholar/OpenReview 全遍历未做）。
+- 阶段：design（ready，night_dispatch=true 已放行）。screening 已由 researcher 判读收口（通过放行）；workflow.json 已实例化（模板 new_measurement v2：design→smoke→pilot→experiment→analysis，五节点任务书已按课题定制）。
+- 最近更新：2026-11-09T01:23:00+08:00（researcher 判读 screening 回执 3e3528c8：PASS）
+- 最近产物：admission.json（admitted，evidence_ledger 11 条，c4=unknown）；literature/related-work.md；workflow.json（实例化+定制）；notes/researcher-interventions/a1d6c5c881005957a1323a6fe91f25ad.md（判读记录）
+- 下一步：design 单元（estimate 75min，profile=lab-planner，reasoning=xhigh，model_override=null→调度器按责任路由选非 GPT、支持工具的 worker）：①Scholar/OpenReview 新颖性收口（命中即按 stop_if_not_novel 停，写 RETRO+求助）；②HF parquet 元数据批次轴核验（不可恢复则分层退化按任务并重估功效，回填 admission uncertainties[1]）；③experiments/protocol.md（探针/分层/判据/三臂严格定义，口径算两次同数）；④experiments/prereg.md+决策价值三行。回执到达后 researcher 判读 novelty-c4 结论与批次轴结论，通过则放行 smoke（8G 卡；正控=探针分任务≈1.0 / 负控=策略标签置换≈0.5 已冻结在 workflow）。
+- 研究员唤醒点：design 回执（判读 novelty/批次轴后放行 smoke）；novelty 命中重叠或 HF 语料不可达 → help.request_researcher 即时唤醒。持续跟踪 LamportRobotics 上传（若出现 rollout 语料审计即触发 stop_if_not_novel 复查）。
+- 关键证据锚点：2611.03168 §5 逐字引语（身份可推断/长度泄漏/近二值标签）见 literature/related-work.md §2；OpenAlex 前向被引 0（W7225193298，2026-11-09）；新颖性主张 c4 标 unknown（4 渠道覆盖，Scholar/OpenReview 全遍历已列为 design 第①步）。

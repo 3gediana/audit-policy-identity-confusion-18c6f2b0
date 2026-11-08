@@ -1,0 +1,217 @@
+{
+  "schema": "research-workflow/v1",
+  "topic": "审计真机基准的策略身份混淆-18c6f2b0",
+  "hypothesis": {
+    "id": "H1",
+    "question": "公开真机基准（arXiv:2611.03168，7 个策略 × 12 任务 × 3,718 条 episode）里『从画面就能认出是哪个策略录的』这一身份混淆到底多大、会不会翻转基准排名——能不能用探针驱动的分层重评协议把它量化并给出排名稳定性判据？",
+    "prediction": "①冻结 DINOv2-small 逐 episode 均值池化特征的逻辑回归探针预测 policy_repo_id 的留出 AUC 显著高于 0.5（来源=作者 §5 自认\"Policy identity may therefore be inferable from the images alone\"，2026-11-09 arXiv HTML 逐字核验）；②按（任务×采集批次）分层重算排名后，至少一个任务上原始排名与分层排名 Kendall τ < 1 或出现逐对翻转（来源=同上引语 + §3 逐策略成功率差 π0.5 47.6% vs SmolVLA 13.1%）。预测②无先验把握，翻转与否正是要测的对象。",
+    "failure_conditions": "①探针留出 AUC ≤ 0.55（近似瞎猜）→ 混淆量化臂空转，课题降级为长度泄漏审计或收口；②全任务分层后排名零翻转且逐对翻转率 0 → 判据臂空转，但混淆量化表+分层协议+长度匹配对照仍构成完整仓库结论（预注册退化出口，brief 已载）；③design 阶段发现任何已发表的身份探针量化/分层重评工作 → 按 stop_if_not_novel 停。"
+  },
+  "lessons": [],
+  "stages": [
+    {
+      "id": "design",
+      "kind": "design",
+      "depends_on": [],
+      "goal": "探针审计件设计文档：新颖性收口+批次轴核验+探针/分层/判据/三臂严格定义+预注册",
+      "instruction": "有界设计单元，按序四步，每步落盘再走下一步。①新颖性收口（stop_if_not_novel 门，最先做）：Google Scholar+OpenReview 定向遍历（查询组合至少覆盖 policy identity probe robot / benchmark confound camera 分层重评 / 2611.03168 与 ArmnetBench 专名 / 引文簇作者名），每式记查询+时间+命中数进 literature/novelty-c4-check.md；命中任何已发表语料审计/身份探针量化/分层重评工作→按 admission.json stop_if_not_novel 立即停（写 notes/RETRO.md+help.request_researcher，早退）；Scholar 反爬打不开就如实记覆盖范围、c4 维持 unknown，不许编。②批次轴核验：拉 1-2 个 HF armnet/armnetbench_v01* parquet 看 schema（时间戳/会话/批次字段），判定采集批次轴能否逐 episode 恢复；结论写进协议并回填 admission.json uncertainties[1]；不可恢复→分层退化按任务并在协议里重估判据臂功效。拉取连败 2 次换路径（hf_hub→datasets-server API→parquet 直链），再败求助早退。③协议严格定义（experiments/protocol.md）：探针=冻结 DINOv2-small（版本/输入分辨率/帧采样与池化写死）+逻辑回归（正则/类不平衡处理写死），留出=按 episode 划分且按任务×策略分层保证每格 train/test 都有；指标=留出宏平均 AUC+逐策略混淆矩阵；门线预注册 AUC≤0.55=混淆臂空转；口径必须算两次得出同一个数（固定种子、固定划分）。分层重评算子=层（任务×采集批次，含退化口径）内策略间成功率比较（bootstrap CI）→跨层聚合重排名→原始 vs 分层 Kendall τ+逐对翻转率+最小每格样本门槛（部分格仅 29 条）。三臂=A 探针驱动分层重评 / B 长度截断匹配池化重评（截断规则写死：截到任务内成功 episode 长度分布哪个分位、失败 episode 怎么处理）/ C 原基准池化排名；任一臂退化显式标记缺失不硬填。2 个 pilot 任务按写死的规则选（如成功率差最大+受机位缺陷影响的任务），不许挑好看的。④决策价值三行+预注册表（experiments/prereg.md+追加 notes/DECISIONS.md）：pilot 后哪个数字改哪个决定、项目级 stop_if、信息量÷成本；smoke 正控（探针分任务应≈1.0）/负控（策略标签置换应≈0.5）口径冻结。产物=literature/novelty-c4-check.md+experiments/protocol.md+experiments/prereg.md；更新 STATUS.md；git commit。验收：协议严到算两次同数+预注册冻结+批次轴结论落盘。",
+      "prediction": "①留出宏平均 AUC>0.55（brief 预测①门线）；②至少一个任务原始 vs 分层排名 Kendall τ<1 或出现逐对翻转（brief 预测②，翻转与否正是测量对象）；③正控任务探针 AUC≈1、策略标签置换负控≈0.5（尺子有效性前提）",
+      "failure_conditions": "①novelty 遍历命中已发表身份探针量化/分层重评→stop_if_not_novel 停；②协议口径做不到算两次同数（特征提取不确定性不可控）→回炉 design；③parquet 无批次字段→不阻塞，按退化口径写进协议并重估功效",
+      "completion": {
+        "files": [
+          "literature/novelty-c4-check.md",
+          "experiments/protocol.md",
+          "experiments/prereg.md"
+        ]
+      },
+      "estimate_min": 75,
+      "reasoning": "xhigh",
+      "model_override": null,
+      "wake": null,
+      "night_dispatch": true,
+      "role": "planner",
+      "status": "ready",
+      "attempts": 0,
+      "result": null,
+      "profile": "lab-planner",
+      "reasoning_effort": "xhigh",
+      "toolsets": [
+        "code_execution",
+        "file",
+        "memory",
+        "paper",
+        "research",
+        "session_search",
+        "skills",
+        "terminal",
+        "todo",
+        "web"
+      ],
+      "skills": [
+        "research-planning"
+      ]
+    },
+    {
+      "id": "smoke",
+      "kind": "experiment",
+      "depends_on": [
+        "design"
+      ],
+      "goal": "探针尺子信度+效度最小检查（8G 卡）：稳不稳、准不准、多贵",
+      "instruction": "信度：同一批 episode 冻结特征+探针按 prereg 冻结口径重算 3 次，AUC 波动远小于门线距离，bootstrap CI 宽度报告。效度：正控=同特征探针分任务（应≈1.0，特征确实携带可分信号）；负控=策略标签置换后 AUC 应落 0.5 附近（高 AUC 非流程伪影）；效度样本与主探针训练集隔离，防循环论证。成本：实测特征提取+探针耗时/显存，与 design 估算对照。禁止中途改门线或口径。",
+      "prediction": "负控 AUC≈0.5（±噪声带）；正控≥0.9；主探针 3 次重算 AUC 极差远小于（AUC−0.55）；实测成本≤估算×2",
+      "failure_conditions": "负控 AUC 显著>0.5（流程伪影）或正控<0.9（特征无信号）→尺子不可用，回 design 修协议；成本超估算×2 且无解释",
+      "completion": {
+        "files": [
+          "results/"
+        ]
+      },
+      "estimate_min": 40,
+      "model_override": null,
+      "wake": null,
+      "role": "executor",
+      "status": "blocked",
+      "attempts": 0,
+      "result": null,
+      "profile": "lab-executor",
+      "reasoning_effort": "high",
+      "toolsets": [
+        "code_execution",
+        "file",
+        "memory",
+        "research",
+        "session_search",
+        "skills",
+        "terminal",
+        "todo",
+        "web"
+      ],
+      "skills": [
+        "experiment-execution"
+      ]
+    },
+    {
+      "id": "pilot",
+      "kind": "experiment",
+      "depends_on": [
+        "smoke"
+      ],
+      "goal": "2 任务×7 策略探针小规模跑通全流程：能算、能存、能复现",
+      "instruction": "按 protocol.md 冻结口径跑 design 选定的 2 任务×全部 7 策略：特征提取→探针→留出 AUC+逐策略混淆矩阵→分层重排名 demo；实现与文档逐项对照，发现偏差就地修——代码里算的必须就是 protocol.md 写的那个量；结果+复现命令落 results/。",
+      "prediction": "同命令重跑数字一致；AUC+混淆矩阵+双排名三件产出齐全",
+      "failure_conditions": "实现与定义出现不可修复偏差，或任务选择偏离 design 写死的规则",
+      "completion": {
+        "files": [
+          "results/"
+        ]
+      },
+      "estimate_min": 30,
+      "model_override": null,
+      "wake": null,
+      "role": "executor",
+      "status": "blocked",
+      "attempts": 0,
+      "result": null,
+      "profile": "lab-executor",
+      "reasoning_effort": "high",
+      "toolsets": [
+        "code_execution",
+        "file",
+        "memory",
+        "research",
+        "session_search",
+        "skills",
+        "terminal",
+        "todo",
+        "web"
+      ],
+      "skills": [
+        "experiment-execution"
+      ]
+    },
+    {
+      "id": "experiment",
+      "kind": "experiment",
+      "depends_on": [
+        "pilot"
+      ],
+      "goal": "12 任务全量三臂测量：探针混淆量化+分层重评+长度截断匹配对照，协议冻结",
+      "instruction": "全 12 任务×7 策略按 prereg 跑三臂：A 探针驱动分层重评 / B 长度截断匹配池化重评 / C 原池化排名；协议全程不变（特征/划分/门槛写死并记录）；逐 episode 原始值全部落盘不只存汇总；任一臂某层退化显式标记缺失不硬填；产出混淆量化表+三套排名+Kendall τ+逐对翻转清单+每格门槛判定。",
+      "prediction": "三臂完整产出且同口径可复现；判据表覆盖全部 12 任务（含显式标记的退化层）",
+      "failure_conditions": "协议漂移未记录；缺数据硬填；只在好看子集上出数",
+      "completion": {
+        "files": [
+          "results/"
+        ]
+      },
+      "estimate_min": 40,
+      "model_override": null,
+      "wake": null,
+      "role": "executor",
+      "status": "blocked",
+      "attempts": 0,
+      "result": null,
+      "profile": "lab-executor",
+      "reasoning_effort": "high",
+      "toolsets": [
+        "code_execution",
+        "file",
+        "memory",
+        "research",
+        "session_search",
+        "skills",
+        "terminal",
+        "todo",
+        "web"
+      ],
+      "skills": [
+        "experiment-execution"
+      ]
+    },
+    {
+      "id": "analysis",
+      "kind": "analysis",
+      "depends_on": [
+        "experiment"
+      ],
+      "goal": "审计报告：探针可靠性+排名稳定性结论+判据输出",
+      "instruction": "汇总信度/效度/成本实测；失效情形逐一实测（240p 腕相机低分辨率、单策略格、小样本格，不许「未观察到」一句话带过）；分层前后排名稳定性结论（τ、逐对翻转、哪些任务基准还作数）；与近邻（2508.06426、DILL）口径差异写清；对照 brief 论点行逐条判定 supported/falsified。",
+      "prediction": "可靠性证据链完整，结论逐条对照预注册判定",
+      "failure_conditions": "失效情形实测缺失；结论超出预注册口径",
+      "completion": {
+        "files": [
+          "results/"
+        ]
+      },
+      "estimate_min": 25,
+      "model_override": null,
+      "wake": "user",
+      "role": "verifier",
+      "status": "blocked",
+      "attempts": 0,
+      "result": null,
+      "profile": "lab-verifier",
+      "reasoning_effort": "xhigh",
+      "toolsets": [
+        "code_execution",
+        "file",
+        "memory",
+        "research",
+        "session_search",
+        "skills",
+        "terminal",
+        "todo",
+        "web"
+      ],
+      "skills": [
+        "result-verification"
+      ]
+    }
+  ],
+  "updated_at": "2026-11-08T17:20:15+00:00",
+  "from_template": {
+    "contribution_type": "new_measurement",
+    "version": 2,
+    "path": "D:\\hermes-data\\research\\templates\\workflow\\new_measurement.md"
+  }
+}

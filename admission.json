@@ -2,7 +2,7 @@
   "schema": "research-topic-admission/v1",
   "decision": "admitted",
   "screening_attempts": 1,
-  "screening_status": "completed",
+  "screening_status": "admitted",
   "research_question": "公开真机基准 ArmnetBench v0.1（arXiv:2611.03168，7 策略 × 12 任务 × 3,718 条 episode）里『从画面就能认出是哪个策略录的』这一策略身份混淆到底多大、会不会翻转基准排名——能否用探针驱动的分层重评协议把它量化并给出排名稳定性判据？",
   "closest_work": [
     {
@@ -12,7 +12,12 @@
       "what_it_did": "发布 ArmnetBench v0.1 评测的全部 3,718 条真机 episode（600 遥操演示 + 3,118 策略 rollout，7 策略 × 12 任务，SO-101 三单元，逐条人工三分类标注），并在 §5 自认三类局限：标签近二值且 episode 长度泄漏标签、机位缺陷使策略身份可从图像推断、leaderboard 无法从发布语料精确复现。",
       "difference": "该文是被审计对象本身：作者只做了警告级自认（models should be trained on length-matched or clipped inputs 一句话建议），全文没有任何量化（无可分性度量、无分层重评、无排名稳定性判据）。本课题把这三条自认缺陷变成可测量对象：冻结特征线性探针量化身份可分性、按（任务×采集批次）分层重算排名、给出 Kendall τ + 逐对翻转率的可比性判据。",
       "full_text_checked": true,
-      "evidence_refs": ["ev-2611-sec5", "ev-2611-labels", "ev-2611-table", "ev-2611-cell"]
+      "evidence_refs": [
+        "ev-2611-sec5",
+        "ev-2611-labels",
+        "ev-2611-table",
+        "ev-2611-cell"
+      ]
     },
     {
       "title": "Shortcut Learning in Generalist Robot Policies: The Role of Dataset Diversity and Fragmentation",
@@ -21,7 +26,9 @@
       "what_it_did": "研究通用机器人策略的 shortcut learning：在 LIBERO 上人为构造任务位置与相机视角的虚假相关，用 OOD 视角交换评测衡量策略对视角捷径的依赖，并给出数据多样性/碎片化归因与增强缓解。",
       "difference": "该文审的是『策略训练时的捷径依赖』（受控构造的虚假相关 + 策略泛化），不是『已发布基准语料里的身份泄漏』；其混淆是合成干预出来的，而本课题的混淆是真实基准里已存在、作者自认但无人量化的采集缺陷；且该文不做语料审计、不做基准排名修正。",
       "full_text_checked": true,
-      "evidence_refs": ["ev-shortcut-2508"]
+      "evidence_refs": [
+        "ev-shortcut-2508"
+      ]
     },
     {
       "title": "Disentangling Spurious Correlations in Vision-Language-Action Models via Predicting Domain-Invariant Latent Lookahead (DILL)",
@@ -30,7 +37,9 @@
       "what_it_did": "提出表征学习框架缓解 VLA 策略的捷径学习；用 LIBERO 诊断集构造 task–view 混淆双岛，交换视角的反事实评测显示基线 VLA 把指令任务替换成视角关联任务（shortcut degree 0.73），DILL 压到 0.05。",
       "difference": "同样是训练侧方法论文（让策略别用视角做捷径），诊断集是自建受控构造；不审计任何已发布真机基准语料，不量化基准内部的身份可分性，不涉及基准排名重算。本课题的探针只做审计测量，不改任何策略。",
       "full_text_checked": true,
-      "evidence_refs": ["ev-dill-2609"]
+      "evidence_refs": [
+        "ev-dill-2609"
+      ]
     },
     {
       "title": "LamportRobotics armnetbench *-audited 数据集家族（第三方 episode 级审计）",
@@ -39,7 +48,9 @@
       "what_it_did": "对 villekuosmanen 同名任务的遥操演示做 episode 级质量审计后再发布：按运动学分数+关键帧人工判读打分，删 0-5 集、flag 标注、audit/report.json 随附，LeRobot v3 格式。",
       "difference": "是本基准家族唯一出现的第三方审计动作，但对象是遥操演示子集的质量（演示是否真完成任务），不是 v01 rollout 语料的策略身份混淆、不探针量化可分性、不重算基准排名。跟进簇存在但空位未被占；该 lab 活跃（5 小时前仍在更新），需跟踪。",
       "full_text_checked": true,
-      "evidence_refs": ["ev-lamport"]
+      "evidence_refs": [
+        "ev-lamport"
+      ]
     }
   ],
   "contribution_type": "new_measurement",
@@ -89,17 +100,52 @@
     "status": "accepted",
     "name": "screening 证据包落盘",
     "acceptance_criteria": "admission.json 过 research-topic-admission/v1 门（eligible=true）；literature/related-work.md 写明查询、来源、原文定位、核验范围与未知项；search_log ≥4 查询 ≥2 渠道；evidence_ledger 每条决定性判断带 source/locator/observation，full_text 带逐字 quote；citation_chasing.backward 与 forward 均有记录。",
-    "evidence_files": ["admission.json", "literature/related-work.md"]
+    "evidence_files": [
+      "admission.json",
+      "literature/related-work.md"
+    ]
   },
   "search_log": [
-    {"query": "robot manipulation benchmark \"policy identity\" OR \"spurious cues\" camera viewpoint linear probe confound evaluation", "channel": "web_search", "checked_at": "2026-11-09T00:05+08:00"},
-    {"query": "\"2611.03168\" OR \"ArmnetBench\" rollout recycle robot benchmark", "channel": "web_search", "checked_at": "2026-11-09T00:06+08:00"},
-    {"query": "arXiv API: all:\"ArmnetBench\"", "channel": "arxiv_api", "checked_at": "2026-11-09T00:07+08:00"},
-    {"query": "arXiv API: all:\"policy identity\" AND all:\"robot\"", "channel": "arxiv_api", "checked_at": "2026-11-09T00:07+08:00"},
-    {"query": "arXiv API: all:\"benchmark\" AND all:\"spurious\" AND all:\"camera\" AND all:\"manipulation\"", "channel": "arxiv_api", "checked_at": "2026-11-09T00:07+08:00"},
-    {"query": "OpenAlex: search=Rollout then Recycle Labelled Real-Robot Episodes（被引核验）", "channel": "openalex_api", "checked_at": "2026-11-09T00:12+08:00"},
-    {"query": "HF: LamportRobotics org datasets 列表 + armnetbench_block_stack-audited 数据集卡", "channel": "huggingface_page", "checked_at": "2026-11-09T00:10+08:00"},
-    {"query": "arXiv HTML 全文 2611.03168v1（§3/§5 原文引语提取）", "channel": "arxiv_html", "checked_at": "2026-11-09T00:09+08:00"}
+    {
+      "query": "robot manipulation benchmark \"policy identity\" OR \"spurious cues\" camera viewpoint linear probe confound evaluation",
+      "channel": "web_search",
+      "checked_at": "2026-11-09T00:05+08:00"
+    },
+    {
+      "query": "\"2611.03168\" OR \"ArmnetBench\" rollout recycle robot benchmark",
+      "channel": "web_search",
+      "checked_at": "2026-11-09T00:06+08:00"
+    },
+    {
+      "query": "arXiv API: all:\"ArmnetBench\"",
+      "channel": "arxiv_api",
+      "checked_at": "2026-11-09T00:07+08:00"
+    },
+    {
+      "query": "arXiv API: all:\"policy identity\" AND all:\"robot\"",
+      "channel": "arxiv_api",
+      "checked_at": "2026-11-09T00:07+08:00"
+    },
+    {
+      "query": "arXiv API: all:\"benchmark\" AND all:\"spurious\" AND all:\"camera\" AND all:\"manipulation\"",
+      "channel": "arxiv_api",
+      "checked_at": "2026-11-09T00:07+08:00"
+    },
+    {
+      "query": "OpenAlex: search=Rollout then Recycle Labelled Real-Robot Episodes（被引核验）",
+      "channel": "openalex_api",
+      "checked_at": "2026-11-09T00:12+08:00"
+    },
+    {
+      "query": "HF: LamportRobotics org datasets 列表 + armnetbench_block_stack-audited 数据集卡",
+      "channel": "huggingface_page",
+      "checked_at": "2026-11-09T00:10+08:00"
+    },
+    {
+      "query": "arXiv HTML 全文 2611.03168v1（§3/§5 原文引语提取）",
+      "channel": "arxiv_html",
+      "checked_at": "2026-11-09T00:09+08:00"
+    }
   ],
   "evidence_ledger": [
     {
@@ -201,22 +247,100 @@
   ],
   "citation_chasing": {
     "backward": [
-      {"direction": "backward", "source": "arXiv:2611.03168v1 §References（全文 12 条引文已读）", "checked_at": "2026-11-09T00:09+08:00", "finding": "引文全部是方法/数据论文（ArmnetBench 本体 2607.24481、OXE、DROID、LeRobot、ACT、Diffusion Policy、SmolVLA、π0、π0.5、GR00T N1.7、MolmoAct 2、Robometer），无基准审计/混淆量化/评测有效性类前作——backward 追溯确认其文献圈内没有可直接套用的现成审计方法。", "status": "supported"}
+      {
+        "direction": "backward",
+        "source": "arXiv:2611.03168v1 §References（全文 12 条引文已读）",
+        "checked_at": "2026-11-09T00:09+08:00",
+        "finding": "引文全部是方法/数据论文（ArmnetBench 本体 2607.24481、OXE、DROID、LeRobot、ACT、Diffusion Policy、SmolVLA、π0、π0.5、GR00T N1.7、MolmoAct 2、Robometer），无基准审计/混淆量化/评测有效性类前作——backward 追溯确认其文献圈内没有可直接套用的现成审计方法。",
+        "status": "supported"
+      }
     ],
     "forward": [
-      {"direction": "forward", "source": "OpenAlex W7225193298", "checked_at": "2026-11-09T00:12+08:00", "finding": "cited_by_count=0，论文引文跟进簇不存在。", "status": "supported"},
-      {"direction": "forward", "source": "Semantic Scholar Graph API", "checked_at": "2026-11-09T00:08+08:00", "finding": "两次请求 429 限流，S2 口径未核验。", "status": "unknown"},
-      {"direction": "forward", "source": "Hugging Face LamportRobotics org（非引文型跟进）", "checked_at": "2026-11-09T00:10+08:00", "finding": "对同基准家族遥操演示做 episode 级审计后再发布的 12 个数据集，2026-11-07 起上传且仍在更新；对象为演示质量审计，非策略身份混淆。", "status": "supported"}
+      {
+        "direction": "forward",
+        "source": "OpenAlex W7225193298",
+        "checked_at": "2026-11-09T00:12+08:00",
+        "finding": "cited_by_count=0，论文引文跟进簇不存在。",
+        "status": "supported"
+      },
+      {
+        "direction": "forward",
+        "source": "Semantic Scholar Graph API",
+        "checked_at": "2026-11-09T00:08+08:00",
+        "finding": "两次请求 429 限流，S2 口径未核验。",
+        "status": "unknown"
+      },
+      {
+        "direction": "forward",
+        "source": "Hugging Face LamportRobotics org（非引文型跟进）",
+        "checked_at": "2026-11-09T00:10+08:00",
+        "finding": "对同基准家族遥操演示做 episode 级审计后再发布的 12 个数据集，2026-11-07 起上传且仍在更新；对象为演示质量审计，非策略身份混淆。",
+        "status": "supported"
+      }
     ]
   },
   "claims": [
-    {"claim_id": "c1", "claim": "ArmnetBench v0.1 发布语料中策略身份可从图像推断，系作者原文自认，全文未量化。", "status": "supported", "evidence_refs": ["ev-2611-sec5", "ev-directions-record"]},
-    {"claim_id": "c2", "claim": "episode 长度与尾部静止泄漏标签、next.done 在失败 episode 上是操作员叫停而非真实终止态，作者自认，唯一建议是一句话级修正。", "status": "supported", "evidence_refs": ["ev-2611-labels"]},
-    {"claim_id": "c3", "claim": "标签近二值：次优仅 106/3118（3.4%），且逐策略成功率差异大（π0.5 47.6% vs SmolVLA 13.1%），排名对混淆敏感的先天条件在位。", "status": "supported", "evidence_refs": ["ev-2611-table"]},
-    {"claim_id": "c4", "claim": "不存在对已发布真机基准语料做策略身份探针量化或按机位/批次分层重算排名的已发表工作。", "status": "unknown", "evidence_refs": ["ev-negsearch-identity", "ev-openalex-fwd", "ev-shortcut-2508", "ev-dill-2609"]},
-    {"claim_id": "c5", "claim": "本基准家族唯一的第三方审计动作（LamportRobotics *-audited）对象是遥操演示质量，不占身份混淆审计空位；该 lab 活跃需跟踪。", "status": "supported", "evidence_refs": ["ev-lamport"]},
-    {"claim_id": "c6", "claim": "2611.03168 前向引文为 0（OpenAlex 2026-11-09），论文跟进簇不存在。", "status": "supported", "evidence_refs": ["ev-openalex-fwd"]},
-    {"claim_id": "c7", "claim": "机位缺陷按『单元×采集批次』分布（除 MolmoAct 2 外全部策略受影响、每任务固定单元），正确分层轴是任务×采集批次而非任务×机位单元。", "status": "supported", "evidence_refs": ["ev-2611-sec5", "ev-2611-cell"]}
+    {
+      "claim_id": "c1",
+      "claim": "ArmnetBench v0.1 发布语料中策略身份可从图像推断，系作者原文自认，全文未量化。",
+      "status": "supported",
+      "evidence_refs": [
+        "ev-2611-sec5",
+        "ev-directions-record"
+      ]
+    },
+    {
+      "claim_id": "c2",
+      "claim": "episode 长度与尾部静止泄漏标签、next.done 在失败 episode 上是操作员叫停而非真实终止态，作者自认，唯一建议是一句话级修正。",
+      "status": "supported",
+      "evidence_refs": [
+        "ev-2611-labels"
+      ]
+    },
+    {
+      "claim_id": "c3",
+      "claim": "标签近二值：次优仅 106/3118（3.4%），且逐策略成功率差异大（π0.5 47.6% vs SmolVLA 13.1%），排名对混淆敏感的先天条件在位。",
+      "status": "supported",
+      "evidence_refs": [
+        "ev-2611-table"
+      ]
+    },
+    {
+      "claim_id": "c4",
+      "claim": "不存在对已发布真机基准语料做策略身份探针量化或按机位/批次分层重算排名的已发表工作。",
+      "status": "unknown",
+      "evidence_refs": [
+        "ev-negsearch-identity",
+        "ev-openalex-fwd",
+        "ev-shortcut-2508",
+        "ev-dill-2609"
+      ]
+    },
+    {
+      "claim_id": "c5",
+      "claim": "本基准家族唯一的第三方审计动作（LamportRobotics *-audited）对象是遥操演示质量，不占身份混淆审计空位；该 lab 活跃需跟踪。",
+      "status": "supported",
+      "evidence_refs": [
+        "ev-lamport"
+      ]
+    },
+    {
+      "claim_id": "c6",
+      "claim": "2611.03168 前向引文为 0（OpenAlex 2026-11-09），论文跟进簇不存在。",
+      "status": "supported",
+      "evidence_refs": [
+        "ev-openalex-fwd"
+      ]
+    },
+    {
+      "claim_id": "c7",
+      "claim": "机位缺陷按『单元×采集批次』分布（除 MolmoAct 2 外全部策略受影响、每任务固定单元），正确分层轴是任务×采集批次而非任务×机位单元。",
+      "status": "supported",
+      "evidence_refs": [
+        "ev-2611-sec5",
+        "ev-2611-cell"
+      ]
+    }
   ],
   "uncertainties": [
     "c4 的『无人做过』仅覆盖本轮 4 渠道 8 查询式（arXiv 全文索引/OpenAlex/网页搜索/HF），Google Scholar 与 OpenReview 全组合遍历未做——不得当已证新颖性引用。",
